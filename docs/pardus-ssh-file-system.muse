@@ -1,0 +1,102 @@
+#title Ssh File System ile uzak dizini yerele bağlamak
+#author Aşkın Yollu
+#date 28-07-2008
+
+-----
+* Lisans
+Bu yazının bazı hakları *Creative Commons Attribution-Share Alike*[1] ile lisanslanarak koruma altına alınmıştır. Bu yazıyı kaynak göstererek ve aynı, benzer veya bu şartları sağlayan bir lisansla dağıtmak sartı ile istediğiniz şekilde kullanabilirsiniz.
+-----
+
+<contents>
+
+-----
+
+* Giriş 
+Herhangi bir sebepten dolayı linux yüklü bir bilgisayarın dizinini kendi bilgisayarınızda, kendi dizininizmiş gibi kullanmak istiyorsanız *sshfs - SSH dosya sistemi* imdadımıza yetişiyor. İsmindende belli olduğu gibi ssh protokolünü kullanarak dosya transeri yapıyoruz. Bunu birçok alanda kullanabilirsiniz, örneğin ben dosya sunucusu olarak kullandığım ve torrent ile dosya indirdiğim bilgisayara bağlanmak için bu yolu kullanıyorum. Sistemin */media* dizinini sshfs ile kendi bilgisayarıma bağladım, bir dosyaya ihtiyacım olduğunda sanki kendi bilgisayarımdaymış gibi hızlıca ulaşarak kullanıyorum. Cacheleme özelliğide bulunduğu için neredeyse hiç performans sorunu yaşamıyorum.
+
+* Gerekli yazılımlar
+ - SSH server yüklü bir bilgisayar. (bu bilgisayarın dizinlerini kullanacağız)
+ - sshfs yüklü bir bilgisayar. (bu bilgisayar ile bağlanacağız)
+
+* Kurulum
+ - Debian && Ubuntu && vs. <example>
+sudo apt-get install sshfs
+</example>
+
+ - Pardus <example>
+sudo pisi it sshfs
+</example>
+
+* Kullanımı
+** Mount - Bağlama
+Öncelikle bir mount point yani bağlama noktası oluşturalım.
+<example>
+sudo mkdir /media/PIS-ii
+</example>
+Benim bağlanacağım bilgisayarın adı PIS-ii olduğu için bağlama noktasını öyle oluşturdum.
+
+Şimdi sistemi dizini bağlayalım.
+<example>
+sudo sshfs kelebek@192.168.3.100:/home/kelebek /media/PIS-ii 
+</example>
+Bu komutu verdikten sonra *192.168.3.100* ip numarasına sahip bilgisayardaki */home/kelebek* dizini, kendi bilgisayarımızın */media/PIS-ii* dizinine bağlanmış oldu. Şuan *kelebek* adlı kullanıcının */home/kelebek* adlı dizinde sahip olduğu tüm yetkilere bizde */media/PIS-ii* dizininde sahibiz. 
+
+Bir taslak oluşturursak
+<example>
+sudo sshfs [kullanici-adi]@[makina]:[dizin] [baglama-noktasi]
+</example>
+
+Bu şekilde bağlarsak sadece root yetkilerine sahip kullanıcılar dizine ulaşabilir. Bu sorunu aşmak için **allow_other** parametresini kullanıyoruz. 
+
+<example>
+sudo sshfs -o allow_others [kullanici-adi]@[makina]:[dizin] [baglama-noktasi]
+</example>
+
+Parametreleri vermeden önce başına **-o** koyuyoruz.
+
+** Parametreler
+<example>
+-o idmap=user
+-o uid=<uid>
+-o gid=<gid>
+-o ro //read only - salt okunur mod
+</example>
+
+** Umount - Bağı koparma
+<example>
+umount bağlamanoktası
+</example>
+yada
+<example>
+fusermount -u bağlamanoktası
+</example>
+
+** /etc/fstab dosyasını kullanarak bağlama
+/etc/fstab dosyasına 
+<example>
+sshfs#USERNAME@REMOTE_HOST:REMOTE_PATH MOUNT_POINT fuse SSHFS_OPTIONS 0 0
+</example>
+şeklinde bir satır ekliyoruz.
+
+Örnek:
+<example>
+sshfs#kelebek@192.168.3.100:/home/kelebek /media/PIS-ii fuse SSHFS_OPTIONS 0 0
+</example>
+
+Ben kullanırken komut satırından mount etmeyi tercih ediyorum. Her seferinde kodları tek tek girmektense **.bashrc** dosyasının içine **alias** tanımlıyarak tek komutla işi hallediyorum.
+.bashrc dosyasının içine 
+<example>
+alias mount-pis-ii="sudo sshfs -o allow_other kelebek@192.168.3.100:/home/kelebek /media/PIS-ii"
+</example>
+satırnı ekliyoruz. Bundan sonra mount-pis-ii komutunu verince önce sizden kullanıcı şifrenizi, sonrada diğer makinanın şifresini isteyecek, şifreleri girdiğinizde artık o dosya sizin bilgisayarınızda olacak.
+
+Sshfs programını dağa farklı ve daha esnek olarak kullanmak mümkün, bunlar için proje sayfası[2]na ve wiki[3]sine bakabilirsiniz.
+
+* Kaynaklar
+[1] http://creativecommons.org/licenses/by-sa/3.0/
+
+[2] Proje sayfası: http://fuse.sourceforge.net/sshfs.html
+
+[3] Wiki: http://fuse.sourceforge.net/sshfs.html
+
+-----

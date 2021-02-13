@@ -1,0 +1,24 @@
+* Kurulum
+Bu[1] adresten gerekli dosyaların indiriyoruz.
+<example>
+tar vxzf magpierss-*.tar.gz
+cd magpierss-*
+cp rss_* sitenin_root_dizini
+cd sitenin_root_dizini
+mkdir cache
+chmod 775 cache
+</example>
+
+kodumuzun içine 
+<src lang="php">
+require_once('magpierss/rss_fetch.inc');
+</src>
+kodunu yerleştiriyoruz.
+
+
+
+
+
+
+* Footnotes
+[1] http://sourceforge.net/project/showfiles.php?group_id=55691
