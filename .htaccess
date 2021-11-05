@@ -1,6 +1,0 @@
-RewriteEngine on
-RewriteRule ^index/(.*) /index.php?p=index&lang=$1
-RewriteRule ^about/(.*) /index.php?p=about&lang=$1
-RewriteRule ^documents/(.*) /index.php?p=documents&lang=$1
-RewriteRule ^project/(.*)/(.*) /projects/index.php?project=$1&lang=$2
-RewriteRule ^project/(.*) /projects/index.php?project=$1

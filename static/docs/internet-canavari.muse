@@ -1,0 +1,46 @@
+#title İnternet Canavarı:)
+#author Aşkın Yollu
+#date 28-07-2008
+
+<contents>
+
+-----
+
+* Giriş
+Evde ibm marka 10 yıllık bir bilgisayarım var, yaklaşık 6 aydır bende. Ara tatilimde masaüstü bilgisayarımı satıp yarine laptop aldığımda, hem gönlümdeki, hemde masamdaki masaüstü bilgisayar boşluğunu doldurmak için arkadaşımdan aldım o bilgisayarı. Kendisine teşekür ediyorum. Lakabı İnternet Canavarı, ismi ise PIS-iii.
+
+* Özellikler
+ - Marka: IBM
+ - Pentium III, 700Mhz
+ - 128Mb SD Ram
+ - 10Gb SCSI Hdd, 200Gb Samsung IDE Hdd
+ - Trio S3 3d onboard ekran kartı
+
+* Yazılımlar
+ - Debian GNU/Linux lenny/sid
+ - LAMP - Apache, Mysql, PHP
+ - Open SSH Server
+ - Xfce Desktop Environment
+ - Gnome Desktop Environment
+ - Pcmanfm
+ - Deluge torrent
+
+* Kullanım amacı
+** Torrent client
+Öncelikli kullanım amacı torrent ile dosya indirme. Sınırsız internet bağlantısına sahip olduğum için, toplam internet trafiğimiz olan aylık 100Gb verinin yaklaşık 80Gbtı bu bilgisayar üzerinden geçmektedir, haftada ortalama 6 gün açık kalıyor.
+
+** Dosya sunucu
+Bu 80 Gblık veriyi günlük kullandığım bilgisayarıma çekeye kalksam, hem bilgisayarımda yer kalmaz hemde gereksiz yere zaman kaybı olur.
+
+ - SSH File System: Günlük olarak kullandığım bilgisayarda linux kurulu olduğu için, sshfs kullanarak[1] sistemi yerele bağlayarak kullanıyorum.
+
+ - Apache: Evde benim dışımda 2 adet windows client(istemci) olduğu için sshfs tek başına yetmiyor, bu durumlarda diğer kullancıları ilgilendiren kısmı apache yardımıyla paylaşıma açtım.
+
+ - Samba: Linux sistemlerde sambayı pek sevmediğim için ve, networkteki bir sorun nedeniyle sambayı kullanamıyorum.
+
+ - Ftp: Win clientler için apacheden daha kullışlı olacağını düşündüğüm için yakın zamanda ftpye geçmeyi planlıyorum.
+
+* Footnotes
+[1] http://yollu.com/docs/ssh-file-system.html
+
+-----
