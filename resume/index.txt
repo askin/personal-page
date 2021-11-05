@@ -1,0 +1,114 @@
+Aşkın Özgür
+
+------------------------------------------------------------------------
+
+  Specialties: DevOps, Python, Java, Shell Script, Linux
+  BS, Computer Engineering at Dokuz Eylül University
+
+------------------------------------------------------------------------
+
+
+Personal
+
+Email
+    askin@askin.ws
+
+Phone
+    +905302821648
+
+Birthday
+    16/01/1987
+
+Marital Status
+    Married
+
+Military Service
+    Done
+
+Languages
+    _Turkish_, _English_
+
+Blog
+    https://blog.askin.ws
+
+GitHub
+    https://github.com/askin
+
+Twitter
+    https://twitter.com/kelebeks
+
+LinkedIn
+    https://www.linkedin.com/in/askinyollu
+
+
+Corporate Experience
+
+2013-Current
+    _Software Developer at Hermes İletişim_ (İzmir/Türkiye)
+    DevOps and System Administration (Building pipeline for Java, Python
+    and Node.js Applicatons)
+    API integration for SMPP (Short Message Peer-to-Peer) integration
+    with Node.js
+    Mass Mailing Service design and implementation (1+ Million daily)
+    Web Based Call Center Development (with WebRTC)
+    Python/Java development
+
+2010-2013
+    _Software Developer at Dokuz Eylül University_ (İzmir/Türkiye)
+    Smartcard programming (Mifare)
+    Linux System Development
+    Pos Machine Development with C/C++
+    Server socket programming with Java
+    Design and implementation web service API for SOA based web
+    application
+
+2010 (7 months)
+    _Web Developer at Dokuz Eylül University_ (İzmir/Türkiye)
+
+2009 (1 month)
+
+    _Intern at Tubitak UEKAE_ (Gebze/Türkiye)
+
+    PiSi(Pardus Package Manager) PackageKit Backend
+
+
+Open Source Contribution
+
+Pardus
+    PiSi(Pardus Package Manager) Packager (main and contrib repository)
+    Odun (Offline updater and package installer)
+    https://code.google.com/p/pisidown/
+
+
+Tools, IDEs and Frameworks
+
+IDE
+    Netbeans for Java Development
+
+Editor
+    Emacs as IDE and Text Editor for Python, PHP, etc.
+    Vim: quick editing on remote server.
+
+Framework
+    Python: web.py, web2py, FastAPI
+    JavaScript: jQuery, Vue.js
+
+DevOps
+    Jenkins, Redmine, Docker (_Docker Compose_), Google Cloud (_Cloud
+    Functions, Cloud Storage_)
+
+Monitoring Tools
+    Graylog, Zabbix
+
+
+Education
+
+2004-2013
+    _BS. Computer Engineering at Dokuz Eylül University_
+
+2001-2004
+    _75. Yıl Cumhuriyet High School_
+
+------------------------------------------------------------------------
+
+  askin@askin.ws / +905302821648 / https://blog.askin.ws
