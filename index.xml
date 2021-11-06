@@ -1,21 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hakkımda on Aşkın Özgür</title>
-    <link>https://askin.ws/</link>
-    <description>Recent content in Hakkımda on Aşkın Özgür</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://askin.ws/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hakkımda</title>
-      <link>https://askin.ws/hakkimda/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://askin.ws/hakkimda/</guid>
-      <description>Hakkımda  Merhaba ben Aşkın Özgür. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka&amp;rsquo;da yaşıyor, Hermes İletişim&amp;lsquo;de çalışıyorum.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hakkımda on Aşkın Özgür</title><link>https://askin.ws/</link><description>Recent content in Hakkımda on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://askin.ws/index.xml" rel="self" type="application/rss+xml"/><item><title>Hakkımda</title><link>https://askin.ws/hakkimda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://askin.ws/hakkimda/</guid><description>Hakkımda Merhaba ben Aşkın Özgür. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka&amp;rsquo;da yaşıyor, Hermes İletişim&amp;lsquo;de çalışıyorum.
 1 Haziran 2018 Tarihinden itibaren Yollu olan soyadım Özgür olarak değişmiştir.
 Aşağıdaki sosyal medya ikonlarına tıklayıp iletişim kurabilirsiniz. Yada e-posta atabilirsiniz askin@askin.ws. Şifreli olarak mail göndermek isterseniz pgp anahtarım: PGP Anahtarı.
-İş Hayatı    Tarih Firma     2013 - Günümüz Yazılım Geliştirici @ Hermes İletişim (İzmir/Türkiye)   2010 - 2013 Yazılım Geliştirici @ Dokuz Eylül University (İzmir/Türkiye)   2010 (7 Ay) Web Gelişrici @ Dokuz Eylül University (İzmir/Türkiye)   2009 (1 Ay) Stajyer @ Tubitak UEKAE (Gebze/Türkiye)    Eğitim    Tarih Okul     2004-2013 BS.</description>
-    </item>
-    
-  </channel>
-</rss>
+İş Hayatı Tarih Firma 2013 - Günümüz Yazılım Geliştirici @ Hermes İletişim (İzmir/Türkiye) 2010 - 2013 Yazılım Geliştirici @ Dokuz Eylül University (İzmir/Türkiye) 2010 (7 Ay) Web Gelişrici @ Dokuz Eylül University (İzmir/Türkiye) 2009 (1 Ay) Stajyer @ Tubitak UEKAE (Gebze/Türkiye) Eğitim Tarih Okul 2004-2013 BS.</description></item></channel></rss>
