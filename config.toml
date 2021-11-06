@@ -52,6 +52,14 @@ googleAnalytics = ""  # add your tracking id
     icon = "fab fa-telegram"
     title = "Telegram"
     url = "https://telegram.me/kelebeks"
+  [[params.socialIcons]]
+    icon = "fab fa-docker"
+    title = "Docker Hub"
+    url = "https://hub.docker.com/u/askinozgur"
+  [[params.socialIcons]]
+    icon = "fab fa-hackerrank"
+    title = "HackerRank"
+    url = "https://www.hackerrank.com/askin"
 
 [permalinks]
   "/" = "/:filename"

@@ -35,4 +35,6 @@ Tarih     | Okul
 
 {{% center %}}
 **Java** / **Python** / **Shell Script** / **Jenkins** / **Git** / **Docker** / **Nginx** / **Haproxy** / **Emacs**
+
+**Linux** / **Ubuntu** / **Zabbix**
 {{% /center %}}
