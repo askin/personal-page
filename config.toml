@@ -29,15 +29,15 @@ googleAnalytics = ""  # add your tracking id
     title = "E-mail"
     url = "mailto:askin@askin.ws"
   [[params.socialIcons]]
-    icon = "fas fa-facebook"
+    icon = "fab fa-facebook"
     title= "Facebook"
     url = "https://www.facebook.com/askin.yollu"
   [[params.socialIcons]]
-    icon = "fas fa-github"
+    icon = "fab fa-github"
     title = "Github"
     url = "https://github.com/askin"
   [[params.socialIcons]]
-    icon = "fas fa-gitlab"
+    icon = "fab fa-gitlab"
     title = "Gitlab"
     url = "https://gitlab.com/askinozgur"
   [[params.socialIcons]]
@@ -45,7 +45,7 @@ googleAnalytics = ""  # add your tracking id
     title = "Bitbucket"
     url = "https://bitbucket.org/askin/"
   [[params.socialIcons]]
-    icon = "fas fa-linkedin"
+    icon = "fab fa-linkedin"
     title = "Linked In"
     url = "https://www.linkedin.com/in/askinyollu/"
   [[params.socialIcons]]
