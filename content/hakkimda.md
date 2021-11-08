@@ -1,5 +1,5 @@
 +++
-title = "Hakkımda"
+title = "Aşkın Özgür"
 +++
 
 ## Hakkımda
