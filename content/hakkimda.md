@@ -6,9 +6,9 @@ title = "Aşkın Özgür"
 
 {{< figure class="avatar" src="/avatar.png" alt="avatar">}}
 
-Merhaba ben Aşkın Özgür. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [Hermes İletişim](http://www.hermesiletisim.net "Hermes İletişim")'de çalışıyorum.
+Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [Hermes İletişim](http://www.hermesiletisim.net "Hermes İletişim")'de çalışıyorum.
 
-1 Haziran 2018 Tarihinden itibaren Yollu olan soyadım Özgür olarak değişmiştir.
+1 Haziran 2018 Tarihinden itibaren **Yollu** olan soyadım **Özgür** olarak değişmiştir.
 
 Aşağıdaki sosyal medya ikonlarına tıklayıp iletişim kurabilirsiniz.
 Yada e-posta atabilirsiniz askin@askin.ws.
