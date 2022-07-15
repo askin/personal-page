@@ -6,7 +6,7 @@ title = "Aşkın Özgür"
 
 {{< figure class="avatar" src="/avatar.png" alt="avatar">}}
 
-Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [Hermes İletişim](http://www.hermesiletisim.net "Hermes İletişim")'de çalışıyorum.
+Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")'de çalışıyorum.
 
 1 Haziran 2018 Tarihinden itibaren **Yollu** olan soyadım **Özgür** olarak değişmiştir.
 
@@ -18,7 +18,8 @@ Yada e-posta atabilirsiniz askin@askin.ws.
 
 Tarih          | Firma
 ---------------|----------------------------------------------------------------------------------------
-2013 - Günümüz | Yazılım Geliştirici @ *[Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)
+2022 - Günümüz | Yazılım Geliştirici @ *[FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye)
+2013 - 2022    | Yazılım Geliştirici @ *[Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)
 2010 - 2013    | Yazılım Geliştirici @ *[Dokuz Eylül University](http://www.deu.edu.tr)* (İzmir/Türkiye)
 2010 (7 Ay)    | Web Gelişrici @ *[Dokuz Eylül University](http://www.deu.edu.tr)* (İzmir/Türkiye)
 2009 (1 Ay)    | Stajyer @ *[Tubitak UEKAE](http://www.uekae.tubitak.gov.tr/)* (Gebze/Türkiye)
