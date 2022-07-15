@@ -40,7 +40,10 @@ LinkedIn
 İş Deneyimi
 --------------------
 
-2013-
+2022-
+:    *Kıdemli Yazılım Geliştirici [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye)
+
+2013-2022
 :   *Yazılım Geliştiştici [Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)
 :   Linux Sistem Yöneticiliği / DevOps
 :   Python/Java yazılım geliştirici

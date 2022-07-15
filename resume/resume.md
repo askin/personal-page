@@ -43,7 +43,10 @@ LinkedIn
 Corporate Experience
 --------------------
 
-2013-Current
+2022-Current
+:    *Senior Backend Developer at [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye)
+
+2013-2022
 :    *Software Developer at [Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)
 :    DevOps and System Administration (Building pipeline for Java, Python and Node.js Applicatons)
 :    API integration for SMPP (Short Message Peer-to-Peer) integration with Node.js
