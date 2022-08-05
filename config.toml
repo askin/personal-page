@@ -5,7 +5,8 @@ theme = "hugo-PaperMod"
 enableEmoji = true
 math = false          # enable KaTeX (https://katex.org/) globally
 googleAnalytics = ""  # add your tracking id
-languageCode = "tr-TR"
+languageCode = "tr"
+paginate = 10
 
 [taxonomies]
   tag = "tags"
@@ -14,8 +15,8 @@ languageCode = "tr-TR"
 
 [params]
   description = ".... description"
-  favicon = "favicon.ico"  # path to a .ico to use as favicon
-  logo = ""  # url or path to a logo to put in the header
+  logo = "uploads/avatar.png"
+  favicon = "uploads/avatar.png"
   disableSpecial1stPost = true
   displayFullLangName = true
   showPostNavLinks = true
@@ -24,7 +25,7 @@ languageCode = "tr-TR"
   showRssButtonInSectionTermList =  true
   showToc = true
   showTitle = true
-  
+
   [params.footer]
     text = "By Aşkın Özgür"
     url = "https://github.com/askin"

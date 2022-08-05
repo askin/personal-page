@@ -7,20 +7,24 @@ description: Eksikler Desc
 - [x] Sayfa icindeki baslik parametrik oldu
 - [ ] Blog ozet degil komple olsun
     - [x] Blog yazilar full gorunsun
-    - [ ] Blog postlar listelenirken basliklar link olsun
+    - [x] Blog postlar listelenirken basliklar link olsun
     - [x] Taglar gorunsun
         - Configden kapatilmis
     - [ ] Blog yazilari arasindaki ayrim cok flu
-- [ ] Taglar gorunsun
+    - [x] Read more eklensin
+- [x] Taglar gorunsun
 - [x] Anasayfa ilk post garip gorunuyor
   - `params.disableSpecial1stPost = true` ile duzeldi
 - [x] Nedense ismim post icinde gorunuyor
   - Author ismi gorunuyor
 - [x] Postlar basladigina dair yazi olsun
-- [ ] İçerik alanı daha geniş olsun
+- [x] İçerik alanı daha geniş olsun
 - [ ] Blog ekraninda Blogs yaziyor, onu `Blog Posts` yapalim, hatta turkcelestirme deneyelim
 - [ ] Dil destegine bak
 - [ ] Kod renklendirme bir tik daha iyi olabilir
+- [x] Ana sayfada next yerine tum yazilar olsun
+- [ ] Favicon olsun
+- [x] Blog kisminda 5 den fazla post olsun
 
 ---
 
