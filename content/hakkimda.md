@@ -1,10 +1,9 @@
-+++
-title = "Aşkın Özgür"
-+++
-
-## Hakkımda
-
-{{< figure class="avatar" src="/avatar.png" alt="avatar">}}
+---
+title: "Hakkımda"
+showToc: false
+showBreadCrumbs: false
+showTitle: false
+---
 
 Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")'de çalışıyorum.
 
