@@ -78,14 +78,14 @@ random
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Konsoldan Rastgele String Oluşturma
+<a aria-label="post link to Konsoldan Rastgele String Oluşturma" href=https://askin.ws/blog/konsoldan-rastgele-string-olusturma/>Konsoldan Rastgele String Oluşturma</a>
 </h1>
 <div class=post-meta><span title="2013-08-13 12:34:00 +0300 +0300">August 13, 2013</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.</p>
+<div class=post-content>
+<p>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&lt; /dev/urandom tr -dc A-Za-z0-9
 </code></pre></div><p>Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
@@ -97,6 +97,10 @@ Konsoldan Rastgele String Oluşturma
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/random/>random</a></li>
+<li><a href=https://askin.ws/tags/rastgele/>rastgele</a></li>
+<li><a href=https://askin.ws/tags/shell/>Shell</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

@@ -78,14 +78,14 @@ database
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-MySQL veritabanı ile ilgili bazı bilgileri öğrenmek
+<a aria-label="post link to MySQL veritabanı ile ilgili bazı bilgileri öğrenmek" href=https://askin.ws/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/>MySQL veritabanı ile ilgili bazı bilgileri öğrenmek</a>
 </h1>
 <div class=post-meta><span title="2013-09-06 12:59:00 +0300 +0300">September 6, 2013</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.</p>
+<div class=post-content>
+<p>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.</p>
 <p>Var olan veritabanlarını görmek:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>show</span> databases;
 </code></pre></div><p>Bir veritabanını kullanmak için seçmek:</p>
@@ -101,20 +101,25 @@ MySQL veritabanı ile ilgili bazı bilgileri öğrenmek
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/database/>database</a></li>
+<li><a href=https://askin.ws/tags/mysql/>mysql</a></li>
+<li><a href=https://askin.ws/tags/query/>query</a></li>
+<li><a href=https://askin.ws/tags/sorgu/>sorgu</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Mysql Kullanıcı - Database Oluşturma
+<a aria-label="post link to Mysql Kullanıcı - Database Oluşturma" href=https://askin.ws/blog/mysql-kullanici-database-olusturma/>Mysql Kullanıcı - Database Oluşturma</a>
 </h1>
 <div class=post-meta><span title="2012-07-11 13:54:00 +0300 +0300">July 11, 2012</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Herzaman unutup google&rsquo;a bakacağıma buraya bakayım daha kolay :)</p>
+<div class=post-content>
+<p>Herzaman unutup google&rsquo;a bakacağıma buraya bakayım daha kolay :)</p>
 <p>Önce mysql sunucusuna bağlanalım:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mysql -u root -p
 </code></pre></div><p>Kullanıcı oluşturma:</p>
@@ -132,55 +137,37 @@ Tüm yetkiler:</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/create/>create</a></li>
+<li><a href=https://askin.ws/tags/database/>database</a></li>
+<li><a href=https://askin.ws/tags/grant/>grant</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/mysql/>mysql</a></li>
+<li><a href=https://askin.ws/tags/sql/>sql</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Java ile Oracle Veritabanına bağlanmak.
+<a aria-label="post link to Java ile Oracle Veritabanına bağlanmak." href=https://askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/>Java ile Oracle Veritabanına bağlanmak.</a>
 </h1>
 <div class=post-meta><span title="2010-11-08 20:29:00 +0300 +0300">November 8, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Öncelikle <a href=http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html>http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html</a> adresinden classes12.jar dosyasını indiriyoruz.</p>
-<p>Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>import</span> java.io.*<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.sql.*<span style=color:#f92672>;</span>
-
-<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>OraThin</span> <span style=color:#f92672>{</span>                                                                                                                                                                
-    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>                                                                                                                                          
-        <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>                                                                                                                                                                         
-            Connection con <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-            Class<span style=color:#f92672>.</span><span style=color:#a6e22e>forName</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;oracle.jdbc.driver.OracleDriver&#34;</span><span style=color:#f92672>);</span>              
-            con<span style=color:#f92672>=</span>DriverManager<span style=color:#f92672>.</span><span style=color:#a6e22e>getConnection</span><span style=color:#f92672>(</span>
-                <span style=color:#e6db74>&#34;jdbc:oracle:thin:@localhost:1521:dbname&#34;</span><span style=color:#f92672>,</span>
-                <span style=color:#e6db74>&#34;username&#34;</span><span style=color:#f92672>,</span>
-                <span style=color:#e6db74>&#34;password&#34;</span><span style=color:#f92672>);</span>
-            Statement s <span style=color:#f92672>=</span> con<span style=color:#f92672>.</span><span style=color:#a6e22e>createStatement</span><span style=color:#f92672>();</span>
-            ResultSet rs <span style=color:#f92672>=</span> s<span style=color:#f92672>.</span><span style=color:#a6e22e>executeQuery</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;SELECT * FROM KISI&#34;</span><span style=color:#f92672>);</span>
-
-            String name<span style=color:#f92672>;</span>
-            String surname<span style=color:#f92672>;</span>
-
-            <span style=color:#66d9ef>while</span><span style=color:#f92672>(</span>rs<span style=color:#f92672>.</span><span style=color:#a6e22e>next</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
-                name    <span style=color:#f92672>=</span> rs<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;AD&#34;</span><span style=color:#f92672>);</span>
-                surname <span style=color:#f92672>=</span> rs<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;SOYAD&#34;</span><span style=color:#f92672>);</span>
-
-                System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Name: &#34;</span> <span style=color:#f92672>+</span> name <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, Surmame: &#34;</span> <span style=color:#f92672>+</span> surname<span style=color:#f92672>);</span>
-            <span style=color:#f92672>}</span>
-
-            s<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
-            con<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
-        <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span><span style=color:#f92672>(</span>Exception e<span style=color:#f92672>){</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();}</span>
-    <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span> 
-</code></pre></div>
+<div class=post-content>
+Öncelikle http://www.oracle.com/technetwork/database/enterprise-edition/jdbc101040-094982.html adresinden classes12.jar dosyasını indiriyoruz.
+Bu dosyayı bir dizine atıp, içeriğini bu dizine çıkartıyoruz. Bu dizini classpath değişkeninde belirtip kodlamaya başlıyoruz.
+import java.io.*; import java.sql.*; public class OraThin { public static void main(String[] args) { try { Connection con = null; Class.forName("oracle.jdbc.driver.OracleDriver"); con=DriverManager.getConnection( "jdbc:oracle:thin:@localhost:1521:dbname", "username", "password"); Statement s = con.createStatement(); ResultSet rs = s.executeQuery("SELECT * FROM KISI"); String name; String surname; while(rs.next()) { name = rs.getString("AD"); surname = rs.getString("SOYAD"); System.
+<a class=next href=https://askin.ws/blog/java-ile-oracle-veritabanina-baglanmak/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/database/>database</a></li>
+<li><a href=https://askin.ws/tags/java/>Java</a></li>
+<li><a href=https://askin.ws/tags/oracle/>oracle</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

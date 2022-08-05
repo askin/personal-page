@@ -79,14 +79,14 @@ Blogs
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Sezar şifreleme
+<a aria-label="post link to Sezar şifreleme" href=https://askin.ws/blog/sezar-sifreleme/>Sezar şifreleme</a>
 </h1>
 <div class=post-meta><span title="2007-12-12 05:35:00 +0300 +0300">December 12, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi</p>
+<div class=post-content>
+<p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:#66d9ef>define </span>str2 <span style=color:#e6db74>&#34;&#34;</span>)
 (<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>sezar</span> str lst)
   (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>i</span> <span style=color:#ae81ff>0</span> (+ i <span style=color:#ae81ff>1</span>)) (<span style=color:#a6e22e>j</span> <span style=color:#ae81ff>0</span> (+ j <span style=color:#ae81ff>1</span>))) ((= j (string-length str)))
@@ -101,112 +101,93 @@ Sezar şifreleme
 </code></pre></div><p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:#66d9ef>define </span>str2 <span style=color:#e6db74>&#34;&#34;</span>)
 </code></pre></div><p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.</p>
-<p>Bu sebeple kodu aşağıdaki hale getirdim.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme> (<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>sezar</span> str lst)
-  (<span style=color:#66d9ef>let </span>((<span style=color:#a6e22e>str</span> (<span style=color:#a6e22e>string-downcase</span> str)) (<span style=color:#a6e22e>str2</span> <span style=color:#e6db74>&#34;&#34;</span>))
-  (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>i</span> <span style=color:#ae81ff>0</span> (+ i <span style=color:#ae81ff>1</span>)) (<span style=color:#a6e22e>j</span> <span style=color:#ae81ff>0</span> (+ j <span style=color:#ae81ff>1</span>))) ((= j (string-length str)))
-    (<span style=color:#66d9ef>if </span>(= i (length lst))
-        (<span style=color:#66d9ef>set! </span>i <span style=color:#ae81ff>0</span>))
-    (<span style=color:#66d9ef>set! </span>str2 
-          (<span style=color:#a6e22e>string-append</span>
-           str2 
-           (string (<span style=color:#a6e22e>integer-&gt;char</span>
-                    (+ (list-ref lst i )
-                       (char-&gt;integer (string-ref str j))))))))
-    (values str2)))
-</code></pre></div><p>Ancak yine eksiklikler vardı.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:#a6e22e>sezar</span> <span style=color:#e6db74>&#34;zeliha&#34;</span> <span style=color:#f92672>&#39;</span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>))
-</code></pre></div><p>bize &ldquo;{gmkic&rdquo; değerini döndürüyordu. &ldquo;agmkic&rdquo; gibi bir değer bizim için daha hoş olabilirdi.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>sezar</span> str lst)
-  (<span style=color:#66d9ef>let </span>((<span style=color:#a6e22e>str</span> (<span style=color:#a6e22e>string-downcase</span> str)) (<span style=color:#a6e22e>str2</span> <span style=color:#e6db74>&#34;&#34;</span>) (<span style=color:#a6e22e>tmp</span> <span style=color:#ae81ff>0</span>))
-  (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>i</span> <span style=color:#ae81ff>0</span> (+ i <span style=color:#ae81ff>1</span>)) (<span style=color:#a6e22e>j</span> <span style=color:#ae81ff>0</span> (+ j <span style=color:#ae81ff>1</span>))) ((= j (string-length str)))
-    (<span style=color:#66d9ef>if </span>(= i (length lst))
-        (<span style=color:#66d9ef>set! </span>i <span style=color:#ae81ff>0</span>))
-    (<span style=color:#66d9ef>set! </span>str2 
-          (<span style=color:#a6e22e>string-append</span>
-           str2 
-           (string (<span style=color:#a6e22e>integer-&gt;char</span>
-                    (<span style=color:#a6e22e>begin</span>
-                      (<span style=color:#66d9ef>set! </span>tmp (+ (list-ref lst i )
-                       (char-&gt;integer (string-ref str j))))
-                      (<span style=color:#a6e22e>cond</span>
-                        [(&gt; tmp <span style=color:#ae81ff>122</span>) (- tmp <span style=color:#ae81ff>26</span>)]
-                        [<span style=color:#66d9ef>else </span>tmp])))))))
-    (values str2)))
-</code></pre></div><p>Burda eklediğim satırlar karaktere çevirilecek sayının değerinin 122den büyük olup olmadığını kontrol ediyor. Eğer z+1=123 gibi bir değer elde ederse bu değer a&rsquo;ya çevirliyor.<br>
-Kodlara <a href=http://www.askin.ws/doc/sezar.scm>Burdan</a> ulaşabilirsiniz.</p>
+<a class=next href=https://askin.ws/blog/sezar-sifreleme/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/algoritma/>Algoritma</a></li>
+<li><a href=https://askin.ws/tags/scheme/>Scheme</a></li>
+<li><a href=https://askin.ws/tags/sezar/>Sezar</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Bir son dakka görevi daha başarıyla tamamlandı
+<a aria-label="post link to Bir son dakka görevi daha başarıyla tamamlandı" href=https://askin.ws/blog/bir-son-dakka-gorevi-daha-basariyla-tamamlandi/>Bir son dakka görevi daha başarıyla tamamlandı</a>
 </h1>
 <div class=post-meta><span title="2007-12-11 18:02:00 +0300 +0300">December 11, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Kim demişse iyi demiş son dakkalar olmazsa hiç bir iş yeteişmez diye:) Bir son dakka görevimi daha başarıyla tamamladım. Pbl ödevimden sonra (bknz: <a href=http://blog.yollu.com/2007/11/21/same-oyunu/>http://blog.yollu.com/2007/11/21/same-oyunu/</a>) proje ödevimi de son anda teslim ettim. Şimdi sırada yeni pbl ödevim var. Hadi hayırlısı.</p>
+<div class=post-content>
+<p>Kim demişse iyi demiş son dakkalar olmazsa hiç bir iş yeteişmez diye:) Bir son dakka görevimi daha başarıyla tamamladım. Pbl ödevimden sonra (bknz: <a href=http://blog.yollu.com/2007/11/21/same-oyunu/>http://blog.yollu.com/2007/11/21/same-oyunu/</a>) proje ödevimi de son anda teslim ettim. Şimdi sırada yeni pbl ödevim var. Hadi hayırlısı.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/%C3%B6dev/>Ödev</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Same oyunu
+<a aria-label="post link to Same oyunu" href=https://askin.ws/blog/same-oyunu/>Same oyunu</a>
 </h1>
 <div class=post-meta><span title="2007-11-21 17:10:00 +0300 +0300">November 21, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.</p>
+<div class=post-content>
+<p>Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.</p>
 <p><a href=http://www.askin.ws/doc/same.scm>http://www.askin.ws/doc/same.scm</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/%C3%B6dev/>Ödev</a></li>
+<li><a href=https://askin.ws/tags/oyun/>Oyun</a></li>
+<li><a href=https://askin.ws/tags/same/>Same</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-jaguar veya jtech ic100 webcam sürücüleri
+<a aria-label="post link to jaguar veya jtech ic100 webcam sürücüleri" href=https://askin.ws/blog/jaguar-veya-jtech-ic100-webcam-suruculeri/>jaguar veya jtech ic100 webcam sürücüleri</a>
 </h1>
 <div class=post-meta><span title="2007-10-28 15:32:00 +0300 +0300">October 28, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2007/10/ic100.jpg alt="jaguar - jtech ic100 webcam">
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2007/10/ic100.jpg alt="jaguar - jtech ic100 webcam">
 <br>
 Yaklaşık 1 saat boyunda jaguar ic100 webcam sürücüsü aradım dün. Kimi siteler üyelik istiyor kimisi bilgisayardaki eksik sürücüleri bulacağını vaad eden programlar yüklemmek istiyor. Ama biliyorum ki hiç birisi benim isteğimle ilgilenmiyor. Ancak sonunda bir site bana o sürücülerin olduğu adresi verdi. İsmini hatırlamamakla birlikte googleda baya arkalarda olduğunu hatırlıyorum. Eger olaki bu sitenin başına bir iş gelmezse ve size de bu sürücü lazım olursa burdan indirebilirsiniz.<br>
 <a href=/uploads/2007/10/ic100.zip title="jaguar - jtech ic100 webcam driver - sürücü">jaguar - jtech ic100 webcam driver - sürücü</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/driver/>Driver</a></li>
+<li><a href=https://askin.ws/tags/jaguar/>Jaguar</a></li>
+<li><a href=https://askin.ws/tags/jtech-ic-100/>jtech ic 100</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-En basit recursion - özyineleme mantığı
+<a aria-label="post link to En basit recursion - özyineleme mantığı" href=https://askin.ws/blog/en-basit-recursion-ozyineleme-mantigi/>En basit recursion - özyineleme mantığı</a>
 </h1>
 <div class=post-meta><span title="2007-10-26 16:09:00 +0300 +0300">October 26, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.</p>
+<div class=post-content>
+<p>Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scm data-lang=scm>(<span style=color:#a6e22e>define</span>
   (<span style=color:#a6e22e>lst-length</span> lst)
   (<span style=color:#66d9ef>if </span>(null? lst)
@@ -215,21 +196,20 @@ En basit recursion - özyineleme mantığı
 </code></pre></div><p>Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz. Sonra tekrar 1 eksik elemanlı listenin 1 elemanını daha çıkartıp, o listenin eleman sayısıyla topluyoruz. Taki (null? lst) #t olana kadar. Ozamanda zaten fonkiyon 0 verecek ve tüm o 1leri toplayacak. size tavsiyem bu konu hakkında çok düşüünün elinizde olan örnekleri tekrar tekrar uygulayın.</p>
 </div>
 <footer class=post-footer>
-<ul class=post-tags>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Scheme hakkında birkaç kitap
+<a aria-label="post link to Scheme hakkında birkaç kitap" href=https://askin.ws/blog/scheme-hakkinda-birkac-kitap/>Scheme hakkında birkaç kitap</a>
 </h1>
 <div class=post-meta><span title="2007-10-18 06:37:00 +0300 +0300">October 18, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.</p>
+<div class=post-content>
+<p>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.</p>
 <p>Öncelikle scheme kitaplarıyla başlasak mantıklı olacak gibi geliyor.scheme hakkında birçok kitap bulunabilir fakat ben aramada ilk karşıma çıkan seçenekleri burda vereceğim biraz google güvenilir gibi geldi bu konuda.</p>
 <p>How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu açıdan en sağlam kaynaklardan biri olduğu görüşündeyim. Sitesi aşağıda. Site üzerinden e-book olarak kitaba ulaşabilirsiniz.<br>
 <a href=http://www.htdp.org>http://www.htdp.org</a></p>
@@ -250,24 +230,26 @@ Scheme programlama dili hakkında son haberleri, kütüphaneleri vs. bulabilece�
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/book/>book</a></li>
+<li><a href=https://askin.ws/tags/e-book/>e-book</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Merhaba!
+<a aria-label="post link to Merhaba!" href=https://askin.ws/blog/hello-world/>Merhaba!</a>
 </h1>
 <div class=post-meta><span title="2007-05-02 10:46:00 +0300 +0300">May 2, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Merhaba işte yeniden karşınızdayım.<br>
+<div class=post-content>
+<p>Merhaba işte yeniden karşınızdayım.<br>
 Hostumuzu değiştirip geldik. .</p>
 </div>
 <footer class=post-footer>
-<ul class=post-tags>
 </ul>
 </footer>
 <hr>

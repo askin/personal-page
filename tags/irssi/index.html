@@ -78,140 +78,23 @@ irssi
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Screen ile Irssi Kullanım Kılavuzu
+<a aria-label="post link to Screen ile Irssi Kullanım Kılavuzu" href=https://askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/>Screen ile Irssi Kullanım Kılavuzu</a>
 </h1>
 <div class=post-meta><span title="2013-11-15 17:17:00 +0300 +0300">November 15, 2013</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><a href=http://www.irssi.org/ title="irssi web sitesi">irssi</a> komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi <a href=http://en.wikipedia.org/wiki/GNU_Screen title="Screen Wiki Sayfası">GNU Screen</a> programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.</p>
-<p>Avantajları:</p>
-<ul>
-<li>Kişiler size mesaj bırakabilir.</li>
-<li>Siz dışardayken yapılan görüşmeleri sonradan yakalayabilirsiniz (genellikle &ldquo;scroolback&rdquo; olarak adlandırılır).</li>
-</ul>
-<p>Yönergeler:</p>
-<ul>
-<li>
-<p>Bir adet linux VPS edinin ya da sık sık yeniden başlatılmayacak, ihtiyacınız olan yerden bağlanabileceğiniz *nix makina üzerinde ssh hesabı edinin.</p>
-</li>
-<li>
-<p>Bu hesaba bağlanmak için ssh kullanın. Windowsta <a href=https://www.putty.org/ title="PuTTY Web Sayfası">PuTTY</a> gibi bir istemci kullanın. Eğer Linux yada Unix temelli bir işletim sistemi kullanıyorsanız zaten ssh kuruludur.</p>
-</li>
-<li>
-<p>Ssh hesabına bağlandığınızda, irssi&rsquo;yı screen oturumu içinde başlatın. Aşağıdaki şekilde yapabilirsiniz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>screen
-<span style=color:#75715e># screen will flash and go back to the default prompt.  You are now inside screen</span>
-irssi
-</code></pre></div></li>
-<li>
-<p>Irc uygulaması IRSSI&rsquo;yı başlatmak yeni komut satırına <code>irssi</code> yazın. Bir not olarak, eğer bir screen oturumundan çıkmak istiyorsanız komut satırından <code>exit</code> yazmanız sizin screen oturumunu açtığınız ilk noktaya dönmenizi sağlayacaktır.</p>
-</li>
-<li>
-<p>IRSSI komut satırı içinde bir sunucuya bağlanmak:</p>
-<pre><code>/connect irc.mozilla.org
-</code></pre>
-<p>yada</p>
-<pre><code>/connect irc.freenode.net
-</code></pre>
-</li>
-<li>
-<p>Bir kez bağlandıktan sonra</p>
-<pre><code>/join #hadron
-</code></pre>
-</li>
-<li>
-<p><code>/connect</code> ve <code>/join</code> komutlarını tekrarlayarak birden fazla sunucuya katılabilirsiniz.</p>
-</li>
-<li>
-<p>Screen yazılımı sizin irssi yazılımından çıkmanıza ve tekrar bağlanmanıza izin verir.</p>
-<ul>
-<li>IRSSI&rsquo;dan çıkmadan komut satırına geri dönmek istersen önce <code>ctrl+a</code> sonrada <code>ctrl+d</code> kombinasyonuna bas</li>
-<li>Eğer IRSSI&rsquo;a tekrar bağlanmak istiyorsanız <code>screen -raAd</code> komutunu çalıştırın.</li>
-<li>Eğer çalışan screen süreçlerini görmek istiyorsanız <code>screen -ls</code> komutunu kullanabilirsiniz.</li>
-<li>Eğer screen sürecine bir isim vermek istiyorsanız <code>screen -S irc</code> komutunu kullanabilirsiniz. Bu şekilde screen komutuna irc adını vermiş oluruz. Buna tekrar bağlanmak için <code>screen -r irc</code> komutunu kullanabilirsiniz.</li>
-</ul>
-</li>
-</ul>
-<p>Sıkça Sorulan Sorular:</p>
-<ol>
-<li>Ön tanımlı takma ismi(nick) nasıl değiştirebiliriz?</li>
-</ol>
-<ul>
-<li>Irssi içinde, <code>/set nick takmaisim</code> ya da <code>/nick&lt;takmaisim></code>, iki yöntemde çalışacaktır.</li>
-</ul>
-<ol start=2>
-<li>Açık kanallarımı, özel mesajlarımı ve sunucu pencerelerini görebilmek için nasıl pencereler arasında geçiş yapabilirim?</li>
-</ol>
-<ul>
-<li>Alt tuşuyla birlikte o pencerenin numarasını kullanarak geçiş yapabilirsiniz. Mesala <code>Alt+1</code> sucunu penceresine gidecekti.</li>
-<li>Eğer bu çalışmıyorsa, Alt tuşu yerine Esc kullanın. Bunun her zaman çalışması gerek.</li>
-</ul>
-<ol start=3>
-<li>Mevcut kanaldaki tüm kullanıcıları nasıl listelerim?</li>
-</ol>
-<ul>
-<li><code>/names</code> yada <code>/who</code> yazabilirsiniz.</li>
-</ul>
-<ol start=4>
-<li>Irssi ekranında <code>Act: 3</code> ne anlama geliyor?</li>
-</ol>
-<ul>
-<li>Irssi ekranınızda, <code>[2:#hadron] [Act:3,4]</code> göreceksiniz. Bu numaralar ne anlama geliyor? 2&rsquo;nin anlamı bulunduğunuz sohbet ekranı. 3 ve 4 diğer açık sohbetler.</li>
-<li>Eğer 3 mavi renkteyse, bunun anlamı birilerin durumu değişti (giriş - çıkış yapıldı).</li>
-<li>Eğer 3 beyaz ise, o sohbette muhabbet devam ediyor.</li>
-<li>Eğer 3 pembe ise, özellikle sizin ilginizi çekecek bir nedenden dolayı size ekstra bir mesaj yollandı.</li>
-<li>Eğer bir sohbetten diğerine geçiş yapmak istiyorsanız, alt+screen# kombinastonunu kullanın(screen# => geçmek istediğiniz ekranın numarası).</li>
-</ul>
-<ol start=5>
-<li>Açık bir pencereyi nasıl kapatabilirim?</li>
-</ol>
-<ul>
-<li>Kapatmak istediğiniz pencereye geçin, ve <code>/window close</code> (yada <code>/wc</code>) yazıp enter&rsquo;a basın.</li>
-</ul>
-<ol start=6>
-<li>İkinci seferde hesabıma nasıl giriş yapabilirim.</li>
-</ol>
-<ul>
-<li><code>screen -r</code> komutunu terminale yazarak.</li>
-</ul>
-<ol start=7>
-<li>Birden fazla screen oturumum var fakat şuan kullandığım screen oturumunu açmak istiyorun. Nasıl yapabilirim?</li>
-</ol>
-<ul>
-<li>Komut satırına <code>screen -x</code> yazın.</li>
-</ul>
-<ol start=8>
-<li>Ekranı aşağı yukarı nasıl kaydırabilirim.</li>
-</ol>
-<ul>
-<li><code>Page Up</code> & <code>Page Down</code></li>
-</ul>
-<ol start=9>
-<li>Birisiyle irc üzerinde nasıl özel sohbet yapabilirim?</li>
-</ol>
-<ul>
-<li>Birisiyle özel sohber başlatmak için konuşacağınız kişinin ismini bilmelisiniz. <code>/names</code> komutunu yazarak odadaki kişileri listeleyip konuşacağınız kişiyi belirleyebilirsiniz ve <code>/query takmaad</code> ya da <code>/q takmaad</code> yazarak özel sohbeti başlatabilirsiniz.</li>
-<li>Özel sohbeti kapatmak için <code>/query</code> ya da <code>/q</code> yazın.</li>
-</ul>
-<ol start=10>
-<li>Irssi&rsquo;ı bir bilgisayardan kapatıp diğerinden ulaşmak istiyorum, bu sırada bağlantılarım açık kalsın ve mesajları almaya devam edeyim istiyorum. Nasıl yapabilirim?</li>
-</ol>
-<ul>
-<li><code>Ctrl+A</code> tuşlarına bastıktan sonra <code>D</code> tuşuna basmalısınız. (Bu sizi screen oturumundan çıkartacaktır)</li>
-<li>O bilgisayardan ssh bağlantısını kapatın ve diğer bilgisayara geçin. Irssi&rsquo;ın kurulu olduğu bilgisayara ssh ile bağlanıp <code>screen -arAd</code> komutunu verin.</li>
-<li>Duyuru: Birdaha bağlanmak zorunda değilsiniz. Irssi&rsquo;ın çalıştığı bilgisayar kapatılmadığı sürece sunucularla bağlantınız kopmayacaktır.</li>
-</ul>
-<p>Bu yazı <a href=http://zenit.senecac.on.ca/wiki/index.php/Irssi_Tutorial>http://zenit.senecac.on.ca/wiki/index.php/Irssi_Tutorial</a> adresindeki dökümanın bir nevi çevirisidir. Bir kısmını kendi kafama göre düzenledim. Bir kısmı pek anlaşılır değil, fazla zaman kaybetmek istemedim. Yorumlarla katkı verirseniz daha anlaşılır bir döküman haline getirebilirim.</p>
-<ul>
-<li><a href=http://www.irssi.org/ title="irssi web sitesi">[1] http://www.irssi.org/</a></li>
-<li><a href=http://en.wikipedia.org/wiki/GNU_Screen>[2] http://en.wikipedia.org/wiki/GNU_Screen</a></li>
-<li><a href=https://www.putty.org/>[3] https://www.putty.org/</a></li>
-</ul>
+<div class=post-content>
+<p><a href=http://www.irssi.org/ title="irssi web sitesi">irssi</a> komut satırından çalışan ve bir çok geliştirici için popüler olan bir IRC istemcisidir. Irssi <a href=http://en.wikipedia.org/wiki/GNU_Screen title="Screen Wiki Sayfası">GNU Screen</a> programı ile birlikte kullanılarak çıkış yapmadan bir veya birden fazla kabuk yaratabilirsiniz. Sürekli biligisayar değiltirip fakat irssi&rsquo;a kaldığınız yerden devam etmek istediğinizde çok kullanılışılır.</p>
+<a class=next href=https://askin.ws/blog/screen-ile-irssi-kullanim-kilavuzu/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/irc/>irc</a></li>
+<li><a href=https://askin.ws/tags/irssi/>irssi</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/screen/>screen</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

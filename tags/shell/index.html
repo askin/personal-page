@@ -78,14 +78,14 @@ Shell
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Konsoldan Rastgele String Oluşturma
+<a aria-label="post link to Konsoldan Rastgele String Oluşturma" href=https://askin.ws/blog/konsoldan-rastgele-string-olusturma/>Konsoldan Rastgele String Oluşturma</a>
 </h1>
 <div class=post-meta><span title="2013-08-13 12:34:00 +0300 +0300">August 13, 2013</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.</p>
+<div class=post-content>
+<p>Konsoldan rastgele stringler oluşturmak için bir çok yöntem var, bunların bir çoğu random ve urandom aygıtlarını kullanıyor. Benim şimdi anlatacağım yöntemle urandom aygıtını kullanıyoruz.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&lt; /dev/urandom tr -dc A-Za-z0-9
 </code></pre></div><p>Burada tr komutuna standart girdi olarak /dev/urandom aygıtını gösteriyoruz. urandom rastgele değerler üretir, bu üretilen değerlerin bazıları yazdırılabilir bazıları da yazdırılamayan karakterlere denk gelir. Biz tr komutu ile bu rastgele üretilen değerlerden alfanümerik olanları ayıklıyoruz. Tabi bu komut sonsuza kadar çıktı üretir, sadece istediğimiz kadarını almak için head komutunu kullanabiliriz.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&lt; /dev/urandom tr -dc A-Za-z0-9 | head -c32
@@ -97,20 +97,24 @@ Konsoldan Rastgele String Oluşturma
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/random/>random</a></li>
+<li><a href=https://askin.ws/tags/rastgele/>rastgele</a></li>
+<li><a href=https://askin.ws/tags/shell/>Shell</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak
+<a aria-label="post link to Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak" href=https://askin.ws/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</a>
 </h1>
 <div class=post-meta><span title="2009-04-06 22:22:00 +0300 +0300">April 6, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/04/linux-tux.jpg alt=GNU/Linux title=GNU/Linux>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/04/linux-tux.jpg alt=GNU/Linux title=GNU/Linux>
 Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.</p>
 <p>Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).</p>
 <p>Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.</p>
@@ -132,6 +136,11 @@ Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski dis
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/move/>move</a></li>
+<li><a href=https://askin.ws/tags/partition/>partition</a></li>
+<li><a href=https://askin.ws/tags/shell/>Shell</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

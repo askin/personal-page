@@ -78,73 +78,28 @@ df
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Linux'ta disk doluluk oranının yanlış hesaplanması
+<a aria-label="post link to Linux'ta disk doluluk oranının yanlış hesaplanması" href=https://askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/>Linux'ta disk doluluk oranının yanlış hesaplanması</a>
 </h1>
 <div class=post-meta><span title="2013-07-22 15:13:00 +0300 +0300">July 22, 2013</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2013/07/disk.png alt=disk>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2013/07/disk.png alt=disk>
 Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:</p>
 <ol>
 <li>Dosya bir program tarafından okumak için açılır.</li>
 <li>Başka bir program bu dosyayı siler.</li>
 </ol>
-<p>Bu senaryo gerçekleştiğinde, her ne kadar dosya silinmiş olsa da, hala diskte yer tutmaya devam edecektir. &ldquo;du&rdquo; komutuyla baktığınızda yer tutmayacaktır, ancak df ile kontrol ettiğimizde disk dolu olarak görünecektir.</p>
-<p>Basit bir demo yapacağım:</p>
-<p>Öncelikle 1GB boyutunda bir dosya oluşturacağım.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir /tmp/tmp_directory/
-cd /tmp/tmp_directory/
-dd <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>/dev/zero of<span style=color:#f92672>=</span>1gb_file.dat bs<span style=color:#f92672>=</span>1M count<span style=color:#f92672>=</span><span style=color:#ae81ff>1024</span>
-</code></pre></div><p>Oluşturulan bu dosyayı python ile açacağım.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>python
-Python <span style=color:#ae81ff>2.7.4</span> (default, Jul  <span style=color:#ae81ff>5</span> <span style=color:#ae81ff>2013</span>, <span style=color:#ae81ff>08</span>:<span style=color:#ae81ff>21</span>:<span style=color:#ae81ff>57</span>)
-[GCC <span style=color:#ae81ff>4.7.3</span>] on linux2
-Type <span style=color:#e6db74>&#34;help&#34;</span>, <span style=color:#e6db74>&#34;copyright&#34;</span>, <span style=color:#e6db74>&#34;credits&#34;</span> <span style=color:#f92672>or</span> <span style=color:#e6db74>&#34;license&#34;</span> <span style=color:#66d9ef>for</span> more information<span style=color:#f92672>.</span>
-<span style=color:#f92672>&gt;&gt;&gt;</span> f <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;1gb_file.dat&#34;</span>, <span style=color:#e6db74>&#34;rwb&#34;</span>)
-<span style=color:#f92672>&gt;&gt;&gt;</span>
-</code></pre></div><p>Şimdi disk bilgilerine bakıyorum</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>df -h
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda5       414G   11G  382G   3% /
-</code></pre></div><p>Görüldüğü gibi diskin 11GB&rsquo;lık kısmı kullanılıyor.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>du -sh tmp_directory/
-1.1G    tmp_directory/
-</code></pre></div><p>tmp_directory dizini diskte 1.1GB yer tutuyor.</p>
-<p>Şimdi dosyayı siliyorum.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>rm tmp_directory/1gb_file.dat
-</code></pre></div><p>Disk bilgilerini tekrar kontrol edelim:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>df -h
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda5       414G   11G  382G   3% /
-
-du -sh tmp_directory/
-4.0K    tmp_directory/
-</code></pre></div><p>Görüldüğü gibi, df çıktısı hala diski 11GB dolu görüyor, du ile baktığımızda ilgili dizinin boyu sadece 4KB, buda boş bir dizinin diskte tuttuğu yer.</p>
-<p>Açtığımız dosyayı geri kapatalım.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> f<span style=color:#f92672>.</span>close()
-</code></pre></div><p>Tekrar kontrollerimizi yapalım:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>df -h
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda5       414G   10G  383G   3% /
-</code></pre></div><p>Dosya kapatıldıktan sonra 1.1GB&rsquo;lık alan tekrar boş olarak hesaplandı.</p>
-<p>Bu dosyayı biz oluşturduğumuz için hangi dosya üzerinde işlem yapacağımızı biliyorduk, peki bu durumda olan dosyalarını nasıl bulabiliriz?</p>
-<p>lsof komutu yardımıyla bunu yapabiliriz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo lsof | grep deleted
-python    <span style=color:#ae81ff>21882</span>            askin    3r      REG                8,5         <span style=color:#ae81ff>0</span>    <span style=color:#ae81ff>7211180</span> /tmp/tmp_directory/1gb_file.dat <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</code></pre></div><p>Bu şekilde hangi açık dosyaların silinmiş olduğunu görebiliriz. Bu çıktıya göre, askin kullanıcısı 21882 process id&rsquo;si ile python programıyla /tmp/tmp_directory/1gb_file.dat dosyasını açmış, fakat bu dosya hala açıkken silinmiş. Bu dosyayı kapatmak için biraz daha bilgiye ihtiyacımız var.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo ls -l /proc/21882/fd/*
-lrwx------ <span style=color:#ae81ff>1</span> askin askin <span style=color:#ae81ff>64</span> Jul <span style=color:#ae81ff>22</span> 14:58 /proc/21882/fd/0 -&gt; /dev/pts/11
-lrwx------ <span style=color:#ae81ff>1</span> askin askin <span style=color:#ae81ff>64</span> Jul <span style=color:#ae81ff>22</span> 14:58 /proc/21882/fd/1 -&gt; /dev/pts/11
-lrwx------ <span style=color:#ae81ff>1</span> askin askin <span style=color:#ae81ff>64</span> Jul <span style=color:#ae81ff>22</span> 14:58 /proc/21882/fd/2 -&gt; /dev/pts/11
-lr-x------ <span style=color:#ae81ff>1</span> askin askin <span style=color:#ae81ff>64</span> Jul <span style=color:#ae81ff>22</span> 14:58 /proc/21882/fd/3 -&gt; /tmp/tmp_directory/1gb_file.dat <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</code></pre></div><p>Burdan aldığımız bilgiyle dosyamızı kapatabiliriz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo cat /dev/null &gt; /proc/21882/fd/3
-</code></pre></div>
+<a class=next href=https://askin.ws/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/df/>df</a></li>
+<li><a href=https://askin.ws/tags/disk/>disk</a></li>
+<li><a href=https://askin.ws/tags/du/>du</a></li>
+<li><a href=https://askin.ws/tags/free-space/>free space</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

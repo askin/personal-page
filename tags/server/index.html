@@ -78,14 +78,14 @@ server
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Subversion sunucu kurulumu
+<a aria-label="post link to Subversion sunucu kurulumu" href=https://askin.ws/blog/subversion-sunucu-kurulumu/>Subversion sunucu kurulumu</a>
 </h1>
 <div class=post-meta><span title="2012-08-23 18:16:00 +0300 +0300">August 23, 2012</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için</p>
+<div class=post-content>
+<p>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install subversion
 </code></pre></div><p>Kurulum tamamlandıktan sonra gerekli tüm araçlara sahip olmuş oluyoruz.</p>
 <p>Bir depo oluşturalım.</p>
@@ -121,103 +121,34 @@ askin = parolam
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/server/>server</a></li>
+<li><a href=https://askin.ws/tags/subversion/>subversion</a></li>
+<li><a href=https://askin.ws/tags/sunucu/>sunucu</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Java ile server socket yapımı
+<a aria-label="post link to Java ile server socket yapımı" href=https://askin.ws/blog/java-ile-server-socket-yapimi/>Java ile server socket yapımı</a>
 </h1>
 <div class=post-meta><span title="2010-12-11 04:25:00 +0300 +0300">December 11, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)</p>
-<p><code>Server.java</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#75715e>/**
-</span><span style=color:#75715e> * @author: Aşkın Yollu 
-</span><span style=color:#75715e> */</span>
-
-<span style=color:#f92672>import</span> java.net.*<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.io.*<span style=color:#f92672>;</span>
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Server</span> <span style=color:#f92672>{</span>
-    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String args<span style=color:#f92672>[])</span> <span style=color:#66d9ef>throws</span> Exception <span style=color:#f92672>{</span>
-        ServerSocket myService <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-        Socket       client    <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-        Worker       tmpworker <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-        
-        <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-            <span style=color:#75715e>// 1234 nolu portu dinle
-</span><span style=color:#75715e></span>            myService <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ServerSocket<span style=color:#f92672>(</span>1234<span style=color:#f92672>);</span>
-        <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-            System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>e<span style=color:#f92672>);</span>
-        <span style=color:#f92672>}</span>
-
-
-        <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-            <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-                <span style=color:#75715e>// bağlantı kuracak istemcileri bekle
-</span><span style=color:#75715e></span>                client <span style=color:#f92672>=</span> myService<span style=color:#f92672>.</span><span style=color:#a6e22e>accept</span><span style=color:#f92672>();</span>
-
-                <span style=color:#75715e>// bağlantıları bir listeye ekle
-</span><span style=color:#75715e></span>
-                <span style=color:#75715e>// istemci için yeni thread oluştur
-</span><span style=color:#75715e></span>                tmpworker <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Worker<span style=color:#f92672>(</span>client<span style=color:#f92672>);</span>
-            <span style=color:#f92672>}</span>
-        <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-            System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>e<span style=color:#f92672>);</span>
-        <span style=color:#f92672>}</span>
-
-    <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
-</code></pre></div><p><code>Worker.java</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#75715e>/**
-</span><span style=color:#75715e> * @author: Aşkın Yollu
-</span><span style=color:#75715e> */</span>
-
-<span style=color:#f92672>import</span> java.net.*<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.io.*<span style=color:#f92672>;</span>
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Worker</span> <span style=color:#66d9ef>implements</span> Runnable <span style=color:#f92672>{</span>
-    <span style=color:#66d9ef>private</span> Socket           client<span style=color:#f92672>;</span>
-    <span style=color:#66d9ef>private</span> DataInputStream  is<span style=color:#f92672>;</span>
-    <span style=color:#66d9ef>private</span> DataOutputStream os<span style=color:#f92672>;</span>
-    Thread       t<span style=color:#f92672>;</span>
-
-    <span style=color:#75715e>// Yaratıcı method
-</span><span style=color:#75715e></span>    <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Worker</span><span style=color:#f92672>(</span>Socket client<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-        <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>client</span> <span style=color:#f92672>=</span> client<span style=color:#f92672>;</span>
-        t <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Thread<span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-        t<span style=color:#f92672>.</span><span style=color:#a6e22e>start</span><span style=color:#f92672>();</span>
-    <span style=color:#f92672>}</span>
-
-    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-        String line <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-        
-        <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-            <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>is</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DataInputStream<span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>client</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInputStream</span><span style=color:#f92672>());</span>
-            <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>os</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DataOutputStream<span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>client</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getOutputStream</span><span style=color:#f92672>());</span>
-
-            <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-                line <span style=color:#f92672>=</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>is</span><span style=color:#f92672>.</span><span style=color:#a6e22e>readLine</span><span style=color:#f92672>();</span>
-                <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>os</span><span style=color:#f92672>.</span><span style=color:#a6e22e>writeBytes</span><span style=color:#f92672>(</span>line <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;\n&#34;</span><span style=color:#f92672>);</span>
-            <span style=color:#f92672>}</span>
-
-        <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-            System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>e<span style=color:#f92672>);</span>
-        <span style=color:#f92672>}</span>
-    <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
-</code></pre></div><p>kodları derleyip çalıştırdıktan sonra</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>telnet localhost <span style=color:#ae81ff>1234</span>
-</code></pre></div><p>komutunu verip birşeyler yazmaya başlayın, bakalım ne olacak :)</p>
-<p>Client tarafını c ile yazacağım. Muhtemelen bir sonraki girdi c ile client socket olur.</p>
+<div class=post-content>
+<p>Bir proje için server sockete ihtiyaç duydum. Öncelikli dilim python olmasına rağmen, sunucu solaris olunca java ile yazmak daha cazip geldi. Öncelikli olarak test amaçlı birkaç satır kod yazdım. Akla gelen ilk örnek echo server oluyor :) aşağıda multi thread çalışan, birden fazla kullanıcıya cevap verebilecek bir echo server var:)</p>
+<a class=next href=https://askin.ws/blog/java-ile-server-socket-yapimi/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/java/>Java</a></li>
+<li><a href=https://askin.ws/tags/server/>server</a></li>
+<li><a href=https://askin.ws/tags/socket/>socket</a></li>
+<li><a href=https://askin.ws/tags/telnet/>telnet</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

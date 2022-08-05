@@ -78,14 +78,14 @@ bash
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Bir dosyanın boş olup olmadığını kontrol etme
+<a aria-label="post link to Bir dosyanın boş olup olmadığını kontrol etme" href=https://askin.ws/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/>Bir dosyanın boş olup olmadığını kontrol etme</a>
 </h1>
 <div class=post-meta><span title="2012-11-07 13:44:00 +0300 +0300">November 7, 2012</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.</p>
+<div class=post-content>
+<p>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>satirsayisi<span style=color:#f92672>=</span><span style=color:#e6db74>`</span>wc  -l 194.27.108.90  | awk <span style=color:#e6db74>&#39;{split($0,a,&#34; &#34;); print a[1]}&#39;</span><span style=color:#e6db74>`</span>
 <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $satirsayisi <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span> echo <span style=color:#e6db74>&#34;dosya bos&#34;</span>; <span style=color:#66d9ef>fi</span>
 </code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> -z <span style=color:#66d9ef>$(</span>cat dosyaadi<span style=color:#66d9ef>)</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span> echo <span style=color:#e6db74>&#34;dosya bos&#34;</span>; <span style=color:#66d9ef>fi</span>
@@ -96,58 +96,74 @@ Bir dosyanın boş olup olmadığını kontrol etme
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bash/>bash</a></li>
+<li><a href=https://askin.ws/tags/bos-dosya/>bos dosya</a></li>
+<li><a href=https://askin.ws/tags/empty/>empty</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/script/>script</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Solariste Özyinelemeli grep
+<a aria-label="post link to Solariste Özyinelemeli grep" href=https://askin.ws/blog/solariste-ozyinelemeli-grep/>Solariste Özyinelemeli grep</a>
 </h1>
 <div class=post-meta><span title="2012-06-06 16:43:00 +0300 +0300">June 6, 2012</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.</p>
+<div class=post-content>
+<p>Özyinelemeli grep çok kullanışlı bir araç. Malesef solariste bulunan grep öz yinelemeli çalışmıyor. Ama bunu aşmak çok zor değil.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ grep <span style=color:#e6db74>&#39;ara&#39;</span> <span style=color:#e6db74>`</span>find . -name <span style=color:#e6db74>&#39;*&#39;</span><span style=color:#e6db74>`</span>
 </code></pre></div>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bash/>bash</a></li>
+<li><a href=https://askin.ws/tags/find/>find</a></li>
+<li><a href=https://askin.ws/tags/grep/>grep</a></li>
+<li><a href=https://askin.ws/tags/solaris/>solaris</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Caps Lock'a ne gerek var.
+<a aria-label="post link to Caps Lock'a ne gerek var." href=https://askin.ws/blog/caps-locka-ne-gerek-var/>Caps Lock'a ne gerek var.</a>
 </h1>
 <div class=post-meta><span title="2011-03-27 21:37:00 +0300 +0300">March 27, 2011</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Hiç gerek yok.</p>
+<div class=post-content>
+<p>Hiç gerek yok.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>setxkbmap -option ctrl:nocaps
 </code></pre></div>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bash/>bash</a></li>
+<li><a href=https://askin.ws/tags/caps-lock/>caps lock</a></li>
+<li><a href=https://askin.ws/tags/ctrl/>ctrl</a></li>
+<li><a href=https://askin.ws/tags/setxkbmap/>setxkbmap</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-BusyBox - date ile saat ve tarihi ayarlamak
+<a aria-label="post link to BusyBox - date ile saat ve tarihi ayarlamak" href=https://askin.ws/blog/busybox-date-ile-saat-ve-tarihi-ayarlamak/>BusyBox - date ile saat ve tarihi ayarlamak</a>
 </h1>
 <div class=post-meta><span title="2010-12-01 13:42:00 +0300 +0300">December 1, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:</p>
+<div class=post-content>
+<p>BusyBox içinde gelen date komutunun kullanımı biraz daha farklı. Saat ayarlamada bir değişiklik yok fakat tarihi ayarlamak biraz daha farklı. Saat ayarlama:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>date -s <span style=color:#e6db74>&#34;23:59:59&#34;</span>
 </code></pre></div><p>Tarih ve saati ayarlama</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>date -s AAGGSSDDYYYY
@@ -156,26 +172,37 @@ date -s <span style=color:#ae81ff>123123592010</span>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bash/>bash</a></li>
+<li><a href=https://askin.ws/tags/busybox/>busybox</a></li>
+<li><a href=https://askin.ws/tags/date/>date</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/saat/>saat</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Genius!
+<a aria-label="post link to Genius!" href=https://askin.ws/blog/genius/>Genius!</a>
 </h1>
 <div class=post-meta><span title="2010-11-24 14:11:00 +0300 +0300">November 24, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
+<div class=post-content>
+<p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd /destination/directory
 ssh user@remote.host <span style=color:#e6db74>&#34;cd /original/directory; tar cf - ./&#34;</span> | tar xvf -
 </code></pre></div><p><a href=http://www.linuxquestions.org/questions/linux-general-1/recursive-scp-w-o-following-links-658857/>Kaynak</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bash/>bash</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/ssh/>ssh</a></li>
+<li><a href=https://askin.ws/tags/symlink/>symlink</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

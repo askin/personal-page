@@ -78,14 +78,14 @@ parallel port
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı
+<a aria-label="post link to Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı" href=https://askin.ws/blog/linux-paralel-port-ile-2x16-lcd-ekran-kullanimi/>Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı</a>
 </h1>
 <div class=post-meta><span title="2011-02-27 03:08:00 +0300 +0300">February 27, 2011</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)</p>
+<div class=post-content>
+<p>Çalıştığım projede linuxta paralel port ile lcd ekran kullanmam gerekti. Neredeyse internetin altını üstüne getirdim ama işime yarar çok birşey bulamadım. Sonunda DOS için yazılmış bir kod buldum. Bu kodu biraz inceleyip, gerekli püf noktaları bulunca kodu linux&rsquo;a uydurmak çok zor olmadı. Hatta neredeyse sadece kullanılan fonksiyonun adını ve parametre yerlerini değiştirdim :)</p>
 <p>Aslında olay çok basitmiş, lcd ekrandan çıkan 14 bacaktan, 8tanesini data ve komut göndermek için kullanıyoruz. 1 bacak enable, 1 set - reset seçimi için, 1 bacakta read/write seçimi için kullanılıyor. Geri kalan 3 bacak güç bağlantısı ve kontrast için kullanılıyor. <a href=http://www.beyondlogic.org/parlcd/parlcd.htm>Burdaki</a> şemaya göre bağlantıları yapabilirsiniz. Ayrıca örnek aldığım kodda aynı sayfada bulunmakta.</p>
 <p>Yorum satırları pek çok şeyi açıklıyor. Ama birkaç noktaya değinmekte fayda var. Data bacaklarına gerekli inputları verdikten sonra, enable bacağını 1&rsquo;den 0&rsquo;a düşürerek lcd&rsquo;nin data bacaklarında sinyali alıp işleme sokmasını sağlıyoruz. init array&rsquo;i içinde lcd&rsquo;nin temizlenmesi ve çalışmaya uygun hale gelmesi için gerekli komutlar tutuluyor. 0x378 paralel portun adresi.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
@@ -144,6 +144,11 @@ Linux, Paralel Port ile 2x16 LCD Ekran Kullanımı
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/c/c++/>c/c++</a></li>
+<li><a href=https://askin.ws/tags/lcd/>lcd</a></li>
+<li><a href=https://askin.ws/tags/linux/>linux</a></li>
+<li><a href=https://askin.ws/tags/parallel-port/>parallel port</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

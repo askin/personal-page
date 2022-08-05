@@ -78,14 +78,14 @@ ssh
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Emacs Tramp SSH Hostname Tamamlama
+<a aria-label="post link to Emacs Tramp SSH Hostname Tamamlama" href=https://askin.ws/blog/emacs-tramp-ssh-hostname-tamamlama/>Emacs Tramp SSH Hostname Tamamlama</a>
 </h1>
 <div class=post-meta><span title="2022-07-30 18:18:00 +0300 +0300">July 30, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><code>Ssh</code> ile baglandigim makineleri kategorilerine göre farklı dosyalarda tutup <code>~/.ssh/config</code> dosyasında <code>Include</code> ile tanımlıyorum.
+<div class=post-content>
+<p><code>Ssh</code> ile baglandigim makineleri kategorilerine göre farklı dosyalarda tutup <code>~/.ssh/config</code> dosyasında <code>Include</code> ile tanımlıyorum.
 Aşağıdaki gibi bir tanımlama güzel oluyor</p>
 <pre tabindex=0><code class=language-config data-lang=config># ~/.ssh/ssh_config_company1
 Host top-secret-prod-host
@@ -112,40 +112,48 @@ Sonunda ilgisizi bir stackoverflow postunda aşağıdaki kod parçasını görd�
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/emacs/>emacs</a></li>
+<li><a href=https://askin.ws/tags/ssh/>ssh</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Genius!
+<a aria-label="post link to Genius!" href=https://askin.ws/blog/genius/>Genius!</a>
 </h1>
 <div class=post-meta><span title="2010-11-24 14:11:00 +0300 +0300">November 24, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
+<div class=post-content>
+<p>Scp ile sembolik linkleri takip etmeden indirme işlemi yapmak için araştırma yaptığımda, aşağıdaki kodu buldum. Böyle bir kullanım 40 yıl düşünsem aklıma gelmezdi.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd /destination/directory
 ssh user@remote.host <span style=color:#e6db74>&#34;cd /original/directory; tar cf - ./&#34;</span> | tar xvf -
 </code></pre></div><p><a href=http://www.linuxquestions.org/questions/linux-general-1/recursive-scp-w-o-following-links-658857/>Kaynak</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bash/>bash</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/ssh/>ssh</a></li>
+<li><a href=https://askin.ws/tags/symlink/>symlink</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-SSH Filesystem ile uzak makinadaki dizini yerele bağlamak
+<a aria-label="post link to SSH Filesystem ile uzak makinadaki dizini yerele bağlamak" href=https://askin.ws/blog/ssh-filesystem-ile-uzak-makinadaki-dizini-yerele-baglamak/>SSH Filesystem ile uzak makinadaki dizini yerele bağlamak</a>
 </h1>
 <div class=post-meta><span title="2008-05-07 10:36:00 +0300 +0300">May 7, 2008</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
+<div class=post-content>
+<p>Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
 Ben daha önce bahsettiğim <a href=http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/>internet canavarı:)</a> için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
 Kullanacağımız programın adı sshfs yani SSH Filesystem.
 Kurulum:</p>
@@ -188,6 +196,10 @@ fusermount -u bağlamanoktası
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/linux/>linux</a></li>
+<li><a href=https://askin.ws/tags/mount/>mount</a></li>
+<li><a href=https://askin.ws/tags/ssh/>ssh</a></li>
+</ul>
 </ul>
 </footer>
 <hr>

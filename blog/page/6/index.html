@@ -79,36 +79,40 @@ Blogs
 </header>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-PyGtk ve Thread Sorunu
+<a aria-label="post link to PyGtk ve Thread Sorunu" href=https://askin.ws/blog/pygtk-ve-thread-sorunu/>PyGtk ve Thread Sorunu</a>
 </h1>
 <div class=post-meta><span title="2010-04-06 23:03:00 +0300 +0300">April 6, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2010/04/gtk.png alt=Gtk title=Gtk>
-PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.</p>
-<p>Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>gtk<span style=color:#f92672>.</span>gdk<span style=color:#f92672>.</span>threads_init()
-</code></pre></div><p>Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</p>
-<p>Sizde böyle bir sorunla karşılaşırsanız aklınızda bulunsun :)</p>
+<div class=post-content>
+PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
+Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
+gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)
+<a class=next href=https://askin.ws/blog/pygtk-ve-thread-sorunu/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/gdk/>gdk</a></li>
+<li><a href=https://askin.ws/tags/gtk/>gtk</a></li>
+<li><a href=https://askin.ws/tags/programlama/>Programlama</a></li>
+<li><a href=https://askin.ws/tags/pygtk/>pygtk</a></li>
+<li><a href=https://askin.ws/tags/python/>python</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak
+<a aria-label="post link to Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak" href=https://askin.ws/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak</a>
 </h1>
 <div class=post-meta><span title="2009-12-07 09:45:00 +0300 +0300">December 7, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/05/pardus.png alt=Pardus title=Pardus>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/05/pardus.png alt=Pardus title=Pardus>
 Bikaç gündür <a href=http://www.pardus.org.tr>Pardus</a> ve <a href=http://www.eduroam.org/>Eduroam</a> ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.</p>
 <p>2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.<br>
 Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.</p>
@@ -127,20 +131,27 @@ pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/eduroam/>eduroam</a></li>
+<li><a href=https://askin.ws/tags/network-manager/>network-manager</a></li>
+<li><a href=https://askin.ws/tags/pardus/>pardus</a></li>
+<li><a href=https://askin.ws/tags/pisi/>pisi</a></li>
+<li><a href=https://askin.ws/tags/python/>python</a></li>
+<li><a href=https://askin.ws/tags/wireless-tools/>wireless-tools</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Pardus ile Eduroam ağına bağlanma
+<a aria-label="post link to Pardus ile Eduroam ağına bağlanma" href=https://askin.ws/blog/pardus-ile-eduroam-agina-baglanma/>Pardus ile Eduroam ağına bağlanma</a>
 </h1>
 <div class=post-meta><span title="2009-12-05 02:02:00 +0300 +0300">December 5, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/12/eduroam_logo_trans.gif alt=Eduroam title=Eduroam>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/12/eduroam_logo_trans.gif alt=Eduroam title=Eduroam>
 <a href=http://www.pardus.org.tr/>Pardus</a>un ağ yöneticisi gayet şık bir arayüze sahip, fakat bize <a href=http://www.eduroam.org/>Eduroam</a> ağına bağlanma özelliği sunmuyor.<br>
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar <a href=http://hostap.epitest.fi/wpa_supplicant/>wpa_supplicant</a> ve <a href=http://roy.marples.name/projects/dhcpcd>dhcpcd</a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.</p>
 <p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.</p>
@@ -173,20 +184,29 @@ Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/dhcpcd/>dhcpcd</a></li>
+<li><a href=https://askin.ws/tags/eduroam/>eduroam</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/network/>network</a></li>
+<li><a href=https://askin.ws/tags/network-manager/>network-manager</a></li>
+<li><a href=https://askin.ws/tags/pardus/>pardus</a></li>
+<li><a href=https://askin.ws/tags/pem/>pem</a></li>
+<li><a href=https://askin.ws/tags/wpa/>wpa</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-TrekStor maxi g.u 500GB harici hard disk
+<a aria-label="post link to TrekStor maxi g.u 500GB harici hard disk" href=https://askin.ws/blog/trekstor-maxi-g-u-500gb-harici-hard-disk/>TrekStor maxi g.u 500GB harici hard disk</a>
 </h1>
 <div class=post-meta><span title="2009-09-16 20:32:00 +0300 +0300">September 16, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/09/TrekStor.png alt=TrekStor title=TrekStor>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/09/TrekStor.png alt=TrekStor title=TrekStor>
 Geçen hafta bilgisayarım bozulunca, verilerimi kurtarmak için bir harici disk almak zorunda kaldım.<br>
 Malum servisler arıza ne olursa olsun hemen format atma merakındalar.<br>
 Tekrar bulamayacağım 20GB kadar, film müzik derken 100GB kadar verim vardı. Diski alınca benim hard diski arkadaşın bilgisayarına takıp hepsini aldım.</p>
@@ -200,105 +220,127 @@ Buda resmi.<br>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/hard-disk/>hard disk</a></li>
+<li><a href=https://askin.ws/tags/harici-disk/>harici disk</a></li>
+<li><a href=https://askin.ws/tags/hdd/>hdd</a></li>
+<li><a href=https://askin.ws/tags/trekstor/>TrekStor</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-post 2 del.icio.us
+<a aria-label="post link to post 2 del.icio.us" href=https://askin.ws/blog/post-2-del-icio-us/>post 2 del.icio.us</a>
 </h1>
 <div class=post-meta><span title="2009-09-15 20:15:00 +0300 +0300">September 15, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/09/post2delicious.png alt="post 2 del.icio.us" title="post 2 del.icio.us">
-Daha önce <a href=/2009/08/29/post-to-del-icio-us/>post to del.icio.us</a> eklentisinden bahsetmiştim.<br>
-Hazır eklentiye el atmışken birkaç özellik ekledim.</p>
-<ul>
-<li>Gizli gönderim</li>
-<li>Var olan linkin üzerine yazılma seçeneği</li>
-<li>Türkçe desteği</li>
-</ul>
-<p>Ön tanımlı atanan kısayolu linuxta gizli gezinme kısayolu ile çakıştığı için değiştirdim. Fakat windowsta yer imleri kısayolu ile çakışmaya başladı bu sefer.<br>
-Bir sonraki ekleyeceğim özellik bu kısa yolun kullanıcı tarafından değiştirilebilmesini sağlamak olacak.<br>
-Eklentinin proje sayfası <a href=http://askin.ws/project/post-2-del.icio.us/tr>burası</a>. Proje sayfasından eklentinin ekran görüntülerine bakabilirsiniz.<br>
-Eklentiyi <a href=https://addons.mozilla.org/en-US/firefox/addon/14030>burdan</a> kurabilirsiniz.</p>
+<div class=post-content>
+Daha önce post to del.icio.us eklentisinden bahsetmiştim.
+Hazır eklentiye el atmışken birkaç özellik ekledim.
+Gizli gönderim Var olan linkin üzerine yazılma seçeneği Türkçe desteği Ön tanımlı atanan kısayolu linuxta gizli gezinme kısayolu ile çakıştığı için değiştirdim. Fakat windowsta yer imleri kısayolu ile çakışmaya başladı bu sefer.
+Bir sonraki ekleyeceğim özellik bu kısa yolun kullanıcı tarafından değiştirilebilmesini sağlamak olacak.
+Eklentinin proje sayfası burası. Proje sayfasından eklentinin ekran görüntülerine bakabilirsiniz.
+<a class=next href=https://askin.ws/blog/post-2-del-icio-us/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/addon/>addon</a></li>
+<li><a href=https://askin.ws/tags/browser/>browser</a></li>
+<li><a href=https://askin.ws/tags/del.icio.us/>del.icio.us</a></li>
+<li><a href=https://askin.ws/tags/extension/>extension</a></li>
+<li><a href=https://askin.ws/tags/firefox/>Firefox</a></li>
+<li><a href=https://askin.ws/tags/internet/>İnternet</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Ah şu spamcılar
+<a aria-label="post link to Ah şu spamcılar" href=https://askin.ws/blog/ah-su-spamcilar/>Ah şu spamcılar</a>
 </h1>
 <div class=post-meta><span title="2009-09-01 20:25:00 +0300 +0300">September 1, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/08/spam.jpg alt=Spam title=Spam>
-Bugün <a href=http://www.akismet.com/>akismet</a>&lsquo;e takılmış 34 spam vardı kutumda. Silmeden önce hep bi göz atarım ne yazmışlar diye. Genelde mesajın tamamı linklerden oluşur. Çok nadir olarak sadece 1 link olur ve ingilizcedir herzaman.<br>
-Bugün gelen spamlardan biri türkçeydi ve hiç link yoktu. Sadece websitesi bömünde acayip bi site vardı. Mesajın içeriği de yazıyla tamamen uyumluydu. Tam elim spam değil tuşuna gideceği sırada garip duygularla yorumun yapıldığı yazıya bakma ihtiyacı duydum ve ardından gülümsedim :) Kahraman spamcımız gelen mesajı aynen almış, site kısmına reklamını yapacağı siteyi yazıp tekrar yollamış. Biraz daha dikkatsiz olsaydım neredeyse bu oyuna düşecektim, aman dikkat bu oyunlara düşmeyin. <a href=http://www.akismet.com/>Akismet</a>&lsquo;e güvenin, bi bildiği vardır.</p>
+<div class=post-content>
+Bugün akismet&lsquo;e takılmış 34 spam vardı kutumda. Silmeden önce hep bi göz atarım ne yazmışlar diye. Genelde mesajın tamamı linklerden oluşur. Çok nadir olarak sadece 1 link olur ve ingilizcedir herzaman.
+Bugün gelen spamlardan biri türkçeydi ve hiç link yoktu. Sadece websitesi bömünde acayip bi site vardı. Mesajın içeriği de yazıyla tamamen uyumluydu. Tam elim spam değil tuşuna gideceği sırada garip duygularla yorumun yapıldığı yazıya bakma ihtiyacı duydum ve ardından gülümsedim :) Kahraman spamcımız gelen mesajı aynen almış, site kısmına reklamını yapacağı siteyi yazıp tekrar yollamış.
+<a class=next href=https://askin.ws/blog/ah-su-spamcilar/>Read More »</a>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/akismet/>akismet</a></li>
+<li><a href=https://askin.ws/tags/internet/>İnternet</a></li>
+<li><a href=https://askin.ws/tags/spam/>Spam</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Post to del.icio.us
+<a aria-label="post link to Post to del.icio.us" href=https://askin.ws/blog/post-to-del-icio-us/>Post to del.icio.us</a>
 </h1>
 <div class=post-meta><span title="2009-08-29 23:48:00 +0300 +0300">August 29, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/08/del.icio.us.-icon.JPG alt="del.icio.us. icon" title="del.icio.us. icon">
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/08/del.icio.us.-icon.JPG alt="del.icio.us. icon" title="del.icio.us. icon">
 Delicious için kullanılabilecek en güze eklenti bence <a href=https://addons.mozilla.org/en-US/firefox/addon/6652>Post to del.icio.us</a> eklentisi. Fakat firefox 3.5 ile uyumsuz olduğu için kurmak sıkıntılı oluyordu. Bugune kadar .mozilla dizinimi hiç silmediğim için uyumsuz demesine rağmen kullanabildim. Fakat nedense bugün çalışmıyordu. Bende açtım içini baktım nesi var diye :)<br>
 install.rdf dosyası içinde maxVersion tagları arasında 3.0.* yazıyordu, buda 3.1 ve üzeri sürümde çalışmaz manasına geliyor. Düzenleyip bide xpi dosyası haline getirdim. <a href=/uploads/2009/08/post_to_del.icio.us-1.0.5.xpi>Burdan</a> kullanabilirsiniz.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/bookmark/>bookmark</a></li>
+<li><a href=https://askin.ws/tags/del.icio.us/>del.icio.us</a></li>
+<li><a href=https://askin.ws/tags/extension/>extension</a></li>
+<li><a href=https://askin.ws/tags/firefox/>Firefox</a></li>
+<li><a href=https://askin.ws/tags/internet/>İnternet</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-2000'i devirdik, yaşasın SPAM
+<a aria-label="post link to 2000'i devirdik, yaşasın SPAM" href=https://askin.ws/blog/2000i-devirdik-yasasin-spam/>2000'i devirdik, yaşasın SPAM</a>
 </h1>
 <div class=post-meta><span title="2009-08-03 22:17:00 +0300 +0300">August 3, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/08/spam.jpg alt=Spam title=Spam>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/08/spam.jpg alt=Spam title=Spam>
 An itibariyle bloguma 2004 adet spam yorum atılmış. Bıkmayıp usanmayıp spam bot hazılıyan spamcılara ve bu spam yorumları yakalayan <a href=http://akismet.com/>akismet</a>&lsquo;e teşekürlerimi sunuyorum.<br>
 Tabi <a href=http://gmail.com>gmail</a>in üstün spam ayıklama kabiliyetini de unutmamak lazım. Arada sırada spam olmayan mailleride engellemesine rağmen çok iyi iş çıkartıyor.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/akismet/>akismet</a></li>
+<li><a href=https://askin.ws/tags/blog/>Blog</a></li>
+<li><a href=https://askin.ws/tags/comment/>comment</a></li>
+<li><a href=https://askin.ws/tags/gmail/>gmail</a></li>
+<li><a href=https://askin.ws/tags/post/>post</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Pardus 2009
+<a aria-label="post link to Pardus 2009" href=https://askin.ws/blog/pardus-2009/>Pardus 2009</a>
 </h1>
 <div class=post-meta><span title="2009-07-25 01:09:00 +0300 +0300">July 25, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/05/pardus.png alt=Pardus title=Pardus>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/05/pardus.png alt=Pardus title=Pardus>
 Sonunda Pardus 2009&rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.<br>
 Kurulum sorunsuz tamamlandı. Kurulum arayüzü çok hoş olmuş. Çok kullanışlı ve çok kolay bir arayüzü olmuş. Bilgisayarıma en hızlı kurulabilen Pardus sürümü. Saat tutmadım ama, 20 dakka ile 30 dakka arasında bir sürede kurulduğunu tahmin ediyorum.<br>
 Kablosuz ağ kartımı sorunsuz tanıdı ve WPA2 şifreli ağıma çok kolay bir şekilde bağlandı. Daha önce de tanıyordu, fakat ağımı göremiyordu, ben de mecburen ndiswraper ile kullanıyordum. Hiç bir ek program kurmama ve kapalı kodlu windows sürücülerine ihtiyaç duymamak beni gayet mutlu etti. Ve ilk defa wi-fi ledinin yanıp söndüğü gördüm:)<br>
@@ -308,20 +350,28 @@ Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür e
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/2009/>2009</a></li>
+<li><a href=https://askin.ws/tags/distro/>distro</a></li>
+<li><a href=https://askin.ws/tags/gnome/>gnome</a></li>
+<li><a href=https://askin.ws/tags/kde/>kde</a></li>
+<li><a href=https://askin.ws/tags/kde4/>kde4</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/pardus/>pardus</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
 </article>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-Mysql Data Dizinini Değiştirme
+<a aria-label="post link to Mysql Data Dizinini Değiştirme" href=https://askin.ws/blog/mysql-data-dizinini-degistirme/>Mysql Data Dizinini Değiştirme</a>
 </h1>
 <div class=post-meta><span title="2009-07-14 02:11:00 +0300 +0300">July 14, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><img loading=lazy src=/uploads/2009/07/mysql.png alt=Mysql title=Mysql>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/07/mysql.png alt=Mysql title=Mysql>
 Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
 Ben pardus kullandığım için</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ service mysql-server stop
@@ -337,6 +387,11 @@ Ardından ilgili dizini yeni yerine kopyalayalım.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
+<li><a href=https://askin.ws/tags/data/>data</a></li>
+<li><a href=https://askin.ws/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tags/mysql/>mysql</a></li>
+<li><a href=https://askin.ws/tags/pardus/>pardus</a></li>
+</ul>
 </ul>
 </footer>
 <hr>
