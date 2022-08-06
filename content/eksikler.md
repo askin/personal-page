@@ -31,7 +31,7 @@ description: Eksikler Desc
   - [ ] Bitbucket iconunu duzelt
   - [ ] Hackerrank iconunu duzelt
 - [x] Maven postunda hata vardi, simdi yok
-- [ ] Ana sayfada postlar listelenirken, taglar kutu icinde cirkin gorunuyor
+- [x] Ana sayfada postlar listelenirken, taglar kutu icinde cirkin gorunuyor
 
 
 ---
