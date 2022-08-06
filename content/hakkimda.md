@@ -31,6 +31,12 @@ Tarih     | Okul
 2004-2013 | BS. Computer Engineering @ *Dokuz Eylül University*
 2001-2004 | *Beylikdüzü 75. Yıl Cumhuriyet Lisesi*
 
+## Sosyal Medya Hesapları
+
+{{% center %}}
+{{% socialicons %}}
+{{% /center %}}
+
 ## İlgilendiğim Diller Ve Teknolojiler
 
 {{% center %}}

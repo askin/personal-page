@@ -25,6 +25,14 @@ description: Eksikler Desc
 - [x] Ana sayfada next yerine tum yazilar olsun
 - [ ] Favicon olsun
 - [x] Blog kisminda 5 den fazla post olsun
+- [ ] Sosyal medya ikonlari yalan olmus
+  - [x] Sayfaya ikonlari koy
+  - [ ] Docker iconunu duzelt
+  - [ ] Bitbucket iconunu duzelt
+  - [ ] Hackerrank iconunu duzelt
+- [x] Maven postunda hata vardi, simdi yok
+- [ ] Ana sayfada postlar listelenirken, taglar kutu icinde cirkin gorunuyor
+
 
 ---
 

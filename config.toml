@@ -35,45 +35,37 @@ paginate = 10
     avatarSize = "90px"
     colorBlack = "#222222"
     colorRed = "#dc3545"
+
   [[params.socialIcons]]
-    icon = "fab fa-twitter"
-    title = "Twitter"
+    name = "Twitter"
     url = "https://twitter.com/kelebeks"
   [[params.socialIcons]]
-    icon = "fas fa-envelope"
-    title = "E-mail"
+    name = "email"
     url = "mailto:askin@askin.ws"
   [[params.socialIcons]]
-    icon = "fab fa-facebook"
-    title= "Facebook"
+    name = "Facebook"
     url = "https://www.facebook.com/askin.yollu"
   [[params.socialIcons]]
-    icon = "fab fa-github"
-    title = "Github"
+    name = "Github"
     url = "https://github.com/askin"
   [[params.socialIcons]]
-    icon = "fab fa-gitlab"
     title = "Gitlab"
+    name = "Gitlab"
     url = "https://gitlab.com/askinozgur"
   [[params.socialIcons]]
-    icon = "fab fa-bitbucket"
-    title = "Bitbucket"
+    name = "Bitbucket"
     url = "https://bitbucket.org/askin/"
   [[params.socialIcons]]
-    icon = "fab fa-linkedin"
-    title = "Linked In"
+    name = "linkedin"
     url = "https://www.linkedin.com/in/askinozgur/"
   [[params.socialIcons]]
-    icon = "fab fa-telegram"
-    title = "Telegram"
+    name = "Telegram"
     url = "https://telegram.me/kelebeks"
   [[params.socialIcons]]
-    icon = "fab fa-docker"
-    title = "Docker Hub"
+    name = "docker"
     url = "https://hub.docker.com/u/askinozgur"
   [[params.socialIcons]]
-    icon = "fab fa-hackerrank"
-    title = "HackerRank"
+    name = "hackerrank"
     url = "https://www.hackerrank.com/askin"
 
 [permalinks]
