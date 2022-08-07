@@ -13,6 +13,17 @@ paginate = 10
   tag = "tags"
   category = "categories"
 
+[Social]
+  website = "https://askin.ws"
+  email = "askin@askin.ws"
+  facebook = "askinyollu"
+  github = "askin"
+  gitlab = "askinozgur"
+  bitbucket = "askin"
+  twitter = "kelebeks"
+  linkedin = "askinozgur"
+  spotify = "kelebex"
+  telegram = "kelebeks"
 
 [params]
   description = "Aşkın Özgür'ün Web Günlüğü ve Kişisel Sitesi"
