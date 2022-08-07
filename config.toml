@@ -6,7 +6,7 @@ enableEmoji = true
 math = false          # enable KaTeX (https://katex.org/) globally
 googleAnalytics = ""  # add your tracking id
 disqusShortname = "askin-ozgurun-web-gunlugu"
-defaultContentLanguage = "tr"
+defaultContentLanguage = "en"
 paginate = 10
 
 [taxonomies]
@@ -88,36 +88,82 @@ paginate = 10
     name = "lichess"
     url = "https://lichess.org/@/kelebeks"
 
-[menu]
-  [[menu.main]]
-    name = "Hakkımda"
-    url = "/hakkimda"
-    weight = 1
+[languages]
+  [languages.tr]
+    description = "Aşkın Özgür'ün Web Günlüğü ve Kişisel Sitesi"
 
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog"
-    weight = 2
+    languageName = "Türkçe :tr:"
+    languageAltTitle = "Türkçe"
 
-  [[menu.main]]
-    name = "Archives"
-    url = "/archives"
-    weight = 3
+    [[languages.tr.menu.main]]
+      name = "Hakkımda"
+      url = "/hakkimda"
+      weight = 1
 
-  [[menu.main]]
-    name = "Öz Geçmiş"
-    url = "/resume"
-    # 'pre' and 'post' hooks are available
-    # here we use an icon from Bootstrap https://icons.getbootstrap.com/
-    pre = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/></svg> '
-    weight = 4
+    [[languages.tr.menu.main]]
+      name = "Blog - tr"
+      url = "/tr/blog"
+      weight = 2
 
-  [[menu.main]]
-    name = "Tags"
-    identifier = "tags"
-    weight = 5
-    url = "/tags/"
+    [[languages.tr.menu.main]]
+      name = "Blog - en"
+      url = "../blog"
+      weight = 3
 
-  
+    [[languages.tr.menu.main]]
+      name = "Arşiv"
+      url = "/arsiv"
+      weight = 4
+
+    [[languages.tr.menu.main]]
+      name = "Öz Geçmiş"
+      url = "/resume"
+      pre = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/></svg> '
+      weight = 5
+
+    [[languages.tr.menu.main]]
+      name = "Etiketler"
+      identifier = "tags"
+      weight = 6
+      url = "/tags/"
+
+  [languages.en]
+    description = "Aşkın Özgür's Web Blog and Personal Page"
+
+    languageName = "English :us:"
+    languageAltTitle = "English"
+
+    [[languages.en.menu.main]]
+      name = "About Me"
+      url = "/aboutme"
+      weight = 1
+
+    [[languages.en.menu.main]]
+      name = "Blog - tr"
+      url = "/tr/blog/"
+      weight = 2
+
+    [[languages.en.menu.main]]
+      name = "Blog - en"
+      url = "/blog"
+      weight = 3
+
+    [[languages.en.menu.main]]
+      name = "Archive"
+      url = "/archives"
+      weight = 4
+
+    [[languages.en.menu.main]]
+      name = "Resume"
+      url = "/resume"
+      pre = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/></svg> '
+      weight = 5
+
+    [[languages.en.menu.main]]
+      name = "Tags"
+      identifier = "tags"
+      weight = 6
+      url = "/en/tags/"
+
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files

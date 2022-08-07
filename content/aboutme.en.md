@@ -1,5 +1,5 @@
 ---
-title: "Hakkımda"
+title: "About Me"
 showToc: false
 showBreadCrumbs: false
 showTitle: false
