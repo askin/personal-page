@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>sorgu on Aşkın Özgür</title><link>https://askin.ws/tr/tags/sorgu/</link><description>Recent content in sorgu on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 06 Sep 2013 12:59:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tr/tags/sorgu/index.xml" rel="self" type="application/rss+xml"/><item><title>MySQL veritabanı ile ilgili bazı bilgileri öğrenmek</title><link>https://askin.ws/tr/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</link><pubDate>Fri, 06 Sep 2013 12:59:00 +0300</pubDate><guid>https://askin.ws/tr/blog/mysql-veritabani-ile-ilgili-bazi-bilgileri-ogrenmek/</guid><description>MySQL kullanıyorsanız, phpMyAdmin gibi bir arayüzünüz olmadığı zaman veritabanı ile ilgili bilgi almak için aşağıdaki sorguları kullanabilirsiniz.
+Var olan veritabanlarını görmek:
+show databases; Bir veritabanını kullanmak için seçmek:
+use veritabani_ismi; Bir veritabanındaki tabloları listelemek:
+show tables; show tables from veritabani_ismi; Bir tablonun oluşturulma scriptini görme:
+show create table tablo_ismi Bir tablonun kolonlarını görme:
+describe tablo_adi</description></item></channel></rss>

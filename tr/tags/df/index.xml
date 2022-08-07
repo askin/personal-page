@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>df on Aşkın Özgür</title><link>https://askin.ws/tr/tags/df/</link><description>Recent content in df on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 22 Jul 2013 15:13:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tr/tags/df/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux'ta disk doluluk oranının yanlış hesaplanması</title><link>https://askin.ws/tr/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</link><pubDate>Mon, 22 Jul 2013 15:13:00 +0300</pubDate><guid>https://askin.ws/tr/blog/linuxta-disk-doluluk-oraninin-yanlis-hesaplanmasi/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2013/07/disk.png" alt="disk" />
+Bir sunucuda garip bir problemle karşılaştım, diskte yer kalmadığını söylüyordu fakat ne yaparsam yapayım diski dolduran dosyaları bulamıyordum. Biraz araştırınca sorunu ve çözümünü buldum. Senaryo şöyle idi:&lt;/p>
+&lt;ol>
+&lt;li>Dosya bir program tarafından okumak için açılır.&lt;/li>
+&lt;li>Başka bir program bu dosyayı siler.&lt;/li>
+&lt;/ol></description></item></channel></rss>
