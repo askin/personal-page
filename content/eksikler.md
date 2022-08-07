@@ -21,6 +21,7 @@ description: Eksikler Desc
 - [x] İçerik alanı daha geniş olsun
 - [ ] Blog ekraninda Blogs yaziyor, onu `Blog Posts` yapalim, hatta turkcelestirme deneyelim
 - [ ] Dil destegine bak
+   - [ ] Ingilezce ekle
 - [ ] Kod renklendirme bir tik daha iyi olabilir
 - [x] Ana sayfada next yerine tum yazilar olsun
 - [ ] Favicon olsun
@@ -32,6 +33,10 @@ description: Eksikler Desc
   - [ ] Hackerrank iconunu duzelt
 - [x] Maven postunda hata vardi, simdi yok
 - [x] Ana sayfada postlar listelenirken, taglar kutu icinde cirkin gorunuyor
+- [ ] Comment ekle
+- [ ] Paylas butonu ekle
+- [ ] Prod modunu aktiflestir
+
 
 
 ---
