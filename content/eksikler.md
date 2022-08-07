@@ -20,11 +20,11 @@ description: Eksikler Desc
 - [x] Postlar basladigina dair yazi olsun
 - [x] İçerik alanı daha geniş olsun
 - [ ] Blog ekraninda Blogs yaziyor, onu `Blog Posts` yapalim, hatta turkcelestirme deneyelim
-- [ ] Dil destegine bak
-   - [ ] Ingilezce ekle
+- [x] Dil destegine bak
+   - [x] Ingilezce ekle
 - [ ] Kod renklendirme bir tik daha iyi olabilir
 - [x] Ana sayfada next yerine tum yazilar olsun
-- [ ] Favicon olsun
+- [x] Favicon olsun
 - [x] Blog kisminda 5 den fazla post olsun
 - [ ] Sosyal medya ikonlari yalan olmus
   - [x] Sayfaya ikonlari koy
@@ -35,12 +35,4 @@ description: Eksikler Desc
 - [x] Ana sayfada postlar listelenirken, taglar kutu icinde cirkin gorunuyor
 - [ ] Comment ekle
 - [ ] Paylas butonu ekle
-- [ ] Prod modunu aktiflestir
-
-
-
----
-
-
-
-
+- [x] Prod modunu aktiflestir
