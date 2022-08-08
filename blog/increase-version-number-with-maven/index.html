@@ -1,14 +1,43 @@
-<!doctype html><html lang=tr dir=auto>
+<!doctype html><html lang=en dir=auto>
 <head><meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>maven | Aşkın Özgür</title>
-<meta name=keywords content>
-<meta name=description content="Aşkın Özgür'ün Web Günlüğü ve Kişisel Sitesi">
-<meta name=author content>
-<link rel=canonical href=https://askin.ws/tr/tags/maven/>
+<title>Increase Version Number With Maven | Aşkın Özgür</title>
+<meta name=keywords content="Maven">
+<meta name=description content="If you have a maven project and want to change version number automatically, there is buil-helper maven plugin to do this. Let&rsquo;s assume that we have a pom.xml like below.
+<?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?>
+<project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+  xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0.0</version>
+
+  <name>my-app</name>
+</project>
+We can update version number from 1.0.0 to 1.0.5 with the command below.
+mvn versions:set -DnewVersion=1.0.5 versions:commit
+Or we can use this command increase version number automatically.
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
+    versions:commit
+Now version number is 1.0.6
+To increase minor version number
+mvn build-helper:parse-version \
+    versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.buildNumber} \
+    versions:commit
+To increase major version number
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.nextMajorVersion}.0.0 \
+    versions:commit
+You can visit Build Helper Maven Plugin&rsquo;s page for more detailed information.">
+<meta name=author content="Aşkın Özgür">
+<link rel=canonical href=https://askin.ws/blog/increase-version-number-with-maven/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.13d3afa74b78d5254990030759ce15327bd1ba171cbdd5c5a8e7022183c24c4e.css integrity="sha256-E9Ovp0t41SVJkAMHWc4VMnvRuhccvdXFqOcCIYPCTE4=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://askin.ws/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://askin.ws/uploads/avatar.png>
 <link rel=icon type=image/png sizes=32x32 href=https://askin.ws/uploads/avatar.png>
@@ -16,45 +45,103 @@
 <link rel=mask-icon href=https://askin.ws/uploads/avatar.png>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://askin.ws/tr/tags/maven/index.xml>
-<link rel=alternate hreflang=en href=https://askin.ws/tags/maven/>
-<link rel=alternate hreflang=tr href=https://askin.ws/tr/tags/maven/>
+<link rel=alternate hreflang=en href=https://askin.ws/blog/increase-version-number-with-maven/>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:title" content="maven">
-<meta property="og:description" content="Aşkın Özgür'ün Web Günlüğü ve Kişisel Sitesi">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://askin.ws/tr/tags/maven/">
+</noscript><meta property="og:title" content="Increase Version Number With Maven">
+<meta property="og:description" content="If you have a maven project and want to change version number automatically, there is buil-helper maven plugin to do this. Let&rsquo;s assume that we have a pom.xml like below.
+<?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?>
+<project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+  xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0.0</version>
+
+  <name>my-app</name>
+</project>
+We can update version number from 1.0.0 to 1.0.5 with the command below.
+mvn versions:set -DnewVersion=1.0.5 versions:commit
+Or we can use this command increase version number automatically.
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
+    versions:commit
+Now version number is 1.0.6
+To increase minor version number
+mvn build-helper:parse-version \
+    versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.buildNumber} \
+    versions:commit
+To increase major version number
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.nextMajorVersion}.0.0 \
+    versions:commit
+You can visit Build Helper Maven Plugin&rsquo;s page for more detailed information.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://askin.ws/blog/increase-version-number-with-maven/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2022-08-08T20:40:25+03:00">
+<meta property="article:modified_time" content="2022-08-08T20:40:25+03:00">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="maven">
-<meta name=twitter:description content="Aşkın Özgür'ün Web Günlüğü ve Kişisel Sitesi">
+<meta name=twitter:title content="Increase Version Number With Maven">
+<meta name=twitter:description content="If you have a maven project and want to change version number automatically, there is buil-helper maven plugin to do this. Let&rsquo;s assume that we have a pom.xml like below.
+<?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?>
+<project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+  xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0.0</version>
+
+  <name>my-app</name>
+</project>
+We can update version number from 1.0.0 to 1.0.5 with the command below.
+mvn versions:set -DnewVersion=1.0.5 versions:commit
+Or we can use this command increase version number automatically.
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
+    versions:commit
+Now version number is 1.0.6
+To increase minor version number
+mvn build-helper:parse-version \
+    versions:set \
+    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.buildNumber} \
+    versions:commit
+To increase major version number
+mvn build-helper:parse-version versions:set \
+    -DnewVersion=\${parsedVersion.nextMajorVersion}.0.0 \
+    versions:commit
+You can visit Build Helper Maven Plugin&rsquo;s page for more detailed information.">
 <meta name=twitter:site content="@kelebeks">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Blogs","item":"https://askin.ws/blog/"},{"@type":"ListItem","position":3,"name":"Increase Version Number With Maven","item":"https://askin.ws/blog/increase-version-number-with-maven/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Increase Version Number With Maven","name":"Increase Version Number With Maven","description":"If you have a maven project and want to change version number automatically, there is buil-helper maven plugin to do this. Let\u0026rsquo;s assume that we have a pom.xml like below.\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;UTF-8\u0026#34;?\u0026gt; \u0026lt;project xmlns=\u0026#34;http://maven.apache.org/POM/4.0.0\u0026#34; xmlns:xsi=\u0026#34;http://www.w3.org/2001/XMLSchema-instance\u0026#34; xsi:schemaLocation=\u0026#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\u0026#34;\u0026gt; \u0026lt;modelVersion\u0026gt;4.0.0\u0026lt;/modelVersion\u0026gt; \u0026lt;groupId\u0026gt;com.mycompany.app\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;my-app\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;1.0.0\u0026lt;/version\u0026gt; \u0026lt;name\u0026gt;my-app\u0026lt;/name\u0026gt; \u0026lt;/project\u0026gt; We can update version number from 1.0.0 to 1.0.5 with the command below.\nmvn versions:set -DnewVersion=1.0.5 versions:commit Or we can use this command increase version number automatically.\nmvn build-helper:parse-version versions:set \\  -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} \\  versions:commit Now version number is 1.0.6\nTo increase minor version number\nmvn build-helper:parse-version \\  versions:set \\  -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.nextMinorVersion}.\\${parsedVersion.buildNumber} \\  versions:commit To increase major version number\nmvn build-helper:parse-version versions:set \\  -DnewVersion=\\${parsedVersion.nextMajorVersion}.0.0 \\  versions:commit You can visit Build Helper Maven Plugin\u0026rsquo;s page for more detailed information.\n","keywords":["Maven"],"articleBody":"If you have a maven project and want to change version number automatically, there is buil-helper maven plugin to do this. Let’s assume that we have a pom.xml like below.\n  xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" 4.0.0 com.mycompany.app my-app 1.0.0 my-app  We can update version number from 1.0.0 to 1.0.5 with the command below.\nmvn versions:set -DnewVersion=1.0.5 versions:commit Or we can use this command increase version number automatically.\nmvn build-helper:parse-version versions:set \\  -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} \\  versions:commit Now version number is 1.0.6\nTo increase minor version number\nmvn build-helper:parse-version \\  versions:set \\  -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.nextMinorVersion}.\\${parsedVersion.buildNumber} \\  versions:commit To increase major version number\nmvn build-helper:parse-version versions:set \\  -DnewVersion=\\${parsedVersion.nextMajorVersion}.0.0 \\  versions:commit You can visit Build Helper Maven Plugin’s page for more detailed information.\n","wordCount":"120","inLanguage":"en","datePublished":"2022-08-08T20:40:25+03:00","dateModified":"2022-08-08T20:40:25+03:00","author":{"@type":"Person","name":"Aşkın Özgür"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://askin.ws/blog/increase-version-number-with-maven/"},"publisher":{"@type":"Organization","name":"Aşkın Özgür","logo":{"@type":"ImageObject","url":"https://askin.ws/favicon.ico"}}}</script>
 </head>
-<body class=list id=top>
+<body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://askin.ws/tr/ accesskey=h title="Aşkın Özgür (Alt + H)">Aşkın Özgür</a>
+<a href=https://askin.ws accesskey=h title="Aşkın Özgür (Alt + H)">Aşkın Özgür</a>
 <div class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 <ul class=lang-switch><li>|</li>
 <li>
-<a href=https://askin.ws/ title=English aria-label="English :us:">English 🇺🇸</a>
+<a href=https://askin.ws/tr/ title=Türkçe aria-label="Türkçe :tr:">Türkçe 🇹🇷</a>
 </li>
 </ul>
 </div>
 </div>
 <ul id=menu>
 <li>
-<a href=https://askin.ws/tr/hakkimda title=Hakkımda>
-<span>Hakkımda</span>
+<a href=https://askin.ws/aboutme title="About Me">
+<span>About Me</span>
 </a>
 </li>
 <li>
-<a href=https://askin.ws/tr/blog title="Blog - tr">
+<a href=https://askin.ws/tr/blog/ title="Blog - tr">
 <span>Blog - tr</span>
 </a>
 </li>
@@ -64,44 +151,35 @@
 </a>
 </li>
 <li>
-<a href=https://askin.ws/tr/arsiv title=Arşiv>
-<span>Arşiv</span>
+<a href=https://askin.ws/archives title=Archive>
+<span>Archive</span>
 </a>
 </li>
 <li>
-<a href=https://askin.ws/tr/resume title="Öz Geçmiş">
-<span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 012-2h5.293A1 1 0 0110 .293L13.707 4a1 1 0 01.293.707V14a2 2 0 01-2 2H4a2 2 0 01-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 01-1-1zM11 8A3 3 0 115 8a3 3 0 016 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 001 1h8a1 1 0 001-1v-.245z"/></svg> Öz Geçmiş</span>
+<a href=https://askin.ws/resume title=Resume>
+<span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 012-2h5.293A1 1 0 0110 .293L13.707 4a1 1 0 01.293.707V14a2 2 0 01-2 2H4a2 2 0 01-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 01-1-1zM11 8A3 3 0 115 8a3 3 0 016 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 001 1h8a1 1 0 001-1v-.245z"/></svg> Resume</span>
 </a>
 </li>
 <li>
-<a href=https://askin.ws/tr/tags/ title=Etiketler>
-<span>Etiketler</span>
+<a href=https://askin.ws/en/tags/ title=Tags>
+<span>Tags</span>
 </a>
 </li>
 </ul>
 </nav>
 </header>
 <main class=main>
-<header class=page-header><div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
-<h1>
-maven
-<a href=index.xml title=RSS aria-label=RSS><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
-</a>
-</h1>
-</header>
 <article class=post-single>
 <header class=post-header>
+<div class=breadcrumbs><a href=https://askin.ws>Home</a>&nbsp;»&nbsp;<a href=https://askin.ws/blog/>Blogs</a></div>
 <h1 class=post-title>
-<a aria-label="post link to Maven İle Versiyon Numarası Güncelleme" href=https://askin.ws/tr/blog/maven-ile-versiyon-numarasi-guncelleme/>Maven İle Versiyon Numarası Güncelleme</a>
+Increase Version Number With Maven
 </h1>
-<div class=post-meta><span title="2021-11-03 19:04:25 +0300 +0300">Kasım 3, 2021</span>&nbsp;·&nbsp;Aşkın Özgür
+<div class=post-meta><span title="2022-08-08 20:40:25 +0300 +0300">August 8, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content>
-<p>Bir <code>maven</code> projeniz varsa ve versiyon numarasını güncellemek istiyorsanız, <code>pom.xml</code>i bir editör ile açıp versiyon numarasını güncelleyebileceğiniz gibi, maven kullanarak da bunu yapabilirsiniz.</p>
-<p>Aşağıdaki gibi bir <code>pom.xml</code> dosyaminizin olduğunu düşünelim.</p>
+<div class=post-content><p>If you have a <code>maven</code> project and want to change version number automatically, there is <code>buil-helper</code> <strong>maven plugin</strong> to do this. Let&rsquo;s assume that we have a <code>pom.xml</code> like below.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-
 <span style=color:#f92672>&lt;project</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
   <span style=color:#a6e22e>xsi:schemaLocation=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style=color:#f92672>&gt;</span>
   <span style=color:#f92672>&lt;modelVersion&gt;</span>4.0.0<span style=color:#f92672>&lt;/modelVersion&gt;</span>
@@ -112,60 +190,29 @@ maven
 
   <span style=color:#f92672>&lt;name&gt;</span>my-app<span style=color:#f92672>&lt;/name&gt;</span>
 <span style=color:#f92672>&lt;/project&gt;</span>
-</code></pre></div><p>Aşağıdaki komut ile <code>1.0.0</code> olan versiyon numarasını <code>1.0.5</code> olarak güncelledik.</p>
+</code></pre></div><p>We can update version number from <code>1.0.0</code> to <code>1.0.5</code> with the command below.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>mvn versions:set -DnewVersion<span style=color:#f92672>=</span>1.0.5 versions:commit
-</code></pre></div><p>Eğer otomatik olarak versiyon numarasını yükseltmek istersek aşağıdaki komut işimizi görecek.</p>
+</code></pre></div><p>Or we can use this command <strong>increase</strong> version number automatically.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>mvn build-helper:parse-version versions:set <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    -DnewVersion<span style=color:#f92672>=</span><span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.majorVersion<span style=color:#f92672>}</span>.<span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.minorVersion<span style=color:#f92672>}</span>.<span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.nextIncrementalVersion<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    versions:commit
-</code></pre></div><p>Artık versiyon numaramız <code>1.0.6</code></p>
-<p>Minör versiyon yükseltmek isterseniz</p>
+</code></pre></div><p>Now version number is <code>1.0.6</code></p>
+<p>To increase minor version number</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>mvn build-helper:parse-version <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    versions:set <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    -DnewVersion<span style=color:#f92672>=</span><span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.majorVersion<span style=color:#f92672>}</span>.<span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.nextMinorVersion<span style=color:#f92672>}</span>.<span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.buildNumber<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    versions:commit
-</code></pre></div><p>Major versiyon yükseltmek isterseniz</p>
+</code></pre></div><p>To increase major version number</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>mvn build-helper:parse-version versions:set <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    -DnewVersion<span style=color:#f92672>=</span><span style=color:#ae81ff>\$</span><span style=color:#f92672>{</span>parsedVersion.nextMajorVersion<span style=color:#f92672>}</span>.0.0 <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    versions:commit
-</code></pre></div><p>Daha detaylı bilgi için aşağıdaki linki kullanabilirsiniz.</p>
-<p><a href=https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html title="Build Helper Maven Plugin">https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html</a></p>
+</code></pre></div><p>You can visit <a href=https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html title="Build Helper Maven Plugin">Build Helper Maven Plugin</a>&rsquo;s page for more detailed information.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/maven/>Maven</a></li>
-<li><a href=https://askin.ws/tr/tags/programlama/>Programlama</a></li>
-</ul>
+<li><a href=https://askin.ws/tags/maven/>Maven</a></li>
 </ul>
 </footer>
-<hr>
-</article>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-<a aria-label="post link to Apache Tomcat Paralel Deploy" href=https://askin.ws/tr/blog/apache-tomcat-parallel-deploy/>Apache Tomcat Paralel Deploy</a>
-</h1>
-<div class=post-meta><span title="2020-09-12 00:00:00 +0000 UTC">Eylül 12, 2020</span>&nbsp;·&nbsp;Aşkın Özgür
-</div>
-</header>
-<div class=post-content>
-<p>Apache Tomcat kullanıyorsanız aynı uygulamanın birden fazla sürümünü
-aynı anda aynı path üzerinde çalıştırabilirsiniz. Bu deploy yaparken
-kesintisiz hizmet sağlamak için çok yardımcı oluyor. Buna <strong>Parallel
-Deployment</strong> deniyor. Paralel deploy sırasında eğer uygulamanın bir
-önceki versiyonunda oturum açılmışsa istekler oraya gitmeye devam
-ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
-<a class=next href=https://askin.ws/tr/blog/apache-tomcat-parallel-deploy/>Daha fazla oku »</a>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/tomcat/>tomcat</a></li>
-<li><a href=https://askin.ws/tr/tags/deploy/>deploy</a></li>
-<li><a href=https://askin.ws/tr/tags/maven/>maven</a></li>
-</ul>
-</ul>
-</footer>
-<hr>
 </article>
 </main>
 <footer class=footer><div class=social-icons>
@@ -196,7 +243,7 @@ ediyor, yeni oturumlar yeni sürüme gitmeye başlıyor.</p>
 <a href=https://lichess.org/@/kelebeks target=_blank rel="noopener noreferrer me" title=Lichess style="border-bottom:0;box-shadow:0 0"><svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path fill="currentcolor" stroke="currentcolor" stroke-linejoin="round" d="M38.956.5c-3.53.418-6.452.902-9.286 2.984C5.534 1.786-.692 18.533.68 29.364 3.493 50.214 31.918 55.785 41.329 41.7c-7.444 7.696-19.276 8.752-28.323 3.084C3.959 39.116-.506 27.392 4.683 17.567 9.873 7.742 18.996 4.535 29.03 6.405c2.43-1.418 5.225-3.22 7.655-3.187l-1.694 4.86 12.752 21.37c-.439 5.654-5.459 6.112-5.459 6.112-.574-1.47-1.634-2.942-4.842-6.036-3.207-3.094-17.465-10.177-15.788-16.207-2.001 6.967 10.311 14.152 14.04 17.663 3.73 3.51 5.426 6.04 5.795 6.756.0.0 9.392-2.504 7.838-8.927L37.4 7.171z"/></svg>
 </a>
 </div>
-<span>&copy; 2022 <a href=https://askin.ws/tr/>Aşkın Özgür</a></span>
+<span>&copy; 2022 <a href=https://askin.ws>Aşkın Özgür</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
@@ -208,5 +255,6 @@ Powered by
 <script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerHTML='copy';function d(){a.innerHTML='copied!',setTimeout(()=>{a.innerHTML='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
 </body>
 </html>
