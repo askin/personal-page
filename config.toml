@@ -163,7 +163,7 @@ paginate = 10
       name = "Tags"
       identifier = "tags"
       weight = 6
-      url = "/en/tags/"
+      url = "/tags/"
 
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files
