@@ -36,3 +36,4 @@ description: Eksikler Desc
 - [ ] Comment ekle
 - [ ] Paylas butonu ekle
 - [x] Prod modunu aktiflestir
+- [X] Turkce Ana sayfada Sonraki Sayfa ingilizeceye gidiyor
