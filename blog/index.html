@@ -93,6 +93,46 @@ Blogs
 <article class=post-single>
 <header class=post-header>
 <h1 class=post-title>
+<a aria-label="post link to Emacs Tramp SSH Hostname Completion" href=https://askin.ws/blog/emacs-tramp-ssh-hostname-completion/>Emacs Tramp SSH Hostname Completion</a>
+</h1>
+<div class=post-meta><span title="2022-08-17 19:00:00 +0300 +0300">August 17, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
+</div>
+</header>
+<div class=post-content>
+<p>I store <code>ssh</code> configurations in separate files with categories. Forexample personal servers and work related servers are stored different files. <code>Include</code> directive is used to define external files in <code>~/.ssh/config</code>.
+A configuration like below is very useful.</p>
+<pre tabindex=0><code class=language-ssh-config data-lang=ssh-config># ~/.ssh/ssh_config_company1
+Host top-secret-prod-host
+  Hostname prod.example.com
+  User root
+  
+# ~/.ssh/ssh_config_company2
+Host top-secret-dev-host
+  Hostname dev.example.com
+  User root
+
+# ~/.ssh/config
+Include ssh_config_company1
+Include ssh_config_company2
+</code></pre><p>But with default configuration, <code>emacs tramp</code> hostname auto completion is not working. When I use full name of the host, it connects to machine successfuly. But when try to complete hostname with <code>TAB</code>, it is not working. After a little research, I lost my all hopes to fix the problem. But I saw a configuration on a unrelated stackoverflow post. When I try, it fixed the my problem.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-elisp data-lang=elisp>(tramp-set-completion-function
+ <span style=color:#e6db74>&#34;ssh&#34;</span>
+ <span style=color:#f92672>&#39;</span>((tramp-parse-sconfig <span style=color:#e6db74>&#34;/etc/ssh_config&#34;</span>)
+   (tramp-parse-sconfig <span style=color:#e6db74>&#34;~/.ssh/config&#34;</span>)))
+</code></pre></div><p>It could be useful when similar problems.</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://askin.ws/tags/emacs/>emacs</a></li>
+<li><a href=https://askin.ws/tags/ssh/>ssh</a></li>
+</ul>
+</ul>
+</footer>
+<hr>
+</article>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
 <a aria-label="post link to Increase Version Number With Maven" href=https://askin.ws/blog/increase-version-number-with-maven/>Increase Version Number With Maven</a>
 </h1>
 <div class=post-meta><span title="2022-08-08 20:40:25 +0300 +0300">August 8, 2022</span>&nbsp;·&nbsp;Aşkın Özgür

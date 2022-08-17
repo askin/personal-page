@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>emacs on Aşkın Özgür</title><link>https://askin.ws/tags/emacs/</link><description>Recent content in emacs on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 17 Aug 2022 19:00:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tags/emacs/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs Tramp SSH Hostname Completion</title><link>https://askin.ws/blog/emacs-tramp-ssh-hostname-completion/</link><pubDate>Wed, 17 Aug 2022 19:00:00 +0300</pubDate><guid>https://askin.ws/blog/emacs-tramp-ssh-hostname-completion/</guid><description>&lt;p>I store &lt;code>ssh&lt;/code> configurations in separate files with categories. Forexample personal servers and work related servers are stored different files. &lt;code>Include&lt;/code> directive is used to define external files in &lt;code>~/.ssh/config&lt;/code>.
+A configuration like below is very useful.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-ssh-config" data-lang="ssh-config"># ~/.ssh/ssh_config_company1
+Host top-secret-prod-host
+Hostname prod.example.com
+User root
+# ~/.ssh/ssh_config_company2
+Host top-secret-dev-host
+Hostname dev.example.com
+User root
+# ~/.ssh/config
+Include ssh_config_company1
+Include ssh_config_company2
+&lt;/code>&lt;/pre>&lt;p>But with default configuration, &lt;code>emacs tramp&lt;/code> hostname auto completion is not working. When I use full name of the host, it connects to machine successfuly. But when try to complete hostname with &lt;code>TAB&lt;/code>, it is not working. After a little research, I lost my all hopes to fix the problem. But I saw a configuration on a unrelated stackoverflow post. When I try, it fixed the my problem.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-elisp" data-lang="elisp">(tramp-set-completion-function
+&lt;span style="color:#e6db74">&amp;#34;ssh&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>((tramp-parse-sconfig &lt;span style="color:#e6db74">&amp;#34;/etc/ssh_config&amp;#34;&lt;/span>)
+(tramp-parse-sconfig &lt;span style="color:#e6db74">&amp;#34;~/.ssh/config&amp;#34;&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>It could be useful when similar problems.&lt;/p></description></item></channel></rss>
