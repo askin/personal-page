@@ -8,7 +8,7 @@
 <meta name=description content="Aşkın Özgür'ün Web Günlüğü ve Kişisel Sitesi">
 <meta name=author content>
 <link rel=canonical href=https://askin.ws/tr/tags/linux/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.96ea33284e0e24582226a209db1156d41c6c234dd8cfd2bc945d3cf3e8ee691f.css integrity="sha256-luozKE4OJFgiJqIJ2xFW1BxsI03Yz9K8lF088+juaR8=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.37fbfbb9a07b47a3216d6b7286578783abd4c3d55c31e2cd65b7013c8dc32a4d.css integrity="sha256-N/v7uaB7R6MhbWtyhleHg6vUw9VcMeLNZbcBPI3DKk0=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://askin.ws/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://askin.ws/uploads/avatar.png>
 <link rel=icon type=image/png sizes=32x32 href=https://askin.ws/uploads/avatar.png>
@@ -68,7 +68,7 @@
 </a>
 </li>
 <li>
-<a href=https://askin.ws/tr/resume title="Öz Geçmiş">
+<a href=https://askin.ws/resume/index-tr.html title="Öz Geçmiş">
 <span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 012-2h5.293A1 1 0 0110 .293L13.707 4a1 1 0 01.293.707V14a2 2 0 01-2 2H4a2 2 0 01-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 01-1-1zM11 8A3 3 0 115 8a3 3 0 016 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 001 1h8a1 1 0 001-1v-.245z"/></svg> Öz Geçmiş</span>
 </a>
 </li>
@@ -88,6 +88,31 @@ Linux
 </a>
 </h1>
 </header>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
+<h1 class=post-title>
+<a aria-label="post link to Saçmalayan konsol ekranını temizleme" href=https://askin.ws/tr/blog/sacmalayan-konsol-ekranini-temizleme/>Saçmalayan konsol ekranını temizleme</a>
+</h1>
+<div class=post-meta><span title="2010-12-08 11:51:00 +0300 +0300">Aralık 8, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
+</div>
+</header>
+<div class=post-content>
+<p>Bir binary dosyayı <em>cat</em> ile görüntüleyince konsol ekranı sapıtabiliyor :) Böyle bir durumda konsolu adam etmek için</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash> reset
+</code></pre></div><p>komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://askin.ws/tr/tags/binary/>binary</a></li>
+<li><a href=https://askin.ws/tr/tags/cat/>cat</a></li>
+<li><a href=https://askin.ws/tr/tags/konsol/>konsol</a></li>
+<li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
+</ul>
+</ul>
+</footer>
+<hr>
+</article>
 <article class=post-single>
 <header class=post-header>
 <div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
@@ -385,47 +410,6 @@ Bugün hayatımdaki en güzel günlerden biri. Pardus 2009 yaz stajı için kabu
 <li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
 <li><a href=https://askin.ws/tr/tags/pardus/>pardus</a></li>
 <li><a href=https://askin.ws/tr/tags/staj/>staj</a></li>
-</ul>
-</ul>
-</footer>
-<hr>
-</article>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
-<h1 class=post-title>
-<a aria-label="post link to Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak" href=https://askin.ws/tr/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</a>
-</h1>
-<div class=post-meta><span title="2009-04-06 22:22:00 +0300 +0300">Nisan 6, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
-</div>
-</header>
-<div class=post-content>
-<p><img loading=lazy src=/uploads/2009/04/linux-tux.jpg alt=GNU/Linux title=GNU/Linux>
-Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.</p>
-<p>Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).</p>
-<p>Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.</p>
-<p>Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)</p>
-<p>Önce diskleri mount ediyoruz</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir /target /source
-mount /dev/hdc1 /target
-mount /dev/hdc3 -o ro /source
-</code></pre></div><p>Mount işleminden sonra kopyalamaya başlayabiliriz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cp -a /source/* /target
-</code></pre></div><p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
-Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.</p>
-<p>Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.</p>
-<pre><code>grub
- &gt; root (hd0, 0)
- &gt; setup (hd0)
-</code></pre>
-<p>Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.</p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
-<li><a href=https://askin.ws/tr/tags/move/>move</a></li>
-<li><a href=https://askin.ws/tr/tags/partition/>partition</a></li>
-<li><a href=https://askin.ws/tr/tags/shell/>Shell</a></li>
 </ul>
 </ul>
 </footer>

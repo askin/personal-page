@@ -8,7 +8,7 @@
 <meta name=description content="Blogs - Aşkın Özgür">
 <meta name=author content>
 <link rel=canonical href=https://askin.ws/tr/blog/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.96ea33284e0e24582226a209db1156d41c6c234dd8cfd2bc945d3cf3e8ee691f.css integrity="sha256-luozKE4OJFgiJqIJ2xFW1BxsI03Yz9K8lF088+juaR8=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.37fbfbb9a07b47a3216d6b7286578783abd4c3d55c31e2cd65b7013c8dc32a4d.css integrity="sha256-N/v7uaB7R6MhbWtyhleHg6vUw9VcMeLNZbcBPI3DKk0=" rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.fa7fed3307d53aedc43874add9b5f2c3c33b68688b3fa7f374aedc4ac79627ce.js integrity="sha256-+n/tMwfVOu3EOHSt2bXyw8M7aGiLP6fzdK7cSseWJ84=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://askin.ws/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://askin.ws/uploads/avatar.png>
@@ -18,8 +18,8 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <link rel=alternate type=application/rss+xml href=https://askin.ws/tr/blog/index.xml>
-<link rel=alternate hreflang=en href=https://askin.ws/blog/>
 <link rel=alternate hreflang=tr href=https://askin.ws/tr/blog/>
+<link rel=alternate hreflang=en href=https://askin.ws/blog/>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -71,7 +71,7 @@
 </a>
 </li>
 <li>
-<a href=https://askin.ws/tr/resume title="Öz Geçmiş">
+<a href=https://askin.ws/resume/index-tr.html title="Öz Geçmiş">
 <span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 2a2 2 0 012-2h5.293A1 1 0 0110 .293L13.707 4a1 1 0 01.293.707V14a2 2 0 01-2 2H4a2 2 0 01-2-2V2zm7.5 1.5v-2l3 3h-2a1 1 0 01-1-1zM11 8A3 3 0 115 8a3 3 0 016 0zm2 5.755S12 12 8 12s-5 1.755-5 1.755V14a1 1 0 001 1h8a1 1 0 001-1v-.245z"/></svg> Öz Geçmiş</span>
 </a>
 </li>
@@ -91,6 +91,41 @@ Blogs
 </a>
 </h1>
 </header>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
+<h1 class=post-title>
+<a aria-label="post link to Mysql Data Dizinini Değiştirme" href=https://askin.ws/tr/blog/mysql-data-dizinini-degistirme/>Mysql Data Dizinini Değiştirme</a>
+</h1>
+<div class=post-meta><span title="2009-07-14 02:11:00 +0300 +0300">Temmuz 14, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
+</div>
+</header>
+<div class=post-content>
+<p><img loading=lazy src=/uploads/2009/07/mysql.png alt=Mysql title=Mysql>
+Mysql data dizini ön tanımlı <strong>/var/lib/mysql</strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum <strong>/home</strong> dizini altına taşımak istiyorum. Tüm işlemleri <em>root</em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
+Ben pardus kullandığım için</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ service mysql-server stop
+</code></pre></div><p>Diğer dağıtımlarda farklı olabilir.
+Ardından ilgili dizini yeni yerine kopyalayalım.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ cp -a /var/lib/mysql /home
+</code></pre></div><p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. <strong>/etc/mysql/my.cnf</strong> dosyasında
+<code>datadir = /var/lib/mysql</code> olan satırı
+<code>datadir = /home/mysql</code> olarak değiştirelim.
+Şimdi servisi yeniden başlatabiliriz.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ service mysql-server start
+</code></pre></div><p>Eğer düzgün bir şekilde çalışıyorsa <strong>/var/lib/mysql</strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://askin.ws/tr/tags/data/>data</a></li>
+<li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
+<li><a href=https://askin.ws/tr/tags/mysql/>mysql</a></li>
+<li><a href=https://askin.ws/tr/tags/pardus/>pardus</a></li>
+</ul>
+</ul>
+</footer>
+<hr>
+</article>
 <article class=post-single>
 <header class=post-header>
 <div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
@@ -456,31 +491,6 @@ Müzik dinlerken kullandığım programın elimin altında dolaşmasını pek se
 <p>Az önce wordpress&rsquo;i güncelledim. 2.5&rsquo;in arayüzü çok hoştu ama biraz kullanışsız gelmişti bana, şimdi çok hoş olmuş. Yazı yaz, yazı yaz diye bağırıyor sanki. Bende kırmıyor yazıyorum&mldr;</p>
 </div>
 <footer class=post-footer>
-</ul>
-</footer>
-<hr>
-</article>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
-<h1 class=post-title>
-<a aria-label="post link to Gentoo Karasuları" href=https://askin.ws/tr/blog/gentoo-karasulari/>Gentoo Karasuları</a>
-</h1>
-<div class=post-meta><span title="2008-09-05 17:54:00 +0300 +0300">Eylül 5, 2008</span>&nbsp;·&nbsp;Aşkın Özgür
-</div>
-</header>
-<div class=post-content>
-<p>06-09-2008 saat 00:25 itibariyle gentooda temel sorunlarımı çözmüş bulunmaktayım. Bugünden itiberen bilgisayarın güç düğmesine bastıktan sonra açılacak olan sistem gentoo. Umarım bu birlikteliğim uzun sürer.<br>
-Temel sorunlarım:</p>
-<ul>
-<li>Ses: Artık benim de bilgisayarım ses çıkartıyor:)</li>
-<li>Wifi: Artık benim de bilgisayarım kablosuz internete bağlanabiliyor:)</li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/gentoo/>gentoo</a></li>
-</ul>
 </ul>
 </footer>
 <hr>
