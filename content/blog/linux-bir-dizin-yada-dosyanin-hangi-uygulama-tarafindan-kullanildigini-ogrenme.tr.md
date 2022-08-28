@@ -3,7 +3,7 @@ Title: Linux - Bir dizin yada dosyanın hangi uygulama tarafından kullanıldı�
 Date: 2008-05-24T13:30:00+03:00
 Author: Aşkın Özgür
 Category: Linux
-Tags: ["Kabuk", "Linux"]
+Tags: ["Konsol", "Linux"]
 Slug: linux-bir-dizin-yada-dosyanin-hangi-uygulama-tarafindan-kullanildigini-ogrenme
 Status: published
 ---

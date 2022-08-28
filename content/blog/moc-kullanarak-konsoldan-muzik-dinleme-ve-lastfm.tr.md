@@ -3,7 +3,7 @@ Title: Moc kullanarak konsoldan müzik dinleme ve lastfm
 Date: 2008-06-12T16:25:00+03:00
 Author: Aşkın Özgür
 Category: Linux
-Tags: ["konsol", "lastfm", "lastfmsubmitd", "moc"]
+Tags: ["konsol", "lastfm", "moc"]
 Slug: moc-kullanarak-konsoldan-muzik-dinleme-ve-lastfm
 Status: published
 ---
