@@ -50,7 +50,7 @@ print &lt;span style="color:#e6db74">&amp;#34;Merhaba &lt;/span>&lt;span style="
 Merhaba kelebek, merhaba Aşkın
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>PyGtk ve Thread Sorunu</title><link>https://askin.ws/tr/blog/pygtk-ve-thread-sorunu/</link><pubDate>Tue, 06 Apr 2010 23:03:00 +0300</pubDate><guid>https://askin.ws/tr/blog/pygtk-ve-thread-sorunu/</guid><description>PyGtk ile ara yüzüzünü hazırladığım bir program içinde thread kullanmam gerekiyordu. Kod çalışıyordu fakat thread işlemi istediğim gibi çalışmıyordu. Arayüzde bir değişiklik olduğu zaman thread çalışıyor, onun dışında hiç bir şekilde tepki vermiyordu.
 Uzun süre hatanın kodda olabileceğini düşündüm. Ama sonunda python gtk.main() ve thread 3&amp;rsquo;lüsünü aynı sorgu içinde googleda aratınca cevabı buldum. Gtk&amp;rsquo;ya thread kullandığımı anlatmam gerekiyordu :)
-gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description></item><item><title>Çıkmaz demeyin şansınızı deneyin - 2</title><link>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/</link><pubDate>Thu, 17 Apr 2008 12:27:00 +0300</pubDate><guid>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid><description>&lt;p>&lt;a href="http://blog.yollu.com/2008/01/22/cikmaz-demeyin-sansinizi-deneyin/">Buradaki&lt;/a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.&lt;/p>
+gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istediğim gibi çalışmaya başladı :)</description></item><item><title>Çıkmaz demeyin şansınızı deneyin - 2</title><link>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/</link><pubDate>Thu, 17 Apr 2008 12:27:00 +0300</pubDate><guid>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/</guid><description>&lt;p>&lt;a href="https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin/">Buradaki&lt;/a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Sayisal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
 &lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> _kupon &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[&lt;/span>6&lt;span style="color:#f92672">];&lt;/span>
 &lt;span style="color:#66d9ef">int&lt;/span> _num&lt;span style="color:#f92672">;&lt;/span>
@@ -81,9 +81,9 @@ System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">o
 &lt;span style="color:#f92672">}&lt;/span>
 &lt;span style="color:#f92672">}&lt;/span>
 &lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>java Sayisal&lt;/code>&lt;br>
-şeklinde girerseniz tek kolon oynayacaktır. eğer&lt;br>
-&lt;code>java Sayisal 4 &lt;/code>&lt;br>
-derseniz 4 kolon oynayacaktır.&lt;br>
-&lt;a href="https://askin.ws/uploads/2008/04/Sayisal.java">Sayısal Kaynak kodları.&lt;/a>&lt;br>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>java Sayisal&lt;/code>
+şeklinde girerseniz tek kolon oynayacaktır. eğer
+&lt;code>java Sayisal 4 &lt;/code>
+derseniz 4 kolon oynayacaktır.
+&lt;a href="https://askin.ws/uploads/2008/04/Sayisal.java">Sayısal Kaynak kodları.&lt;/a>
 &lt;a href="https://askin.ws/uploads/2008/04/Sayisal.class">Sayısal derlenmiş hali.&lt;/a>&lt;/p></description></item></channel></rss>

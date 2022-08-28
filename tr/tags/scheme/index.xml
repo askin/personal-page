@@ -31,4 +31,5 @@ str2
 (char-&amp;gt;integer (string-ref str j)))))))))
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p></description></item><item><title>Same oyunu</title><link>https://askin.ws/tr/blog/same-oyunu/</link><pubDate>Wed, 21 Nov 2007 17:10:00 +0300</pubDate><guid>https://askin.ws/tr/blog/same-oyunu/</guid><description>Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.
+same.scm</description></item></channel></rss>

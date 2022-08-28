@@ -13,30 +13,30 @@ public class Sayisal {
         int sira = 0;
         while (sira < 6) {
             _num = (int) (1 + Math.random() * 49);
-            if (!varmi(_kupon, _num)) 
+            if (!varmi(_kupon, _num))
                 _kupon[sira++] = _num;
         }
     }
-    
+
     private boolean varmi(int[] kupon, int num) {
         for (int x: kupon) {if (x == num) return true;}
         return false;
     }
-    
+
     public String toString(){
-       String kuponStr = &#34;&#34;;
-       for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + &#34; &#34;);
+        String kuponStr = &#34;&#34;;
+        for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + &#34; &#34;);
         return kuponStr;
     }
-    
+
     public static void main(String[] args){
         byte kuponSayisi;
         if (args.length == 0) kuponSayisi = 1;
-            else kuponSayisi = Byte.parseByte(args[0]);
-            
+        else kuponSayisi = Byte.parseByte(args[0]);
+
         for (int i = 1; i <= kuponSayisi; i++){
             System.out.print(&#34; &#34; + i + &#34;.kupon: &#34;);
-        System.out.println((new Sayisal()).toString());
+            System.out.println((new Sayisal()).toString());
         }
     }
 }
@@ -70,30 +70,30 @@ public class Sayisal {
         int sira = 0;
         while (sira < 6) {
             _num = (int) (1 + Math.random() * 49);
-            if (!varmi(_kupon, _num)) 
+            if (!varmi(_kupon, _num))
                 _kupon[sira++] = _num;
         }
     }
-    
+
     private boolean varmi(int[] kupon, int num) {
         for (int x: kupon) {if (x == num) return true;}
         return false;
     }
-    
+
     public String toString(){
-       String kuponStr = &#34;&#34;;
-       for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + &#34; &#34;);
+        String kuponStr = &#34;&#34;;
+        for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + &#34; &#34;);
         return kuponStr;
     }
-    
+
     public static void main(String[] args){
         byte kuponSayisi;
         if (args.length == 0) kuponSayisi = 1;
-            else kuponSayisi = Byte.parseByte(args[0]);
-            
+        else kuponSayisi = Byte.parseByte(args[0]);
+
         for (int i = 1; i <= kuponSayisi; i++){
             System.out.print(&#34; &#34; + i + &#34;.kupon: &#34;);
-        System.out.println((new Sayisal()).toString());
+            System.out.println((new Sayisal()).toString());
         }
     }
 }
@@ -117,30 +117,30 @@ public class Sayisal {
         int sira = 0;
         while (sira < 6) {
             _num = (int) (1 + Math.random() * 49);
-            if (!varmi(_kupon, _num)) 
+            if (!varmi(_kupon, _num))
                 _kupon[sira++] = _num;
         }
     }
-    
+
     private boolean varmi(int[] kupon, int num) {
         for (int x: kupon) {if (x == num) return true;}
         return false;
     }
-    
+
     public String toString(){
-       String kuponStr = &#34;&#34;;
-       for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + &#34; &#34;);
+        String kuponStr = &#34;&#34;;
+        for (int i = 0; i < 6; i++) kuponStr += (_kupon[i] + &#34; &#34;);
         return kuponStr;
     }
-    
+
     public static void main(String[] args){
         byte kuponSayisi;
         if (args.length == 0) kuponSayisi = 1;
-            else kuponSayisi = Byte.parseByte(args[0]);
-            
+        else kuponSayisi = Byte.parseByte(args[0]);
+
         for (int i = 1; i <= kuponSayisi; i++){
             System.out.print(&#34; &#34; + i + &#34;.kupon: &#34;);
-        System.out.println((new Sayisal()).toString());
+            System.out.println((new Sayisal()).toString());
         }
     }
 }
@@ -152,7 +152,7 @@ Sayısal Kaynak kodları.
 Sayısal derlenmiş hali.">
 <meta name=twitter:site content="@kelebeks">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":4,"name":"Çıkmaz demeyin şansınızı deneyin - 2","item":"https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Çıkmaz demeyin şansınızı deneyin - 2","name":"Çıkmaz demeyin şansınızı deneyin - 2","description":"Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.\npublic class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira \u0026lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = \u0026#34;\u0026#34;; for (int i = 0; i \u0026lt; 6; i++) kuponStr += (_kupon[i] + \u0026#34; \u0026#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.length == 0) kuponSayisi = 1; else kuponSayisi = Byte.parseByte(args[0]); for (int i = 1; i \u0026lt;= kuponSayisi; i++){ System.out.print(\u0026#34; \u0026#34; + i + \u0026#34;.kupon: \u0026#34;); System.out.println((new Sayisal()).toString()); } } } java Sayisal\nşeklinde girerseniz tek kolon oynayacaktır. eğer\njava Sayisal 4 \nderseniz 4 kolon oynayacaktır.\nSayısal Kaynak kodları.\nSayısal derlenmiş hali.\n","keywords":["Java","Programlama"],"articleBody":"Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.\npublic class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira  6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = \"\"; for (int i = 0; i  6; i++) kuponStr += (_kupon[i] + \" \"); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.length == 0) kuponSayisi = 1; else kuponSayisi = Byte.parseByte(args[0]); for (int i = 1; i  kuponSayisi; i++){ System.out.print(\" \" + i + \".kupon: \"); System.out.println((new Sayisal()).toString()); } } } java Sayisal\nşeklinde girerseniz tek kolon oynayacaktır. eğer\njava Sayisal 4 \nderseniz 4 kolon oynayacaktır.\nSayısal Kaynak kodları.\nSayısal derlenmiş hali.\n","wordCount":"170","inLanguage":"tr","datePublished":"2008-04-17T12:27:00+03:00","dateModified":"2008-04-17T12:27:00+03:00","author":{"@type":"Person","name":"Aşkın Özgür"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/"},"publisher":{"@type":"Organization","name":"Aşkın Özgür","logo":{"@type":"ImageObject","url":"https://askin.ws/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Çıkmaz demeyin şansınızı deneyin - 2","name":"Çıkmaz demeyin şansınızı deneyin - 2","description":"Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.\npublic class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira \u0026lt; 6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = \u0026#34;\u0026#34;; for (int i = 0; i \u0026lt; 6; i++) kuponStr += (_kupon[i] + \u0026#34; \u0026#34;); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.length == 0) kuponSayisi = 1; else kuponSayisi = Byte.parseByte(args[0]); for (int i = 1; i \u0026lt;= kuponSayisi; i++){ System.out.print(\u0026#34; \u0026#34; + i + \u0026#34;.kupon: \u0026#34;); System.out.println((new Sayisal()).toString()); } } } java Sayisal şeklinde girerseniz tek kolon oynayacaktır. eğer java Sayisal 4  derseniz 4 kolon oynayacaktır. Sayısal Kaynak kodları. Sayısal derlenmiş hali.\n","keywords":["Java","Programlama"],"articleBody":"Buradaki yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.\npublic class Sayisal { int[] _kupon = new int[6]; int _num; public Sayisal(){ int sira = 0; while (sira  6) { _num = (int) (1 + Math.random() * 49); if (!varmi(_kupon, _num)) _kupon[sira++] = _num; } } private boolean varmi(int[] kupon, int num) { for (int x: kupon) {if (x == num) return true;} return false; } public String toString(){ String kuponStr = \"\"; for (int i = 0; i  6; i++) kuponStr += (_kupon[i] + \" \"); return kuponStr; } public static void main(String[] args){ byte kuponSayisi; if (args.length == 0) kuponSayisi = 1; else kuponSayisi = Byte.parseByte(args[0]); for (int i = 1; i  kuponSayisi; i++){ System.out.print(\" \" + i + \".kupon: \"); System.out.println((new Sayisal()).toString()); } } } java Sayisal şeklinde girerseniz tek kolon oynayacaktır. eğer java Sayisal 4  derseniz 4 kolon oynayacaktır. Sayısal Kaynak kodları. Sayısal derlenmiş hali.\n","wordCount":"170","inLanguage":"tr","datePublished":"2008-04-17T12:27:00+03:00","dateModified":"2008-04-17T12:27:00+03:00","author":{"@type":"Person","name":"Aşkın Özgür"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin-2/"},"publisher":{"@type":"Organization","name":"Aşkın Özgür","logo":{"@type":"ImageObject","url":"https://askin.ws/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -214,7 +214,7 @@ Sayısal derlenmiş hali.">
 <div class=post-meta><span title="2008-04-17 12:27:00 +0300 +0300">Nisan 17, 2008</span>&nbsp;·&nbsp;Aşkın Özgür
 </div>
 </header>
-<div class=post-content><p><a href=http://blog.yollu.com/2008/01/22/cikmaz-demeyin-sansinizi-deneyin/>Buradaki</a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.</p>
+<div class=post-content><p><a href=/tr/blog/cikmaz-demeyin-sansinizi-deneyin/>Buradaki</a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Sayisal</span> <span style=color:#f92672>{</span>
     <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> _kupon <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span><span style=color:#f92672>[</span>6<span style=color:#f92672>];</span>
     <span style=color:#66d9ef>int</span> _num<span style=color:#f92672>;</span>
@@ -222,38 +222,38 @@ Sayısal derlenmiş hali.">
         <span style=color:#66d9ef>int</span> sira <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
         <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>sira <span style=color:#f92672>&lt;</span> 6<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
             _num <span style=color:#f92672>=</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span><span style=color:#f92672>)</span> <span style=color:#f92672>(</span>1 <span style=color:#f92672>+</span> Math<span style=color:#f92672>.</span><span style=color:#a6e22e>random</span><span style=color:#f92672>()</span> <span style=color:#f92672>*</span> 49<span style=color:#f92672>);</span>
-            <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>varmi<span style=color:#f92672>(</span>_kupon<span style=color:#f92672>,</span> _num<span style=color:#f92672>))</span> 
+            <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>varmi<span style=color:#f92672>(</span>_kupon<span style=color:#f92672>,</span> _num<span style=color:#f92672>))</span>
                 _kupon<span style=color:#f92672>[</span>sira<span style=color:#f92672>++]</span> <span style=color:#f92672>=</span> _num<span style=color:#f92672>;</span>
         <span style=color:#f92672>}</span>
     <span style=color:#f92672>}</span>
-    
+
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>varmi</span><span style=color:#f92672>(</span><span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> kupon<span style=color:#f92672>,</span> <span style=color:#66d9ef>int</span> num<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
         <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> x<span style=color:#f92672>:</span> kupon<span style=color:#f92672>)</span> <span style=color:#f92672>{</span><span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>x <span style=color:#f92672>==</span> num<span style=color:#f92672>)</span> <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>;}</span>
         <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>;</span>
     <span style=color:#f92672>}</span>
-    
+
     <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>toString</span><span style=color:#f92672>(){</span>
-       String kuponStr <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
-       <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;</span> 6<span style=color:#f92672>;</span> i<span style=color:#f92672>++)</span> kuponStr <span style=color:#f92672>+=</span> <span style=color:#f92672>(</span>_kupon<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span><span style=color:#f92672>);</span>
+        String kuponStr <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+        <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;</span> 6<span style=color:#f92672>;</span> i<span style=color:#f92672>++)</span> kuponStr <span style=color:#f92672>+=</span> <span style=color:#f92672>(</span>_kupon<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span><span style=color:#f92672>);</span>
         <span style=color:#66d9ef>return</span> kuponStr<span style=color:#f92672>;</span>
     <span style=color:#f92672>}</span>
-    
+
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>){</span>
         <span style=color:#66d9ef>byte</span> kuponSayisi<span style=color:#f92672>;</span>
         <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>args<span style=color:#f92672>.</span><span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> 0<span style=color:#f92672>)</span> kuponSayisi <span style=color:#f92672>=</span> 1<span style=color:#f92672>;</span>
-            <span style=color:#66d9ef>else</span> kuponSayisi <span style=color:#f92672>=</span> Byte<span style=color:#f92672>.</span><span style=color:#a6e22e>parseByte</span><span style=color:#f92672>(</span>args<span style=color:#f92672>[</span>0<span style=color:#f92672>]);</span>
-            
+        <span style=color:#66d9ef>else</span> kuponSayisi <span style=color:#f92672>=</span> Byte<span style=color:#f92672>.</span><span style=color:#a6e22e>parseByte</span><span style=color:#f92672>(</span>args<span style=color:#f92672>[</span>0<span style=color:#f92672>]);</span>
+
         <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 1<span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;=</span> kuponSayisi<span style=color:#f92672>;</span> i<span style=color:#f92672>++){</span>
             System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>print</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; &#34;</span> <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.kupon: &#34;</span><span style=color:#f92672>);</span>
-        System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>((</span><span style=color:#66d9ef>new</span> Sayisal<span style=color:#f92672>()).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
+            System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>((</span><span style=color:#66d9ef>new</span> Sayisal<span style=color:#f92672>()).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
         <span style=color:#f92672>}</span>
     <span style=color:#f92672>}</span>
 <span style=color:#f92672>}</span>
-</code></pre></div><p><code>java Sayisal</code><br>
-şeklinde girerseniz tek kolon oynayacaktır. eğer<br>
-<code>java Sayisal 4 </code><br>
-derseniz 4 kolon oynayacaktır.<br>
-<a href=/uploads/2008/04/Sayisal.java>Sayısal Kaynak kodları.</a><br>
+</code></pre></div><p><code>java Sayisal</code>
+şeklinde girerseniz tek kolon oynayacaktır. eğer
+<code>java Sayisal 4 </code>
+derseniz 4 kolon oynayacaktır.
+<a href=/uploads/2008/04/Sayisal.java>Sayısal Kaynak kodları.</a>
 <a href=/uploads/2008/04/Sayisal.class>Sayısal derlenmiş hali.</a></p>
 </div>
 <footer class=post-footer>

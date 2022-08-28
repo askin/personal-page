@@ -245,7 +245,7 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
 </div>
 </header>
 <div class=post-content>
-<p><a href=http://blog.yollu.com/2008/01/22/cikmaz-demeyin-sansinizi-deneyin/>Buradaki</a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.</p>
+<p><a href=/tr/blog/cikmaz-demeyin-sansinizi-deneyin/>Buradaki</a> yazımdan esinlenip yazdım bunu. Azıcık java öğrendim artık uygulama yapma zamanıdır. Eminim daha güzel (hatta belki benim ki iğrenç bi koddur(:) yazılabilir. Ama şimdilik bunu yapabiliyorum.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Sayisal</span> <span style=color:#f92672>{</span>
     <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> _kupon <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span><span style=color:#f92672>[</span>6<span style=color:#f92672>];</span>
     <span style=color:#66d9ef>int</span> _num<span style=color:#f92672>;</span>
@@ -253,38 +253,38 @@ gtk.gdk.threads_init() Bu satırı kodumun başına eklediğimde herşey istedi�
         <span style=color:#66d9ef>int</span> sira <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
         <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>sira <span style=color:#f92672>&lt;</span> 6<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
             _num <span style=color:#f92672>=</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span><span style=color:#f92672>)</span> <span style=color:#f92672>(</span>1 <span style=color:#f92672>+</span> Math<span style=color:#f92672>.</span><span style=color:#a6e22e>random</span><span style=color:#f92672>()</span> <span style=color:#f92672>*</span> 49<span style=color:#f92672>);</span>
-            <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>varmi<span style=color:#f92672>(</span>_kupon<span style=color:#f92672>,</span> _num<span style=color:#f92672>))</span> 
+            <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>varmi<span style=color:#f92672>(</span>_kupon<span style=color:#f92672>,</span> _num<span style=color:#f92672>))</span>
                 _kupon<span style=color:#f92672>[</span>sira<span style=color:#f92672>++]</span> <span style=color:#f92672>=</span> _num<span style=color:#f92672>;</span>
         <span style=color:#f92672>}</span>
     <span style=color:#f92672>}</span>
-    
+
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>varmi</span><span style=color:#f92672>(</span><span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> kupon<span style=color:#f92672>,</span> <span style=color:#66d9ef>int</span> num<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
         <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> x<span style=color:#f92672>:</span> kupon<span style=color:#f92672>)</span> <span style=color:#f92672>{</span><span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>x <span style=color:#f92672>==</span> num<span style=color:#f92672>)</span> <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>;}</span>
         <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>;</span>
     <span style=color:#f92672>}</span>
-    
+
     <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>toString</span><span style=color:#f92672>(){</span>
-       String kuponStr <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
-       <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;</span> 6<span style=color:#f92672>;</span> i<span style=color:#f92672>++)</span> kuponStr <span style=color:#f92672>+=</span> <span style=color:#f92672>(</span>_kupon<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span><span style=color:#f92672>);</span>
+        String kuponStr <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+        <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;</span> 6<span style=color:#f92672>;</span> i<span style=color:#f92672>++)</span> kuponStr <span style=color:#f92672>+=</span> <span style=color:#f92672>(</span>_kupon<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span><span style=color:#f92672>);</span>
         <span style=color:#66d9ef>return</span> kuponStr<span style=color:#f92672>;</span>
     <span style=color:#f92672>}</span>
-    
+
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>){</span>
         <span style=color:#66d9ef>byte</span> kuponSayisi<span style=color:#f92672>;</span>
         <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>args<span style=color:#f92672>.</span><span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> 0<span style=color:#f92672>)</span> kuponSayisi <span style=color:#f92672>=</span> 1<span style=color:#f92672>;</span>
-            <span style=color:#66d9ef>else</span> kuponSayisi <span style=color:#f92672>=</span> Byte<span style=color:#f92672>.</span><span style=color:#a6e22e>parseByte</span><span style=color:#f92672>(</span>args<span style=color:#f92672>[</span>0<span style=color:#f92672>]);</span>
-            
+        <span style=color:#66d9ef>else</span> kuponSayisi <span style=color:#f92672>=</span> Byte<span style=color:#f92672>.</span><span style=color:#a6e22e>parseByte</span><span style=color:#f92672>(</span>args<span style=color:#f92672>[</span>0<span style=color:#f92672>]);</span>
+
         <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 1<span style=color:#f92672>;</span> i <span style=color:#f92672>&lt;=</span> kuponSayisi<span style=color:#f92672>;</span> i<span style=color:#f92672>++){</span>
             System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>print</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; &#34;</span> <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.kupon: &#34;</span><span style=color:#f92672>);</span>
-        System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>((</span><span style=color:#66d9ef>new</span> Sayisal<span style=color:#f92672>()).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
+            System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>((</span><span style=color:#66d9ef>new</span> Sayisal<span style=color:#f92672>()).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
         <span style=color:#f92672>}</span>
     <span style=color:#f92672>}</span>
 <span style=color:#f92672>}</span>
-</code></pre></div><p><code>java Sayisal</code><br>
-şeklinde girerseniz tek kolon oynayacaktır. eğer<br>
-<code>java Sayisal 4 </code><br>
-derseniz 4 kolon oynayacaktır.<br>
-<a href=/uploads/2008/04/Sayisal.java>Sayısal Kaynak kodları.</a><br>
+</code></pre></div><p><code>java Sayisal</code>
+şeklinde girerseniz tek kolon oynayacaktır. eğer
+<code>java Sayisal 4 </code>
+derseniz 4 kolon oynayacaktır.
+<a href=/uploads/2008/04/Sayisal.java>Sayısal Kaynak kodları.</a>
 <a href=/uploads/2008/04/Sayisal.class>Sayısal derlenmiş hali.</a></p>
 </div>
 <footer class=post-footer>
