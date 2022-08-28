@@ -1,6 +1,8 @@
 ---
 title: Eksikler
 description: Eksikler Desc
+Status: draft
+published: false
 ---
 
 - [x] Hakkimda ozet sadece ana sayfada olsun
@@ -22,7 +24,7 @@ description: Eksikler Desc
 - [ ] Blog ekraninda Blogs yaziyor, onu `Blog Posts` yapalim, hatta turkcelestirme deneyelim
 - [x] Dil destegine bak
    - [x] Ingilezce ekle
-- [ ] Kod renklendirme bir tik daha iyi olabilir
+- [x] Kod renklendirme bir tik daha iyi olabilir
 - [x] Ana sayfada next yerine tum yazilar olsun
 - [x] Favicon olsun
 - [x] Blog kisminda 5 den fazla post olsun
