@@ -77,4 +77,4 @@ bize "{gmkic" değerini döndürüyordu. "agmkic" gibi bir değer bizim için da
 ```
 
 Burda eklediğim satırlar karaktere çevirilecek sayının değerinin 122den büyük olup olmadığını kontrol ediyor. Eğer z+1=123 gibi bir değer elde ederse bu değer a'ya çevirliyor.  
-Kodlara [Burdan](http://www.askin.ws/doc/sezar.scm) ulaşabilirsiniz.
+Kodlara [Burdan](/doc/sezar.scm) ulaşabilirsiniz.

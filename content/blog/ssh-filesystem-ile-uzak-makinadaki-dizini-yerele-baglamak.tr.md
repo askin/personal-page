@@ -9,7 +9,7 @@ Status: published
 ---
 
 Eğer linux kullanıyorsanız ve herhangi bir uzak makinaya ssh erişimi hakkınız varsa, ssh protokolü kullanarak uzak makinanın herhangi bir dizinini sanki kendi harddiskinizdeymiş gibi kullanabilirsiniz.
-Ben daha önce bahsettiğim [internet canavarı:)](http://blog.yollu.com/2008/02/21/telekom-artik-kork-benden/) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
+Ben daha önce bahsettiğim [internet canavarı :)](/tr/blog/telekom-artik-kork-benden/) için bu sistemi kullanıyorum. Ekran kartı pek iyi olmadığı için film izlerken sorun çıkartıyordu(özellikle alt yazılı filmlerde senkron sorunu oluyordu). Ve film arşivim o makinada olduğu için her seferde http protokolü üzerinden filmi kendi makinama çekip izlemek zor geliyordu.
 Kullanacağımız programın adı sshfs yani SSH Filesystem.
 Kurulum:
 

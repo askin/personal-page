@@ -3,7 +3,7 @@ Title: 2000'i devirdik, yaşasın SPAM
 Date: 2009-08-03T22:17:00+03:00
 Author: Aşkın Özgür
 Category: Günlük
-Tags: ["akismet", "Blog", "comment", "gmail", "post"]
+Tags: ["akismet", "Blog", "comment", "gmail", "post", "spam"]
 Slug: 2000i-devirdik-yasasin-spam
 Status: published
 ---
