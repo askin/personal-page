@@ -95,47 +95,6 @@ Linux
 <header class=post-header>
 <div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
 <h1 class=post-title>
-<a aria-label="post link to Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak" href=https://askin.ws/tr/blog/bir-gnulinux-kurulumunu-baska-bir-harddiskebolume-tasimak/>Bir GNU/Linux kurulumunu başka bir harddiske/bölüme taşımak</a>
-</h1>
-<div class=post-meta><span title="2009-04-06 22:22:00 +0300 +0300">Nisan 6, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
-</div>
-</header>
-<div class=post-content>
-<p><img loading=lazy src=/uploads/2009/04/linux-tux.jpg alt=GNU/Linux title=GNU/Linux>
-Öncelikle bir çalışan cd ile sistem açılır, benim tercihim gparted live cd. Sizin elinizin altında ne varsa kabuldur. İlla çalışan cd olmasına gerek yok, herhangi bir linux cdside olabilir. Bize mount, cp ve nano komutları lazım. Bunları sağlayan herhangi bir cd kullanılabilir.</p>
-<p>Taşınacak kurulumun hangi disk bölümünde olduğu bilinmeli. Ben 2. bölümdeki kurulumu 1. bölüme taşıyacağım. Yani /dev/hdc3 den /dev/hdc1 e taşıma yapacağım(sizdeki disk isimleri muhtemelen farklıdır).</p>
-<p>Cd ile sistemi başlattıktan sonra konsola düşmemiz gerekmekte. Ctrl + Alt + F1 tuş kombinasyonu muhtemelen iş görecektir. Ben live cd kullandığım için grafik ekranla karşılaştım, burdan bi terminal açarak işimi göreceğim.</p>
-<p>Yapacağımız işlemler için root olmamız gerekiyor. Bu işlemi yapacak cesaretiniz varsa, nasıl root olunur bilginizde vardır diye düşünüyorum :)</p>
-<p>Önce diskleri mount ediyoruz</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir /target /source
-mount /dev/hdc1 /target
-mount /dev/hdc3 -o ro /source
-</code></pre></div><p>Mount işleminden sonra kopyalamaya başlayabiliriz.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cp -a /source/* /target
-</code></pre></div><p>Bu işlem kopyalanacak verinin boyutuna göre uzunca sürebilir.
-Kopyalama tamamlandıktan sonra yeni diskteki /etc/fstab dosyasını ve eski diskteki /boot/grub/menu.lst dosyalarını değiştirmemiz gerekiyor. fstab dosyasında &ldquo;/&rdquo; dizininin bağlanacağı yeni bölümü gösteriyoruz. menu.lst dosyasında ise yeni bölümün boot edilebilmesi için gerekli ayarları yapıyoruz.</p>
-<p>Eğer eski bölümü silecek veya orayı başka amaç için kullanacaksanız mbr kaydını yenilemeniz gerekmektedir, yani grubu tekrar yeni disk için kurmalısınız.</p>
-<pre><code>grub
- &gt; root (hd0, 0)
- &gt; setup (hd0)
-</code></pre>
-<p>Bende bu şekilde kuruldu, sizde bölüm numaralarına göre değişecektir kurulum.</p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
-<li><a href=https://askin.ws/tr/tags/move/>move</a></li>
-<li><a href=https://askin.ws/tr/tags/partition/>partition</a></li>
-<li><a href=https://askin.ws/tr/tags/shell/>Shell</a></li>
-</ul>
-</ul>
-</footer>
-<hr>
-</article>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
-<h1 class=post-title>
 <a aria-label="post link to Pardus-Linux.Org e-dergi bana süpriz yaptı..." href=https://askin.ws/tr/blog/pardus-linuxorg-e-dergi-bana-supriz-yapti/>Pardus-Linux.Org e-dergi bana süpriz yaptı...</a>
 </h1>
 <div class=post-meta><span title="2009-03-11 01:36:00 +0300 +0300">Mart 11, 2009</span>&nbsp;·&nbsp;Aşkın Özgür
@@ -294,7 +253,7 @@ komutunu kullanarak sürecin hangi uygulamaya ait olduğunuz öğrenebiliriz.</p
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/kabuk/>Kabuk</a></li>
+<li><a href=https://askin.ws/tr/tags/konsol/>Konsol</a></li>
 <li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
 </ul>
 </ul>
