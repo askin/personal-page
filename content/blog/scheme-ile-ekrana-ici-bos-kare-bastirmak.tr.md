@@ -3,7 +3,7 @@ Title: Scheme ile ekrana içi boş dikdörtgen bastırmak
 Date: 2007-12-20T09:13:00+03:00
 Author: Aşkın Özgür
 Category: Programlama
-Tags: []
+Tags: ["Scheme"]
 Slug: scheme-ile-ekrana-ici-bos-kare-bastirmak
 Status: published
 ---

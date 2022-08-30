@@ -3,7 +3,7 @@ Title: Scheme hakkında birkaç kitap
 Date: 2007-10-18T06:37:00+03:00
 Author: Aşkın Özgür
 Category: Programlama
-Tags: ["book", "e-book"]
+Tags: ["book", "Scheme"]
 Slug: scheme-hakkinda-birkac-kitap
 Status: published
 ---
@@ -23,8 +23,7 @@ Teach Yourself Scheme in Fixnum days // Yeni başlayanlar için iyi bir başlang
 <http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html>
 
 Ayrıca  
-<http://www.yollu.com/documents/programming/scheme>  
-adresinden scheme hakkındaki kitapları sıkıtırılmış haliyle indirebilirsiniz
+[Buradan](/documents/programming/scheme/Teach_yourself_scheme_fixday.zip "Teach_yourself_scheme_fixday") ve [buradan](/documents/programming/scheme/the_scheme_programming_language.zip "the_scheme_programming_language")  scheme hakkındaki kitapları sıkıtırılmış haliyle indirebilirsiniz
 
 Kitapları bitirdik sıra geldi internet sitelerine
 

@@ -10,4 +10,4 @@ Status: published
 
 Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.
 
-[same.scm](/doc/same.scm>)
+[same.scm](/doc/same.scm)

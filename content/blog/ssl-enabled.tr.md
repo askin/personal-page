@@ -3,7 +3,7 @@ Title: SSL Enabled
 Date: 2014-03-11T18:51:00+03:00
 Author: Aşkın Özgür
 Category: Günlük
-Tags: []
+Tags: ["Let's Encrypt", "EEF", "Certificate"]
 Slug: ssl-enabled
 Status: published
 ---

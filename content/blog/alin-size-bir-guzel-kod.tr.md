@@ -3,7 +3,7 @@ Title: Alın size bir güzel kod:)
 Date: 2007-12-28T16:29:00+03:00
 Author: Aşkın Özgür
 Category: Programlama
-Tags: []
+Tags: ["Programming", "Scheme"]
 Slug: alin-size-bir-guzel-kod
 Status: published
 ---

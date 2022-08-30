@@ -3,7 +3,7 @@ Title: En basit recursion - özyineleme mantığı
 Date: 2007-10-26T16:09:00+03:00
 Author: Aşkın Özgür
 Category: Programlama
-Tags: []
+Tags: ["Scheme", "Programming"]
 Slug: en-basit-recursion-ozyineleme-mantigi
 Status: published
 ---
