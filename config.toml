@@ -9,6 +9,10 @@ disqusShortname = "askin-ozgurun-web-gunlugu"
 defaultContentLanguage = "en"
 paginate = 10
 
+[outputs]
+  home = ['HTML', 'AMP', 'RSS', 'JSON']
+
+
 [taxonomies]
   tag = "tags"
   category = "categories"
@@ -127,6 +131,12 @@ paginate = 10
       weight = 6
       url = "/tags/"
 
+    [[languages.tr.menu.main]]
+      name = "Arama"
+      identifier = "arama"
+      weight = 7
+      url = "arama/"
+
   [languages.en]
     description = "Aşkın Özgür's Web Blog and Personal Page"
 
@@ -164,6 +174,12 @@ paginate = 10
       identifier = "tags"
       weight = 6
       url = "/tags/"
+
+    [[languages.en.menu.main]]
+      name = "Search"
+      identifier = "search"
+      weight = 7
+      url = "search/"
 
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files
