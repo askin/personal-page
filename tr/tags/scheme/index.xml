@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>scheme on Aşkın Özgür</title><link>https://askin.ws/tr/tags/scheme/</link><description>Recent content in scheme on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 22 Jan 2008 17:29:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tr/tags/scheme/index.xml" rel="self" type="application/rss+xml"/><item><title>Çıkmaz Demeyin Şansınızı Deneyin</title><link>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin/</link><pubDate>Tue, 22 Jan 2008 17:29:00 +0300</pubDate><guid>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin/</guid><description>&lt;p>Bu girdi &lt;a href="http://tutkudalmaz.org/gunluk/?p=21">Burdaki&lt;/a> girdiden esinlenilerek yazıldı.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Scheme on Aşkın Özgür</title><link>https://askin.ws/tr/tags/scheme/</link><description>Recent content in Scheme on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 22 Jan 2008 17:29:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tr/tags/scheme/index.xml" rel="self" type="application/rss+xml"/><item><title>Çıkmaz Demeyin Şansınızı Deneyin</title><link>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin/</link><pubDate>Tue, 22 Jan 2008 17:29:00 +0300</pubDate><guid>https://askin.ws/tr/blog/cikmaz-demeyin-sansinizi-deneyin/</guid><description>&lt;p>Bu girdi &lt;a href="http://tutkudalmaz.org/gunluk/?p=21">Burdaki&lt;/a> girdiden esinlenilerek yazıldı.&lt;/p>
 &lt;p>E madem pyton ile sayısal kuponu yapılıyor biz niye scheme ile yapmayalım bunu demi:)&lt;br>
 Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama şimdilik böyle oynayalım demi:)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">sayisal&lt;/span>)
@@ -17,7 +17,49 @@ Probleme göre kod bana çok uzun geldi. Belki ilerde optimize edebilirim. Ama �
 &lt;span style="color:#75715e">;aslında define kısmı çıkartılarak buna gerek kalmamayabilir&lt;/span>
 &lt;span style="color:#75715e">;ama ilerde belki başka birşey içinde kullanırım:)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>DrScheme v372 Çıktı</title><link>https://askin.ws/tr/blog/drscheme-v372-cikti/</link><pubDate>Sat, 29 Dec 2007 13:40:00 +0300</pubDate><guid>https://askin.ws/tr/blog/drscheme-v372-cikti/</guid><description>DrScheme v372 çıktı. Bu versiyonunda birçok hatanın düzeltildiği ve birkaç yeni özellik eklendiği belirtiliyor. Sanırım beni ençok etkileyen özellik kod tamamlama özelliği. Siz bir kod yazarken o size ekleyebileceğiniz konutları sıralıyor. Ancak bu özellik çok kullanışlı bir halde gelmiyor. Tamamlama istediğimiz zaman [ Ctrl / ] tuş kombinasyonunu kullanmamız gerekmekte. Bende [ Ctrl Shift 7 ] kombinasyonunun kullanılması gerekiyor.
-Ayrıca burdan indirebilirsiniz.</description></item><item><title>Sezar şifreleme</title><link>https://askin.ws/tr/blog/sezar-sifreleme/</link><pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate><guid>https://askin.ws/tr/blog/sezar-sifreleme/</guid><description>&lt;p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p>
+Ayrıca burdan indirebilirsiniz.</description></item><item><title>Alın size bir güzel kod:)</title><link>https://askin.ws/tr/blog/alin-size-bir-guzel-kod/</link><pubDate>Fri, 28 Dec 2007 16:29:00 +0300</pubDate><guid>https://askin.ws/tr/blog/alin-size-bir-guzel-kod/</guid><description>Alın size bir güzel kod:) Benim hoşuma gitti eminim sizin hoşunuzada gidecek.
+(define (goster str) (let loop ((str str)) (if (equal? str &amp;#34;&amp;#34;) (begin (sleep 0) (display &amp;#34;&amp;#34;)) (begin (sleep 1/2) (display (string-ref str 0)) (loop (substring str 1))))))</description></item><item><title>Scheme ile ekrana içi boş dikdörtgen bastırmak</title><link>https://askin.ws/tr/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</link><pubDate>Thu, 20 Dec 2007 09:13:00 +0300</pubDate><guid>https://askin.ws/tr/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">kare&lt;/span> x y)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((= i x))
+(&lt;span style="color:#a6e22e">newline&lt;/span>)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j y))
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= i &lt;span style="color:#ae81ff">0&lt;/span>) (= i (- x &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= j &lt;span style="color:#ae81ff">0&lt;/span>) (= j (- y &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>)
+(display &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>bu kod aşağıdaki gibi bir şekil oluşruracak&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">**********
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+**********
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu şekil pek hoş değil. Eğer display&amp;rsquo;in içini biraz düzenlersek çok dahahoş şekilerle karşılaşırız.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">kare&lt;/span> x y)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>))) ((= i x))
+(&lt;span style="color:#a6e22e">newline&lt;/span>)
+(&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j y))
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= i &lt;span style="color:#ae81ff">0&lt;/span>) (= i (- x &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;* &amp;#34;&lt;/span>)
+(&lt;span style="color:#66d9ef">if &lt;/span>(&lt;span style="color:#66d9ef">or &lt;/span>(= j &lt;span style="color:#ae81ff">0&lt;/span>) (= j (- y &lt;span style="color:#ae81ff">1&lt;/span>)))
+(display &lt;span style="color:#e6db74">&amp;#34;* &amp;#34;&lt;/span>)
+(display &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>))))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu kod&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">* * * * * * * * * *
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+* *
+* * * * * * * * * *
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>şeklini oluşturacaktır. Tabiki etkileşim penceresinde şekil daha düzgün çıkacaktır.&lt;/p></description></item><item><title>Sezar şifreleme</title><link>https://askin.ws/tr/blog/sezar-sifreleme/</link><pubDate>Wed, 12 Dec 2007 05:35:00 +0300</pubDate><guid>https://askin.ws/tr/blog/sezar-sifreleme/</guid><description>&lt;p>Sezar şifreleme için yazdığım ilk kod aşağıdaki gibiydi&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
 (&lt;span style="color:#66d9ef">define &lt;/span>(&lt;span style="color:#a6e22e">sezar&lt;/span> str lst)
 (&lt;span style="color:#66d9ef">do &lt;/span>((&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ i &lt;span style="color:#ae81ff">1&lt;/span>)) (&lt;span style="color:#a6e22e">j&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> (+ j &lt;span style="color:#ae81ff">1&lt;/span>))) ((= j (string-length str)))
@@ -32,4 +74,26 @@ str2
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Ancak bu kod pek hoşuma gitmedi üzerinde biraz daha oynama yapmak gerekiyordu. Mesela en baştaki&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scheme" data-lang="scheme">(&lt;span style="color:#66d9ef">define &lt;/span>str2 &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>pek hoş durmuyordu ve hiç bir sonuç gönmüyordu. Ekstradan srt2 nin değerini sorgulamak gerekiyordu.&lt;/p></description></item><item><title>Same oyunu</title><link>https://askin.ws/tr/blog/same-oyunu/</link><pubDate>Wed, 21 Nov 2007 17:10:00 +0300</pubDate><guid>https://askin.ws/tr/blog/same-oyunu/</guid><description>Merhaba arkadaşlarımın isteği üzerine ödev olarak verilmiş olan same oyununun kendi yazdığım scheme kodlarını internete koydum. Olaki bigün sizden de scheme ile same oyunu yazmanızı isterlerse bu kodlardan faydalanabilirsiniz.
-same.scm</description></item></channel></rss>
+same.scm</description></item><item><title>En basit recursion - özyineleme mantığı</title><link>https://askin.ws/tr/blog/en-basit-recursion-ozyineleme-mantigi/</link><pubDate>Fri, 26 Oct 2007 16:09:00 +0300</pubDate><guid>https://askin.ws/tr/blog/en-basit-recursion-ozyineleme-mantigi/</guid><description>&lt;p>Benin algılamakta en zorluk çektiğim kavramdı. Ancak öğrenince çok çok işe yarıyor.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scm" data-lang="scm">(&lt;span style="color:#a6e22e">define&lt;/span>
+(&lt;span style="color:#a6e22e">lst-length&lt;/span> lst)
+(&lt;span style="color:#66d9ef">if &lt;/span>(null? lst)
+&lt;span style="color:#ae81ff">0&lt;/span>
+(+ &lt;span style="color:#ae81ff">1&lt;/span> (&lt;span style="color:#a6e22e">lst-length&lt;/span> (cdr lst)))))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Kodu tanımlayacak olursak (null? lst) lst değişkeninde tuttuğumuz listenin boş olup olmadığını kontrol ediyor. Boş listenin eleman sayısının 0 olduğunu biliyoruz. Listemiz genelde ilk halinde boş olmayacağı için if condition direk #f verip 2. satıra geçecek. özyinelemenin can damarı aslında burda. Biz 1 eksik elemanlı listenin eleman sayısıyla 1i topluyoruz. Sonra tekrar 1 eksik elemanlı listenin 1 elemanını daha çıkartıp, o listenin eleman sayısıyla topluyoruz. Taki (null? lst) #t olana kadar. Ozamanda zaten fonkiyon 0 verecek ve tüm o 1leri toplayacak. size tavsiyem bu konu hakkında çok düşüünün elinizde olan örnekleri tekrar tekrar uygulayın.&lt;/p></description></item><item><title>Scheme hakkında birkaç kitap</title><link>https://askin.ws/tr/blog/scheme-hakkinda-birkac-kitap/</link><pubDate>Thu, 18 Oct 2007 06:37:00 +0300</pubDate><guid>https://askin.ws/tr/blog/scheme-hakkinda-birkac-kitap/</guid><description>&lt;p>Madem tekrardan scheme öğrenmeye başladım o konu hakkında braz yazı yazalım değilmi. İşe bir kitap ile başlayalım.&lt;/p>
+&lt;p>Öncelikle scheme kitaplarıyla başlasak mantıklı olacak gibi geliyor.scheme hakkında birçok kitap bulunabilir fakat ben aramada ilk karşıma çıkan seçenekleri burda vereceğim biraz google güvenilir gibi geldi bu konuda.&lt;/p>
+&lt;p>How to Design Programs // Dr scheme projesiyle birlikte yürüyen bir kitap bu açıdan en sağlam kaynaklardan biri olduğu görüşündeyim. Sitesi aşağıda. Site üzerinden e-book olarak kitaba ulaşabilirsiniz.&lt;br>
+&lt;a href="http://www.htdp.org">http://www.htdp.org&lt;/a>&lt;/p>
+&lt;p>The Scheme Programming Language // Scheme için kullandığım tek kaynaktı. Ancak tek kaynak hiç bir şekilde yetmiyor.&lt;br>
+Aynı şekilde site üzerinden bu kitabada ulaşabilirsiniz.&lt;br>
+&lt;a href="http://www.scheme.com/tspl3/">http://www.scheme.com/tspl3/&lt;/a>&lt;/p>
+&lt;p>Teach Yourself Scheme in Fixnum days // Yeni başlayanlar için iyi bir başlangıç olacağını düşünüyorum&lt;br>
+&lt;a href="http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html">http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme.html&lt;/a>&lt;/p>
+&lt;p>Ayrıca&lt;br>
+&lt;a href="https://askin.ws/documents/programming/scheme/Teach_yourself_scheme_fixday.zip" title="Teach_yourself_scheme_fixday">Buradan&lt;/a> ve &lt;a href="https://askin.ws/documents/programming/scheme/the_scheme_programming_language.zip" title="the_scheme_programming_language">buradan&lt;/a> scheme hakkındaki kitapları sıkıtırılmış haliyle indirebilirsiniz&lt;/p>
+&lt;p>Kitapları bitirdik sıra geldi internet sitelerine&lt;/p>
+&lt;p>Dr.Scheme Ortamını indirebileceğimiz ve onunla ilgili hatta scheme ile ilgili çeşitli kaynaklara ulaşabileceğimiz bir site.&lt;br>
+&lt;a href="http://www.drscheme.org">http://www.drscheme.org&lt;/a>&lt;/p>
+&lt;p>Son olarakta schemers&lt;br>
+Scheme programlama dili hakkında son haberleri, kütüphaneleri vs. bulabileceğiniz bir site.&lt;br>
+&lt;a href="http://www.schemers.org/">http://www.schemers.org/&lt;/a>&lt;/p></description></item></channel></rss>
