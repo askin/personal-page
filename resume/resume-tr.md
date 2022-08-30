@@ -22,8 +22,8 @@ Askerlik
 Bildiğim Diller
 :    *İngilizce* (İyi)
 
-Blog
-:   [https://blog.askin.ws](https://blog.askin.ws)
+Blog ve Site
+:   [https://askin.ws/tr](https://askin.ws/tr)
 
 GitHub
 :   [https://github.com/askin](https://github.com/askin)
@@ -35,7 +35,7 @@ OpenHUB
 :   [https://www.openhub.net/accounts/kelebek](https://www.openhub.net/accounts/kelebek)
 
 LinkedIn
-:   [https://www.linkedin.com/in/askinyollu](https://www.linkedin.com/in/askinyollu)
+:   [https://www.linkedin.com/in/askinozgur](https://www.linkedin.com/in/askinozgur)
 
 İş Deneyimi
 --------------------
@@ -99,4 +99,4 @@ Eğitim
 :    *75. Yıl Beylikdüzü Cumhuriyet Lisesi*
 
 ----
-> <askin@askin.ws> / +905302821648 / [https://blog.askin.ws](https://blog.askin.ws)
+> <askin@askin.ws> / +905302821648 / [https://askin.ws/tr](https://askin.ws/tr)

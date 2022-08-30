@@ -28,8 +28,8 @@ Military Service
 Languages
 :    *Turkish*, *English*
 
-Blog
-:   [https://blog.askin.ws](https://blog.askin.ws)
+Blog and Website
+:   [https://askin.ws](https://askin.ws)
 
 GitHub
 :   [https://github.com/askin](https://github.com/askin)
@@ -38,7 +38,7 @@ Twitter
 :   [https://twitter.com/kelebeks](https://twitter.com/kelebeks)
 
 LinkedIn
-:   [https://www.linkedin.com/in/askinyollu](https://www.linkedin.com/in/askinyollu)
+:   [https://www.linkedin.com/in/askinozgur](https://www.linkedin.com/in/askinozgur)
 
 Corporate Experience
 --------------------
@@ -105,4 +105,4 @@ Education
 :    *75. Yıl Cumhuriyet High School*
 
 ----
-> <askin@askin.ws> / +905302821648 / [https://blog.askin.ws](https://blog.askin.ws)
+> <askin@askin.ws> / +905302821648 / [https://askin.ws](https://askin.ws)
