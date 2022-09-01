@@ -113,25 +113,20 @@ Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:</p>
 <li>sd: /dev/sde</li>
 </ul>
 <p>Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz</p>
-<pre><code>dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
-</code></pre>
-<p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.</p>
-<pre><code>mkdir /tmp/mnt_sd /tmp/mnt_usb
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>dd <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>2013-02-09-wheezy-raspbian.img of<span style=color:#f92672>=</span>/dev/sdd
+</code></pre></div><p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir /tmp/mnt_sd /tmp/mnt_usb
 mount /dev/sdd1 /tmp/mnt_usb
 mount /dev/sde1 /tmp/mnt_sd
 
 cp /tmp/mnt_usb/* /tmp/mnt_sd
-</code></pre>
-<p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada <em>root=/dev/mmcblk0p2</em> olan kısmı <em>root=/dev/sda2</em> olarak değiştirin.</p>
+</code></pre></div><p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada <em>root=/dev/mmcblk0p2</em> olan kısmı <em>root=/dev/sda2</em> olarak değiştirin.</p>
 <p><a href=http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/>Kaynak</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/boot/>boot</a></li>
 <li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
 <li><a href=https://askin.ws/tr/tags/raspberry-pi/>raspberry pi</a></li>
-<li><a href=https://askin.ws/tr/tags/raspbian/>raspbian</a></li>
-<li><a href=https://askin.ws/tr/tags/sd/>sd</a></li>
 </ul>
 </ul>
 </footer>

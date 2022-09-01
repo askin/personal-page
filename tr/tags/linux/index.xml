@@ -7,15 +7,13 @@ Benim sistemimde usb bellek ve sd kart aşağıdaki şekilde tanındı:&lt;/p>
 &lt;li>sd: /dev/sde&lt;/li>
 &lt;/ul>
 &lt;p>Öncelikle indirdiğimiz imaj dosyasını usb belleğimize kopyalıyoruz&lt;/p>
-&lt;pre>&lt;code>dd if=2013-02-09-wheezy-raspbian.img of=/dev/sdd
-&lt;/code>&lt;/pre>
-&lt;p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.&lt;/p>
-&lt;pre>&lt;code>mkdir /tmp/mnt_sd /tmp/mnt_usb
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>2013-02-09-wheezy-raspbian.img of&lt;span style="color:#f92672">=&lt;/span>/dev/sdd
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Elimizde bulunan sd karta 1 adet fat32 bölüm oluşturuyoruz (oluşturduğunuz bölüm hem ilk sırada hem de birincil bir bölüm olmalı). Bunu ister Gparted gibi bir araçla yapın isterseniz fdisk kullanın. Bölümleme işlemlerini yaptıktan sonra aşağıdaki komutları uygulayın.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir /tmp/mnt_sd /tmp/mnt_usb
 mount /dev/sdd1 /tmp/mnt_usb
 mount /dev/sde1 /tmp/mnt_sd
 cp /tmp/mnt_usb/* /tmp/mnt_sd
-&lt;/code>&lt;/pre>
-&lt;p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada &lt;em>root=/dev/mmcblk0p2&lt;/em> olan kısmı &lt;em>root=/dev/sda2&lt;/em> olarak değiştirin.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu işlemleri yaptıktan sonra /tmp/mnt_sd/cmdline.txt dosyasını düzenlememiz gerekmekte. Bu dosyada &lt;em>root=/dev/mmcblk0p2&lt;/em> olan kısmı &lt;em>root=/dev/sda2&lt;/em> olarak değiştirin.&lt;/p>
 &lt;p>&lt;a href="http://www.networkinghowtos.com/howto/raspbian-on-raspberry-pi-using-sd-card-usb-memory-stick/">Kaynak&lt;/a>&lt;/p></description></item><item><title>Bir dosyanın boş olup olmadığını kontrol etme</title><link>https://askin.ws/tr/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</link><pubDate>Wed, 07 Nov 2012 13:44:00 +0300</pubDate><guid>https://askin.ws/tr/blog/bir-dosyanin-bos-olup-olmadigini-kontrol-etme/</guid><description>Shell script yazarken bir dosyanın boş olup olmadığını kontrol etmemiz gerekebilir. Bunu yapmak için birkaç yöntem yazacağım.
 satirsayisi=`wc -l 194.27.108.90 | awk &amp;#39;{split($0,a,&amp;#34; &amp;#34;); print a[1]}&amp;#39;` if [ $satirsayisi == 0 ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z $(cat dosyaadi) ]; then echo &amp;#34;dosya bos&amp;#34;; fi if [ -z `cat dosyaadi` ]; then echo &amp;#34;dosya bos&amp;#34;; fi Ve en güzeli
 if [ -s dosyaadi ]; then echo &amp;#34;Dosya dolu&amp;#34;; else echo &amp;#34;Dosya bos&amp;#34;; fi</description></item><item><title>Subversion sunucu kurulumu</title><link>https://askin.ws/tr/blog/subversion-sunucu-kurulumu/</link><pubDate>Thu, 23 Aug 2012 18:16:00 +0300</pubDate><guid>https://askin.ws/tr/blog/subversion-sunucu-kurulumu/</guid><description>&lt;p>Linux üzerinde kurulumdan bahsedeceğim. Öncelikle kullandığınız dağıtımın paket deposundan subversion paketini kurmalısınız. Ben debian kullandığım için&lt;/p>
