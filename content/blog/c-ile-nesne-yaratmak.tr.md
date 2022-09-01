@@ -3,7 +3,7 @@ Title: C ile Nesne Yaratmak
 Date: 2010-04-27T04:08:00+03:00
 Author: Aşkın Özgür
 Category: Programlama
-Tags: ["c/c++", "Nesne", "OOP"]
+Tags: ["c/c++", "OOP"]
 Slug: c-ile-nesne-yaratmak
 Status: published
 ---
