@@ -100,6 +100,36 @@ Linux
 <header class=post-header>
 <div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
 <h1 class=post-title>
+<a aria-label="post link to Docker Iptables Kurallarını Sallamıyor" href=https://askin.ws/tr/blog/docker-iptables-kurallarini-sallamiyor/>Docker Iptables Kurallarını Sallamıyor</a>
+</h1>
+<div class=post-meta><span title="2022-12-08 18:30:00 +0300 +0300">Aralık 8, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
+</div>
+</header>
+<div class=post-content>
+<p>Farketmem nedense biraz zaman aldı, bir docker container&rsquo;ının portunu publish ettiğimizde arka tarafta bizden habersiz o port erişime açılıyor. UFW, FirewallD ya da doğrudan iptables kullanmanız farketmiyor.</p>
+<p>Bazı servislere gelen anlamsız istekleri incelerken farkettim bunu. Çözmem de biraz sancılı oldu, yanlış bir firewall ayarı nedeniyle böyle birşey olduğunu düşündüğüm için çözüm bulmam zorlaştı. Siz de böyle bir durumdaysanız aşağıdaki yöntemlerden birini kullanabilirsiniz.</p>
+<p><code>/etc/docker/daemon.json</code> dosyasına aşağıdaki satırları ekledikten sonra docker daemonu yeniden başlatabilirsiniz.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;iptables&#34;</span> : <span style=color:#66d9ef>false</span>
+}
+</code></pre></div><p>Ya da</p>
+<p>Docker servisini başlatırken <code>--iptables=false</code> parametresiyle başlatabilirsiniz.</p>
+<p>Bu yazıda aynı problemi yaşayan başka birisi var. Eğlenceli bir yazı olmuş ona da bakabilirsiniz. <a href=https://erfansahaf.medium.com/why-docker-and-firewall-dont-get-along-with-each-other-ddca7a002e10 title="Why Docker and Firewall don’t get along with each other!">Why Docker and Firewall don’t get along with each other!</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://askin.ws/tr/tags/devops/>Devops</a></li>
+<li><a href=https://askin.ws/tr/tags/docker/>Docker</a></li>
+<li><a href=https://askin.ws/tr/tags/linux/>linux</a></li>
+</ul>
+</ul>
+</footer>
+<hr>
+</article>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
+<h1 class=post-title>
 <a aria-label="post link to İngilizce Klavye Düzeninde Türkçe Karakter Kullanmak" href=https://askin.ws/tr/blog/ingilizce-klavye-duzeninde-turkce-karakter-kullanmak/>İngilizce Klavye Düzeninde Türkçe Karakter Kullanmak</a>
 </h1>
 <div class=post-meta><span title="2022-08-23 22:00:00 +0300 +0300">Ağustos 23, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
@@ -513,31 +543,6 @@ Tüm yetkiler:</p>
 <li><a href=https://askin.ws/tr/tags/lcd/>lcd</a></li>
 <li><a href=https://askin.ws/tr/tags/linux/>linux</a></li>
 <li><a href=https://askin.ws/tr/tags/parallel-port/>parallel port</a></li>
-</ul>
-</ul>
-</footer>
-<hr>
-</article>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
-<h1 class=post-title>
-<a aria-label="post link to Saçmalayan konsol ekranını temizleme" href=https://askin.ws/tr/blog/sacmalayan-konsol-ekranini-temizleme/>Saçmalayan konsol ekranını temizleme</a>
-</h1>
-<div class=post-meta><span title="2010-12-08 11:51:00 +0300 +0300">Aralık 8, 2010</span>&nbsp;·&nbsp;Aşkın Özgür
-</div>
-</header>
-<div class=post-content>
-<p>Bir binary dosyayı <em>cat</em> ile görüntüleyince konsol ekranı sapıtabiliyor :) Böyle bir durumda konsolu adam etmek için</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash> reset
-</code></pre></div><p>komutunu kullanabiliriz. Her seferinde komutu unutup neydi neydi diye düşünüyorum. Buraya yazıyorum ki bir daha unutursam hemen bakıp bulayım :)</p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/binary/>binary</a></li>
-<li><a href=https://askin.ws/tr/tags/cat/>cat</a></li>
-<li><a href=https://askin.ws/tr/tags/konsol/>Konsol</a></li>
-<li><a href=https://askin.ws/tr/tags/linux/>Linux</a></li>
 </ul>
 </ul>
 </footer>

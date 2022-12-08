@@ -103,6 +103,67 @@ Blogs
 <header class=post-header>
 <div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
 <h1 class=post-title>
+<a aria-label="post link to Scheme ile ekrana içi boş dikdörtgen bastırmak" href=https://askin.ws/tr/blog/scheme-ile-ekrana-ici-bos-kare-bastirmak/>Scheme ile ekrana içi boş dikdörtgen bastırmak</a>
+</h1>
+<div class=post-meta><span title="2007-12-20 09:13:00 +0300 +0300">Aralık 20, 2007</span>&nbsp;·&nbsp;Aşkın Özgür
+</div>
+</header>
+<div class=post-content>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>kare</span> x y)
+  (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>i</span> <span style=color:#ae81ff>0</span> (+ i <span style=color:#ae81ff>1</span>))) ((= i x))
+    (<span style=color:#a6e22e>newline</span>)
+    (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>j</span> <span style=color:#ae81ff>0</span> (+ j <span style=color:#ae81ff>1</span>))) ((= j y))
+      (<span style=color:#66d9ef>if </span>(<span style=color:#66d9ef>or </span>(= i <span style=color:#ae81ff>0</span>) (= i (- x <span style=color:#ae81ff>1</span>)))
+          (display <span style=color:#e6db74>&#34;*&#34;</span>)
+          (<span style=color:#66d9ef>if </span>(<span style=color:#66d9ef>or </span>(= j <span style=color:#ae81ff>0</span>) (= j (- y <span style=color:#ae81ff>1</span>)))
+              (display <span style=color:#e6db74>&#34;*&#34;</span>)
+              (display <span style=color:#e6db74>&#34; &#34;</span>))))))
+</code></pre></div><p>bu kod aşağıdaki gibi bir şekil oluşruracak</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>**********
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+**********
+</code></pre></div><p>Ancak bu şekil pek hoş değil. Eğer display&rsquo;in içini biraz düzenlersek çok dahahoş şekilerle karşılaşırız.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>(<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>kare</span> x y)
+  (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>i</span> <span style=color:#ae81ff>0</span> (+ i <span style=color:#ae81ff>1</span>))) ((= i x))
+    (<span style=color:#a6e22e>newline</span>)
+    (<span style=color:#66d9ef>do </span>((<span style=color:#a6e22e>j</span> <span style=color:#ae81ff>0</span> (+ j <span style=color:#ae81ff>1</span>))) ((= j y))
+      (<span style=color:#66d9ef>if </span>(<span style=color:#66d9ef>or </span>(= i <span style=color:#ae81ff>0</span>) (= i (- x <span style=color:#ae81ff>1</span>)))
+          (display <span style=color:#e6db74>&#34;* &#34;</span>)
+          (<span style=color:#66d9ef>if </span>(<span style=color:#66d9ef>or </span>(= j <span style=color:#ae81ff>0</span>) (= j (- y <span style=color:#ae81ff>1</span>)))
+              (display <span style=color:#e6db74>&#34;* &#34;</span>)
+              (display <span style=color:#e6db74>&#34;  &#34;</span>))))))
+</code></pre></div><p>Bu kod</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme>* * * * * * * * * * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+* * * * * * * * * *
+</code></pre></div><p>şeklini oluşturacaktır. Tabiki etkileşim penceresinde şekil daha düzgün çıkacaktır.</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://askin.ws/tr/tags/scheme/>Scheme</a></li>
+</ul>
+</ul>
+</footer>
+<hr>
+</article>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
+<h1 class=post-title>
 <a aria-label="post link to Tanrı Kent" href=https://askin.ws/tr/blog/tanri-kent/>Tanrı Kent</a>
 </h1>
 <div class=post-meta><span title="2007-12-20 07:23:00 +0300 +0300">Aralık 20, 2007</span>&nbsp;·&nbsp;Aşkın Özgür

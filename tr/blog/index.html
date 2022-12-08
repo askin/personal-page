@@ -103,6 +103,36 @@ Blogs
 <header class=post-header>
 <div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
 <h1 class=post-title>
+<a aria-label="post link to Docker Iptables Kurallarını Sallamıyor" href=https://askin.ws/tr/blog/docker-iptables-kurallarini-sallamiyor/>Docker Iptables Kurallarını Sallamıyor</a>
+</h1>
+<div class=post-meta><span title="2022-12-08 18:30:00 +0300 +0300">Aralık 8, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
+</div>
+</header>
+<div class=post-content>
+<p>Farketmem nedense biraz zaman aldı, bir docker container&rsquo;ının portunu publish ettiğimizde arka tarafta bizden habersiz o port erişime açılıyor. UFW, FirewallD ya da doğrudan iptables kullanmanız farketmiyor.</p>
+<p>Bazı servislere gelen anlamsız istekleri incelerken farkettim bunu. Çözmem de biraz sancılı oldu, yanlış bir firewall ayarı nedeniyle böyle birşey olduğunu düşündüğüm için çözüm bulmam zorlaştı. Siz de böyle bir durumdaysanız aşağıdaki yöntemlerden birini kullanabilirsiniz.</p>
+<p><code>/etc/docker/daemon.json</code> dosyasına aşağıdaki satırları ekledikten sonra docker daemonu yeniden başlatabilirsiniz.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;iptables&#34;</span> : <span style=color:#66d9ef>false</span>
+}
+</code></pre></div><p>Ya da</p>
+<p>Docker servisini başlatırken <code>--iptables=false</code> parametresiyle başlatabilirsiniz.</p>
+<p>Bu yazıda aynı problemi yaşayan başka birisi var. Eğlenceli bir yazı olmuş ona da bakabilirsiniz. <a href=https://erfansahaf.medium.com/why-docker-and-firewall-dont-get-along-with-each-other-ddca7a002e10 title="Why Docker and Firewall don’t get along with each other!">Why Docker and Firewall don’t get along with each other!</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://askin.ws/tr/tags/devops/>Devops</a></li>
+<li><a href=https://askin.ws/tr/tags/docker/>Docker</a></li>
+<li><a href=https://askin.ws/tr/tags/linux/>linux</a></li>
+</ul>
+</ul>
+</footer>
+<hr>
+</article>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
+<h1 class=post-title>
 <a aria-label="post link to İngilizce Klavye Düzeninde Türkçe Karakter Kullanmak" href=https://askin.ws/tr/blog/ingilizce-klavye-duzeninde-turkce-karakter-kullanmak/>İngilizce Klavye Düzeninde Türkçe Karakter Kullanmak</a>
 </h1>
 <div class=post-meta><span title="2022-08-23 22:00:00 +0300 +0300">Ağustos 23, 2022</span>&nbsp;·&nbsp;Aşkın Özgür
@@ -367,30 +397,6 @@ du -sh .[!.]* * | sort -h Bu komutun da biraz sıkıntılar var.
 <p>Malum sıkıntılı bir soyada sahiptim, 3 aylık uğraş sonucunda soyadımı değiştirmeyi başardım. İleride belki bunun için bir blog yazarım. Yeni soyadım <strong>Özgür</strong> :)</p>
 </div>
 <footer class=post-footer>
-</ul>
-</footer>
-<hr>
-</article>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://askin.ws/tr/>Anasayfa</a></div>
-<h1 class=post-title>
-<a aria-label="post link to Let's Encrypt" href=https://askin.ws/tr/blog/lets-encrypt/>Let's Encrypt</a>
-</h1>
-<div class=post-meta><span title="2017-02-06 15:09:00 +0300 +0300">Şubat 6, 2017</span>&nbsp;·&nbsp;Aşkın Özgür
-</div>
-</header>
-<div class=post-content>
-Daha önceki yazılarımda belirtiğim gibi ssl için startssl kullanıyordum. Ücretsiz sertifika verdiği için startssl uzun süre işimi gördü. Fakat son dönemde Let&rsquo;s Encrypti keşfettim. Çok basit bir şekilde sertifika oluşturmamızı sağlıyor. İlk denememden sonra tüm kullandığım websitelerinde ve servislerde Let&rsquo;s Encrypt kullanmaya karar verdim. Sizde seveceksiniz bundan eminim. Yaklaşık 12 sertifika oluşturdum, bunların takibini yapmak biraz sıkıntılı olacak. Bir de Let&rsquo;s Encrypt sertifikaları 3 aylık oluşturuyor. Birşeylerin gözden kaçması çok mümkün.
-<a class=next href=https://askin.ws/tr/blog/lets-encrypt/>Daha fazla oku »</a>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://askin.ws/tr/tags/certificate/>Certificate</a></li>
-<li><a href=https://askin.ws/tr/tags/eef/>EEF</a></li>
-<li><a href=https://askin.ws/tr/tags/lets-encrypt/>Let's Encrypt</a></li>
-<li><a href=https://askin.ws/tr/tags/security/>Security</a></li>
-</ul>
 </ul>
 </footer>
 <hr>
