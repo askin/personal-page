@@ -10,7 +10,11 @@ draft: false
 
 Farketmem nedense biraz zaman aldı, bir docker container'ının portunu publish ettiğimizde arka tarafta bizden habersiz o port erişime açılıyor. UFW, FirewallD ya da doğrudan iptables kullanmanız farketmiyor.
 
-Bazı servislere gelen anlamsız istekleri incelerken farkettim bunu. Çözmem de biraz sancılı oldu, yanlış bir firewall ayarı nedeniyle böyle birşey olduğunu düşündüğüm için çözüm bulmam zorlaştı. Siz de böyle bir durumdaysanız aşağıdaki yöntemlerden birini kullanabilirsiniz.
+Bazı servislere gelen anlamsız istekleri incelerken farkettim bunu.
+Çözmem de biraz sancılı oldu, yanlış bir firewall ayarı nedeniyle böyle birşey olduğunu düşündüğüm için çözüm bulmam zorlaştı.
+Ama sorun docker'ın bir port publish edildiğinde onun için otomatik olarak iptables kuralları eklemesiymiş.
+[Burada](https://docs.docker.com/network/iptables/#prevent-docker-from-manipulating-iptables "Prevent Docker from manipulating iptables") ilgili docker dökümanı bulunmakta.
+Siz de böyle bir durumdaysanız aşağıdaki yöntemlerden birini kullanabilirsiniz.
 
 
 `/etc/docker/daemon.json` dosyasına aşağıdaki satırları ekledikten sonra docker daemonu yeniden başlatabilirsiniz.
