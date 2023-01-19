@@ -5,8 +5,44 @@
 <meta name=robots content="index, follow">
 <title>Docker EXPOSE | Aşkın Özgür</title>
 <meta name=keywords content="Devops,Docker,linux">
-<meta name=description content="Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
- The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port.">
+<meta name=description content="Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim.
+Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
+
+The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified.
+The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the -p flag on docker run to publish and map one or more ports, or the -P flag to publish all exposed ports and map them to high-order ports.
+
+Dökümana göre Dockerfile içinde yazılan EXPOSE ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda Dockerı bilgilendiriyor.
+Daha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki Dockerfile ı kullanarak oluşturduğum bir imajım var.
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+CMD [&#34;uvicorn&#34;, &#34;app.main:app&#34;, &#34;--proxy-headers&#34;, &#34;--host&#34;, &#34;0.0.0.0&#34;, &#34;--port&#34;, &#34;8123&#34;]
+Görüldüğü üzere bu Dockerfile içinde herhangi bir port tanımlaması yapmadık. Sadece uvicorn uygulamasına 8123 portundan çalışacağını söyledik.
+Bunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.
+docker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose
+curl http://localhost:8123
+{&#34;Hello&#34;:&#34;World&#34;}
+Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için EXPOSE kullanmamız şart değil.
+Peki EXPOSE bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında dockerı çalıştırırken -P parametresini verirsek EXPOSE ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.
+Aşağıdaki Dockerfile kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+
+EXPOSE 8123
+
+CMD [&#34;uvicorn&#34;, &#34;app.main:app&#34;, &#34;--proxy-headers&#34;, &#34;--host&#34;, &#34;0.0.0.0&#34;, &#34;--port&#34;, &#34;8123&#34;]
+docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose
+docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+b3be17aef125   askinozgur/publish-port-with-expose   &#34;uvicorn app.main:ap…&#34;   5 seconds ago   Up 5 seconds   0.0.0.0:49157->8123/tcp, :::49157->8123/tcp   test-with-expose
+docker ps çıktısınd görüldüğü gibi içerdeki 8123 portu dışarıya 49157 olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.
+Bu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.
+https://github.com/askin/docker-examples">
 <meta name=author content="Aşkın Özgür">
 <link rel=canonical href=https://askin.ws/tr/blog/docker-expose/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.37fbfbb9a07b47a3216d6b7286578783abd4c3d55c31e2cd65b7013c8dc32a4d.css integrity="sha256-N/v7uaB7R6MhbWtyhleHg6vUw9VcMeLNZbcBPI3DKk0=" rel="preload stylesheet" as=style>
@@ -26,19 +62,91 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQCQ6JYDFR"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-LQCQ6JYDFR',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="Docker EXPOSE">
-<meta property="og:description" content="Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
- The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port.">
+<meta property="og:description" content="Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim.
+Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
+
+The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified.
+The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the -p flag on docker run to publish and map one or more ports, or the -P flag to publish all exposed ports and map them to high-order ports.
+
+Dökümana göre Dockerfile içinde yazılan EXPOSE ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda Dockerı bilgilendiriyor.
+Daha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki Dockerfile ı kullanarak oluşturduğum bir imajım var.
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+CMD [&#34;uvicorn&#34;, &#34;app.main:app&#34;, &#34;--proxy-headers&#34;, &#34;--host&#34;, &#34;0.0.0.0&#34;, &#34;--port&#34;, &#34;8123&#34;]
+Görüldüğü üzere bu Dockerfile içinde herhangi bir port tanımlaması yapmadık. Sadece uvicorn uygulamasına 8123 portundan çalışacağını söyledik.
+Bunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.
+docker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose
+curl http://localhost:8123
+{&#34;Hello&#34;:&#34;World&#34;}
+Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için EXPOSE kullanmamız şart değil.
+Peki EXPOSE bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında dockerı çalıştırırken -P parametresini verirsek EXPOSE ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.
+Aşağıdaki Dockerfile kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+
+EXPOSE 8123
+
+CMD [&#34;uvicorn&#34;, &#34;app.main:app&#34;, &#34;--proxy-headers&#34;, &#34;--host&#34;, &#34;0.0.0.0&#34;, &#34;--port&#34;, &#34;8123&#34;]
+docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose
+docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+b3be17aef125   askinozgur/publish-port-with-expose   &#34;uvicorn app.main:ap…&#34;   5 seconds ago   Up 5 seconds   0.0.0.0:49157->8123/tcp, :::49157->8123/tcp   test-with-expose
+docker ps çıktısınd görüldüğü gibi içerdeki 8123 portu dışarıya 49157 olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.
+Bu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.
+https://github.com/askin/docker-examples">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://askin.ws/tr/blog/docker-expose/"><meta property="article:section" content="blog">
 <meta property="article:published_time" content="2023-01-19T13:00:00+03:00">
 <meta property="article:modified_time" content="2023-01-19T13:00:00+03:00">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Docker EXPOSE">
-<meta name=twitter:description content="Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
- The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port.">
+<meta name=twitter:description content="Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim.
+Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
+
+The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified.
+The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the -p flag on docker run to publish and map one or more ports, or the -P flag to publish all exposed ports and map them to high-order ports.
+
+Dökümana göre Dockerfile içinde yazılan EXPOSE ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda Dockerı bilgilendiriyor.
+Daha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki Dockerfile ı kullanarak oluşturduğum bir imajım var.
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+CMD [&#34;uvicorn&#34;, &#34;app.main:app&#34;, &#34;--proxy-headers&#34;, &#34;--host&#34;, &#34;0.0.0.0&#34;, &#34;--port&#34;, &#34;8123&#34;]
+Görüldüğü üzere bu Dockerfile içinde herhangi bir port tanımlaması yapmadık. Sadece uvicorn uygulamasına 8123 portundan çalışacağını söyledik.
+Bunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.
+docker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose
+curl http://localhost:8123
+{&#34;Hello&#34;:&#34;World&#34;}
+Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için EXPOSE kullanmamız şart değil.
+Peki EXPOSE bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında dockerı çalıştırırken -P parametresini verirsek EXPOSE ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.
+Aşağıdaki Dockerfile kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.
+FROM python:3.9
+WORKDIR /code
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./app /code/app
+
+EXPOSE 8123
+
+CMD [&#34;uvicorn&#34;, &#34;app.main:app&#34;, &#34;--proxy-headers&#34;, &#34;--host&#34;, &#34;0.0.0.0&#34;, &#34;--port&#34;, &#34;8123&#34;]
+docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose
+docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+b3be17aef125   askinozgur/publish-port-with-expose   &#34;uvicorn app.main:ap…&#34;   5 seconds ago   Up 5 seconds   0.0.0.0:49157->8123/tcp, :::49157->8123/tcp   test-with-expose
+docker ps çıktısınd görüldüğü gibi içerdeki 8123 portu dışarıya 49157 olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.
+Bu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.
+https://github.com/askin/docker-examples">
 <meta name=twitter:site content="@kelebeks">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":4,"name":"Docker EXPOSE","item":"https://askin.ws/tr/blog/docker-expose/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Docker EXPOSE","name":"Docker EXPOSE","description":"Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.\n The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port.","keywords":["Devops","Docker","linux"],"articleBody":"Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.\n The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the -p flag on docker run to publish and map one or more ports, or the -P flag to publish all exposed ports and map them to high-order ports.\n Dökümana göre Dockerfile içinde yazılan EXPOSE ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda Dockerı bilgilendiriyor.\nDaha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki Dockerfile ı kullanarak oluşturduğum bir imajım var.\nFROMpython:3.9WORKDIR/codeCOPY ./requirements.txt /code/requirements.txtRUN pip install --no-cache-dir --upgrade -r /code/requirements.txtCOPY ./app /code/appCMD [\"uvicorn\", \"app.main:app\", \"--proxy-headers\", \"--host\", \"0.0.0.0\", \"--port\", \"8123\"]Görüldüğü üzere bu Dockerfile içinde herhangi bir port tanımlaması yapmadık. Sadece uvicorn uygulamasına 8123 portundan çalışacağını söyledik.\nBunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.\ndocker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose curl http://localhost:8123 {\"Hello\":\"World\"} Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için EXPOSE kullanmamız şart değil.\nPeki EXPOSE bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında dockerı çalıştırırken -P parametresini verirsek EXPOSE ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.\nAşağıdaki Dockerfile kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.\nFROMpython:3.9WORKDIR/codeCOPY ./requirements.txt /code/requirements.txtRUN pip install --no-cache-dir --upgrade -r /code/requirements.txtCOPY ./app /code/appEXPOSE8123CMD [\"uvicorn\", \"app.main:app\", \"--proxy-headers\", \"--host\", \"0.0.0.0\", \"--port\", \"8123\"]docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES b3be17aef125 askinozgur/publish-port-with-expose \"uvicorn app.main:ap…\" 5 seconds ago Up 5 seconds 0.0.0.0:49157-8123/tcp, :::49157-8123/tcp test-with-expose docker ps çıktısınd görüldüğü gibi içerdeki 8123 portu dışarıya 49157 olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.\nBu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.\nhttps://github.com/askin/docker-examples\n","wordCount":"363","inLanguage":"tr","datePublished":"2023-01-19T13:00:00+03:00","dateModified":"2023-01-19T13:00:00+03:00","author":{"@type":"Person","name":"Aşkın Özgür"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://askin.ws/tr/blog/docker-expose/"},"publisher":{"@type":"Organization","name":"Aşkın Özgür","logo":{"@type":"ImageObject","url":"https://askin.ws/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Docker EXPOSE","name":"Docker EXPOSE","description":"Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.\n The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the -p flag on docker run to publish and map one or more ports, or the -P flag to publish all exposed ports and map them to high-order ports.\n Dökümana göre Dockerfile içinde yazılan EXPOSE ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda Dockerı bilgilendiriyor.\nDaha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki Dockerfile ı kullanarak oluşturduğum bir imajım var.\nFROMpython:3.9WORKDIR/codeCOPY ./requirements.txt /code/requirements.txtRUN pip install --no-cache-dir --upgrade -r /code/requirements.txtCOPY ./app /code/appCMD [\u0026#34;uvicorn\u0026#34;, \u0026#34;app.main:app\u0026#34;, \u0026#34;--proxy-headers\u0026#34;, \u0026#34;--host\u0026#34;, \u0026#34;0.0.0.0\u0026#34;, \u0026#34;--port\u0026#34;, \u0026#34;8123\u0026#34;]Görüldüğü üzere bu Dockerfile içinde herhangi bir port tanımlaması yapmadık. Sadece uvicorn uygulamasına 8123 portundan çalışacağını söyledik.\nBunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.\ndocker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose curl http://localhost:8123 {\u0026#34;Hello\u0026#34;:\u0026#34;World\u0026#34;} Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için EXPOSE kullanmamız şart değil.\nPeki EXPOSE bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında dockerı çalıştırırken -P parametresini verirsek EXPOSE ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.\nAşağıdaki Dockerfile kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.\nFROMpython:3.9WORKDIR/codeCOPY ./requirements.txt /code/requirements.txtRUN pip install --no-cache-dir --upgrade -r /code/requirements.txtCOPY ./app /code/appEXPOSE8123CMD [\u0026#34;uvicorn\u0026#34;, \u0026#34;app.main:app\u0026#34;, \u0026#34;--proxy-headers\u0026#34;, \u0026#34;--host\u0026#34;, \u0026#34;0.0.0.0\u0026#34;, \u0026#34;--port\u0026#34;, \u0026#34;8123\u0026#34;]docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES b3be17aef125 askinozgur/publish-port-with-expose \u0026quot;uvicorn app.main:ap…\u0026quot; 5 seconds ago Up 5 seconds 0.0.0.0:49157-\u0026gt;8123/tcp, :::49157-\u0026gt;8123/tcp test-with-expose docker ps çıktısınd görüldüğü gibi içerdeki 8123 portu dışarıya 49157 olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.\nBu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.\nhttps://github.com/askin/docker-examples\n","keywords":["Devops","Docker","linux"],"articleBody":"Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.\n The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the -p flag on docker run to publish and map one or more ports, or the -P flag to publish all exposed ports and map them to high-order ports.\n Dökümana göre Dockerfile içinde yazılan EXPOSE ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda Dockerı bilgilendiriyor.\nDaha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki Dockerfile ı kullanarak oluşturduğum bir imajım var.\nFROMpython:3.9WORKDIR/codeCOPY ./requirements.txt /code/requirements.txtRUN pip install --no-cache-dir --upgrade -r /code/requirements.txtCOPY ./app /code/appCMD [\"uvicorn\", \"app.main:app\", \"--proxy-headers\", \"--host\", \"0.0.0.0\", \"--port\", \"8123\"]Görüldüğü üzere bu Dockerfile içinde herhangi bir port tanımlaması yapmadık. Sadece uvicorn uygulamasına 8123 portundan çalışacağını söyledik.\nBunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.\ndocker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose curl http://localhost:8123 {\"Hello\":\"World\"} Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için EXPOSE kullanmamız şart değil.\nPeki EXPOSE bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında dockerı çalıştırırken -P parametresini verirsek EXPOSE ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.\nAşağıdaki Dockerfile kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.\nFROMpython:3.9WORKDIR/codeCOPY ./requirements.txt /code/requirements.txtRUN pip install --no-cache-dir --upgrade -r /code/requirements.txtCOPY ./app /code/appEXPOSE8123CMD [\"uvicorn\", \"app.main:app\", \"--proxy-headers\", \"--host\", \"0.0.0.0\", \"--port\", \"8123\"]docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES b3be17aef125 askinozgur/publish-port-with-expose \"uvicorn app.main:ap…\" 5 seconds ago Up 5 seconds 0.0.0.0:49157-8123/tcp, :::49157-8123/tcp test-with-expose docker ps çıktısınd görüldüğü gibi içerdeki 8123 portu dışarıya 49157 olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.\nBu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.\nhttps://github.com/askin/docker-examples\n","wordCount":"363","inLanguage":"tr","datePublished":"2023-01-19T13:00:00+03:00","dateModified":"2023-01-19T13:00:00+03:00","author":{"@type":"Person","name":"Aşkın Özgür"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://askin.ws/tr/blog/docker-expose/"},"publisher":{"@type":"Organization","name":"Aşkın Özgür","logo":{"@type":"ImageObject","url":"https://askin.ws/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>

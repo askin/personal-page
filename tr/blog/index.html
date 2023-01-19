@@ -109,9 +109,44 @@ Blogs
 </div>
 </header>
 <div class=post-content>
-Bir etkinlik sırasında EXPOSE kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim. Öncelikle Dockerfile referans dökümanından EXPOSE ile ilgili verilen bilgiye bakalım.
-The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The EXPOSE instruction does not actually publish the port.
-<a class=next href=https://askin.ws/tr/blog/docker-expose/>Daha fazla oku »</a>
+<p>Bir etkinlik sırasında <code>EXPOSE</code> kullanımıyla ilgili bir anlaşmazlığa düştük, ben de biraz inceleyip onunla ilgili bir yazı yazmak istedim.
+Öncelikle <a href=https://docs.docker.com/engine/reference/builder/#expose title="Dockerfile reference">Dockerfile referans</a> dökümanından <code>EXPOSE</code> ile ilgili verilen bilgiye bakalım.</p>
+<blockquote>
+<p>The <code>EXPOSE</code> instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified.
+The <code>EXPOSE</code> instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the <code>-p</code> flag on <code>docker run</code> to publish and map one or more ports, or the <code>-P</code> flag to publish all exposed ports and map them to high-order ports.</p>
+</blockquote>
+<p>Dökümana göre <code>Dockerfile</code> içinde yazılan <code>EXPOSE</code> ifadesi herhangi bir port yönlendirme(publish) yapmıyor, çalıştırma sırasında uygulamanın hangi portların dışarı açabileceği konusunda <code>Docker</code>ı bilgilendiriyor.</p>
+<p>Daha iyi anlamak için hemen bir örnek yapalım. Aşağıdaki <code>Dockerfile</code> ı kullanarak oluşturduğum bir imajım var.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> python:3.9</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /code</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> ./requirements.txt /code/requirements.txt<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> pip install --no-cache-dir --upgrade -r /code/requirements.txt<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> ./app /code/app<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;uvicorn&#34;</span>, <span style=color:#e6db74>&#34;app.main:app&#34;</span>, <span style=color:#e6db74>&#34;--proxy-headers&#34;</span>, <span style=color:#e6db74>&#34;--host&#34;</span>, <span style=color:#e6db74>&#34;0.0.0.0&#34;</span>, <span style=color:#e6db74>&#34;--port&#34;</span>, <span style=color:#e6db74>&#34;8123&#34;</span>]<span style=color:#960050;background-color:#1e0010>
+</span></code></pre></div><p>Görüldüğü üzere bu <code>Dockerfile</code> içinde herhangi bir port tanımlaması yapmadık. Sadece <code>uvicorn</code> uygulamasına <code>8123</code> portundan çalışacağını söyledik.</p>
+<p>Bunu aşağıdaki komutla çalıştırıp istek attığımızda beklediğimiz gibi çalıştığını görebiliyoruz.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker run --rm --name test-without-expose -p 8123:8123 askinozgur/publish-port-without-expose
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>curl http://localhost:8123
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{<span style=color:#f92672>&#34;Hello&#34;</span>:<span style=color:#e6db74>&#34;World&#34;</span>}
+</code></pre></div><p>Dökumanın söylediği, bizim de test edip gördüğümüz gibi port yönlendirebilmek için <code>EXPOSE</code> kullanmamız şart değil.</p>
+<p>Peki <code>EXPOSE</code> bilgilendirme dışında başka hiç bir işe yaramıyor mu? Aslında <code>docker</code>ı çalıştırırken <code>-P</code> parametresini verirsek <code>EXPOSE</code> ile tanımlanmış bütün portları boşta bulunan bir porta yönlendirmiş olacağız.</p>
+<p>Aşağıdaki <code>Dockerfile</code> kullanılarak oluşturulmuş imajı çalıştırdığımız bir örneğe bakalım.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> python:3.9</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /code</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> ./requirements.txt /code/requirements.txt<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> pip install --no-cache-dir --upgrade -r /code/requirements.txt<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> ./app /code/app<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>EXPOSE</span><span style=color:#e6db74> 8123</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;uvicorn&#34;</span>, <span style=color:#e6db74>&#34;app.main:app&#34;</span>, <span style=color:#e6db74>&#34;--proxy-headers&#34;</span>, <span style=color:#e6db74>&#34;--host&#34;</span>, <span style=color:#e6db74>&#34;0.0.0.0&#34;</span>, <span style=color:#e6db74>&#34;--port&#34;</span>, <span style=color:#e6db74>&#34;8123&#34;</span>]<span style=color:#960050;background-color:#1e0010>
+</span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker run --rm --name test-with-expose -P askinozgur/publish-port-with-expose
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker ps
+</code></pre></div><pre tabindex=0><code>CONTAINER ID   IMAGE                                 COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+b3be17aef125   askinozgur/publish-port-with-expose   &quot;uvicorn app.main:ap…&quot;   5 seconds ago   Up 5 seconds   0.0.0.0:49157-&gt;8123/tcp, :::49157-&gt;8123/tcp   test-with-expose
+</code></pre><p><code>docker ps</code> çıktısınd görüldüğü gibi içerdeki <code>8123</code> portu dışarıya <code>49157</code> olarak yönlendirildi. Bu port her yeni konteyner oluşturulduğunda değişecektir.</p>
+<p>Bu yazıda kullandığım örneklere aşağıdaki github reposundan erişebilirsiniz.</p>
+<p><a href=https://github.com/askin/docker-examples title="Docker Örnekleri">https://github.com/askin/docker-examples</a></p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
