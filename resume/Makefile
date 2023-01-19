@@ -9,10 +9,10 @@ index-tr.html: resume-tr.md style.css
 	pandoc --standalone -c style.css --from markdown --to html -o index-tr.html resume-tr.md
 
 Askin_Ozgur_CV-tr.pdf: index-tr.html
-	wkhtmltopdf index-tr.html Askin_Ozgur_CV-tr.pdf.pdf
+	wkhtmltopdf --enable-local-file-access index-tr.html Askin_Ozgur_CV-tr.pdf.pdf
 
 Askin_Ozgur_CV-en.pdf: index-tr.html
-	wkhtmltopdf index.html Askin_Ozgur_CV-en.pdf.pdf
+	wkhtmltopdf --enable-local-file-access index.html Askin_Ozgur_CV-en.pdf.pdf
 
 index.docx: resume.md
 	pandoc --from markdown --to docx -o index.docx resume.md

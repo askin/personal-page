@@ -43,13 +43,15 @@ LinkedIn
 Corporate Experience
 --------------------
 
-2022-Current
+2022-2023
 :    *Senior Backend Developer at [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye)
+:    Implementation of Rest APIs with Spring Boot
+:    API integration for insurance industry with Spring Boot
 
 2013-2022
 :    *Software Developer at [Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)
 :    DevOps and System Administration (Building pipeline for Java, Python and Node.js Applicatons)
-:    API integration for SMPP (Short Message Peer-to-Peer) integration with Node.js
+:    API integration for SMPP (Short Message Peer-to-Peer Protocol) integration with Node.js
 :    Mass Mailing Service design and implementation (1+ Million daily)
 :    Web Based Call Center Development (with WebRTC)
 :    Python/Java development
@@ -79,7 +81,8 @@ Pardus
 Tools, IDEs and Frameworks
 --------------------------
 IDE
-:    Netbeans for Java Development
+:    IntelliJ for Java Development
+:    PyCharm for Python Development
 
 Editor
 :    Emacs as IDE and Text Editor for Python, PHP, etc.
@@ -87,7 +90,7 @@ Editor
 
 Framework
 :    Python: web.py, web2py, FastAPI
-:    JavaScript: jQuery, Vue.js
+:    Java: Spring/Spring Boot
 
 DevOps
 :   Jenkins, Redmine, Docker (*Docker Compose*), Google Cloud (*Cloud Functions, Cloud Storage*)

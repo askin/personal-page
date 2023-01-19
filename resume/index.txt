@@ -7,7 +7,6 @@ Aşkın Özgür
 
 ------------------------------------------------------------------------
 
-
 Personal
 
 Email
@@ -26,7 +25,7 @@ Military Service
     Done
 
 Languages
-    _Turkish_, _English_
+    Turkish, English
 
 Blog and Website
     https://askin.ws
@@ -40,24 +39,25 @@ Twitter
 LinkedIn
     https://www.linkedin.com/in/askinozgur
 
-
 Corporate Experience
 
-2022-Current
-    _Senior Backend Developer at FYK Teknoloji_ (İzmir/Türkiye)
+2022-2023
+    Senior Backend Developer at FYK Teknoloji (İzmir/Türkiye)
+    Implementation of Rest APIs with Spring Boot
+    API integration for insurance industry with Spring Boot
 
 2013-2022
-    _Software Developer at Hermes İletişim_ (İzmir/Türkiye)
+    Software Developer at Hermes İletişim (İzmir/Türkiye)
     DevOps and System Administration (Building pipeline for Java, Python
     and Node.js Applicatons)
-    API integration for SMPP (Short Message Peer-to-Peer) integration
-    with Node.js
+    API integration for SMPP (Short Message Peer-to-Peer Protocol)
+    integration with Node.js
     Mass Mailing Service design and implementation (1+ Million daily)
     Web Based Call Center Development (with WebRTC)
     Python/Java development
 
 2010-2013
-    _Software Developer at Dokuz Eylül University_ (İzmir/Türkiye)
+    Software Developer at Dokuz Eylül University (İzmir/Türkiye)
     Smartcard programming (Mifare)
     Linux System Development
     Pos Machine Development with C/C++
@@ -66,14 +66,13 @@ Corporate Experience
     application
 
 2010 (7 months)
-    _Web Developer at Dokuz Eylül University_ (İzmir/Türkiye)
+    Web Developer at Dokuz Eylül University (İzmir/Türkiye)
 
 2009 (1 month)
 
-    _Intern at Tubitak UEKAE_ (Gebze/Türkiye)
+    Intern at Tubitak UEKAE (Gebze/Türkiye)
 
     PiSi(Pardus Package Manager) PackageKit Backend
-
 
 Open Source Contribution
 
@@ -82,11 +81,11 @@ Pardus
     Odun (Offline updater and package installer)
     https://code.google.com/p/pisidown/
 
-
 Tools, IDEs and Frameworks
 
 IDE
-    Netbeans for Java Development
+    IntelliJ for Java Development
+    PyCharm for Python Development
 
 Editor
     Emacs as IDE and Text Editor for Python, PHP, etc.
@@ -94,23 +93,22 @@ Editor
 
 Framework
     Python: web.py, web2py, FastAPI
-    JavaScript: jQuery, Vue.js
+    Java: Spring/Spring Boot
 
 DevOps
-    Jenkins, Redmine, Docker (_Docker Compose_), Google Cloud (_Cloud
-    Functions, Cloud Storage_)
+    Jenkins, Redmine, Docker (Docker Compose), Google Cloud (Cloud
+    Functions, Cloud Storage)
 
 Monitoring Tools
     Graylog, Zabbix
 
-
 Education
 
 2004-2013
-    _BS. Computer Engineering at Dokuz Eylül University_
+    BS. Computer Engineering at Dokuz Eylül University
 
 2001-2004
-    _75. Yıl Cumhuriyet High School_
+    75. Yıl Cumhuriyet High School
 
 ------------------------------------------------------------------------
 
