@@ -5,7 +5,7 @@ showBreadCrumbs: false
 showTitle: false
 ---
 
-Hello, I am **Aşkın Özgür**. I am a software developer. I live in **İzmir/Karşıyaka** and work as a **Senior Software Developer** at [**FYK Technology**](https://fykmobile.com/ "FYK Technology").
+Hello, I am **Aşkın Özgür**. I am a software developer. I live in **İzmir/Karşıyaka** and work as a **{{< param "work.title" >}}** at [**{{< param "work.company" >}}**]({{< param "work.url" >}} "{{< param "work.company" >}}").
 
 You can reach me by clicking the social media icons below. Or you can send me an email: [askin@askin.ws](mailto:askin@askin.ws "askin@askin.ws")
 
@@ -18,7 +18,8 @@ You can reach me by clicking the social media icons below. Or you can send me an
 
 | Date           | Company                                                                                              |
 |----------------|------------------------------------------------------------------------------------------------------|
-| 2022 - Günümüz | Senior Backend Developer @ *[FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye) |
+| 2023 - Current | Senior Java Developer @ *[Rise Technology](https://www.rise-consulting.net/ "Rise Technology")*
+| 2022 - 2023    | Senior Backend Developer @ *[FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye) |
 | 2013 - 2022    | Software Developer @ *[Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)              |
 | 2010 - 2013    | Software Developer @ *[Dokuz Eylül University](http://www.deu.edu.tr)* (İzmir/Türkiye)               |
 | 2010 (7 Ay)    | Web Developer @ *[Dokuz Eylül University](http://www.deu.edu.tr)* (İzmir/Türkiye)                    |

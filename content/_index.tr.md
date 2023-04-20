@@ -3,7 +3,8 @@ title: "Aşkın Özgür"
 description: "Aşkın Özgür"
 ---
 
-Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")'de çalışıyorum.
+Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim.
+Karşıyaka'da yaşıyor, [**{{< param "work.company" >}}**]({{< param "work.url" >}} "{{< param "work.company" >}}")'de çalışıyorum..
 
 1 Haziran 2018 Tarihinden itibaren **Yollu** olan soyadım **Özgür** olarak değişmiştir.
 

@@ -41,6 +41,11 @@ paginate = 10
   showTitle = true
   isproduction = true
 
+  [params.work]
+      title = "Senior Software Developer"
+      company = "Rise Technology"
+      url = "https://www.rise-consulting.net/"
+
   [params.assets]
       favicon32x32 = "uploads/avatar.png"
       favicon16x16 = "uploads/avatar.png"

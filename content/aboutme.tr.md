@@ -6,7 +6,9 @@ showTitle: false
 url: "hakkimda"
 ---
 
-Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, [FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")'de çalışıyorum.
+Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim. Karşıyaka'da yaşıyor, 
+[**{{< param "work.company" >}}**]({{< param "work.url" >}} "{{< param "work.company" >}}")'de çalışıyorum..
+
 
 1 Haziran 2018 Tarihinden itibaren **Yollu** olan soyadım **Özgür** olarak değişmiştir.
 
@@ -18,7 +20,8 @@ Yada e-posta atabilirsiniz askin@askin.ws.
 
 Tarih          | Firma
 ---------------|----------------------------------------------------------------------------------------
-2022 - Günümüz | Yazılım Geliştirici @ *[FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye)
+2023 - Günümüz | Yazılım Geliştirici @ *[Rise Technology](https://www.rise-consulting.net/ "Rise Technology")*
+2022 - 2023    | Yazılım Geliştirici @ *[FYK Teknoloji](https://fykmobile.com/ "FYK Teknoloji")* (İzmir/Türkiye)
 2013 - 2022    | Yazılım Geliştirici @ *[Hermes İletişim](http://www.hermesiletisim.net)* (İzmir/Türkiye)
 2010 - 2013    | Yazılım Geliştirici @ *[Dokuz Eylül University](http://www.deu.edu.tr)* (İzmir/Türkiye)
 2010 (7 Ay)    | Web Gelişrici @ *[Dokuz Eylül University](http://www.deu.edu.tr)* (İzmir/Türkiye)
