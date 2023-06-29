@@ -25,3 +25,5 @@ du -sh .[!.]* * | sort -h
 
 Bu komutun da biraz sıkıntılar var. Mesela dosya ismi iki nokta ile başlıyorsa listelemeyecek malesef. Fakat bu şekilde
 işimi görüyor.
+
+<!--more-->
