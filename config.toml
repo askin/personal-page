@@ -105,11 +105,6 @@ paginate = 10
     languageAltTitle = "Türkçe"
 
     [[languages.tr.menu.main]]
-      name = "Hakkımda"
-      url = "/hakkimda"
-      weight = 1
-
-    [[languages.tr.menu.main]]
       name = "Blog - tr"
       url = "/tr/blog"
       weight = 2
@@ -147,11 +142,6 @@ paginate = 10
 
     languageName = "English :us:"
     languageAltTitle = "English"
-
-    [[languages.en.menu.main]]
-      name = "About Me"
-      url = "/aboutme"
-      weight = 1
 
     [[languages.en.menu.main]]
       name = "Blog - tr"

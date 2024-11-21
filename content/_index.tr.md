@@ -3,17 +3,8 @@ title: "Aşkın Özgür"
 description: "Aşkın Özgür"
 ---
 
-Merhaba ben **Aşkın Özgür**. Özgür Yazılım gönüllüsü bir Bilgisayar Mühendisiyim.
-Karşıyaka'da yaşıyor, [**{{< param "work.company" >}}**]({{< param "work.url" >}} "{{< param "work.company" >}}")'de çalışıyorum..
+Merhaba ben **Aşkın Özgür**. Özgür Yazılım meraklısı bir bilgisayar mühendisiyim. [Dokuz Eylül Üniversitesi](http://www.deu.edu.tr) Bilgisayar Mühendisliği bölümünden mezun oldum. 2010dan beri profesyonel olarak çalışmaktayım. Ağırlıklı olarak backend geliştirici olarak çalışmaktayım. Son yıllarda çoğunlukla **Java** ve **Kotlin** kullanıyorum, ancak daha önce **Python**, **PHP** ve **JavaScript** gibi dilleri kullarak da yazılım geliştirdim.
 
-1 Haziran 2018 Tarihinden itibaren **Yollu** olan soyadım **Özgür** olarak değişmiştir.
+Öz geçmişime [buradan](/resume) ulaşabilirsiniz.
 
-Aşağıdaki sosyal medya ikonlarına tıklayıp iletişim kurabilirsiniz.
-Yada e-posta atabilirsiniz askin@askin.ws.
-Şifreli olarak mail göndermek isterseniz pgp anahtarım: [PGP Anahtarı](/askin_askin_ws.asc "PGP Ahahtari"). 
-
-## Sosyal Medya Hesapları
-
-{{% center %}}
-{{% socialicons %}}
-{{% /center %}}
+Bana sosyal medyadan ulaşmak için sayfanın altındaki sosyal medya ikonlarını kullababilirsiniz. Ya da e-posta atabilirsiniz [askin@askin.ws](mailto:askin@askin.ws).
