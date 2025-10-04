@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>pardus on Aşkın Özgür</title><link>https://askin.ws/tr/tags/pardus/</link><description>Recent content in pardus on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 07 Dec 2009 09:45:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tr/tags/pardus/index.xml" rel="self" type="application/rss+xml"/><item><title>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak</title><link>https://askin.ws/tr/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</link><pubDate>Mon, 07 Dec 2009 09:45:00 +0300</pubDate><guid>https://askin.ws/tr/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus" />
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Pardus on Aşkın Özgür</title><link>https://askin.ws/tr/tags/pardus/</link><description>Recent content in Pardus on Aşkın Özgür</description><generator>Hugo -- gohugo.io</generator><language>tr</language><lastBuildDate>Mon, 07 Dec 2009 09:45:00 +0300</lastBuildDate><atom:link href="https://askin.ws/tr/tags/pardus/index.xml" rel="self" type="application/rss+xml"/><item><title>Pardus Ağ Yöneticisi İle Eduroam Ağına Bağlanmak</title><link>https://askin.ws/tr/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</link><pubDate>Mon, 07 Dec 2009 09:45:00 +0300</pubDate><guid>https://askin.ws/tr/blog/pardus-ag-yoneticisi-ile-eduroam-agina-baglanmak/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus" />
 Bikaç gündür &lt;a href="http://www.pardus.org.tr">Pardus&lt;/a> ve &lt;a href="http://www.eduroam.org/">Eduroam&lt;/a> ile uğraşıyordum. Eduroama bağlanmak için pratik yollar buldum fakat hiç birisi Ağ Yöneticisi kullanarak bağlanmanın zevkini vermiyordu.&lt;/p>
 &lt;p>2 gün boyunca Ağ Yöneticisinin neresini değiştirmem gerektiğini arayıp durdum. Sonunda wireless-tools adlı paketin aradığım paket olduğunu keşfettim :) wireless tools paketi wpa_supplicant kullanarak wpa şifreleme kullanan ağlara bağlanmaya yarıyor. Sağolsun Pardus geliştiricileri wpa_supplicant paketi için dbus kullanan bir python betiği yazmışlar. Bu betik içinde tanımlanan methodlarla wpa_supplicantı yönetebiliyoruz. Bu betiğe eduroam ağına bağlanmak için gerekli parametreleri alan bir method ekledim.&lt;br>
 Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmasını sağlayacak birkaç değişiklik yaptım.&lt;/p>
@@ -7,9 +7,9 @@ Daha sonra wireless-tools paketi içindeki comar betiğine bu methodu kullanmas�
 &lt;a href="http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/">http://github.com/askin/kelebekpisi/tree/master/wpa_supplicant/&lt;/a>&lt;br>
 &lt;a href="http://github.com/askin/kelebekpisi/tree/master/wireless-tools/">http://github.com/askin/kelebekpisi/tree/master/wireless-tools/&lt;/a>&lt;/p>
 &lt;p>Paketleri kendiniz derlemek için root yetkileriyle&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
-pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pisi bi http://github.com/askin/kelebekpisi/raw/master/wpa_supplicant/pspec.xml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>komutlarını vermelisiniz, ardından oluşan pisi paketlerini kurabilirsiniz.&lt;/p>
 &lt;p>Ya da hazır ikili pisi paketlerini &lt;a href="http://askin.ws/pisi/eduroam/">http://askin.ws/pisi/eduroam/&lt;/a> adresinden bulabilirsiniz.&lt;/p>
 &lt;p>Paketleri kurduktan sonra ayarları yaparken Güvenlik Türü seçeneğini &amp;ldquo;WPA &amp;amp; WPA2 Enterprise&amp;rdquo; olarak seçmelisiniz.&lt;/p>
 &lt;p>Son olarak wireless-tools paketi Pardus&amp;rsquo;un temel paketlerinden birisidir, wpa_supplicant paketi de wpa ağlarına bağlanmak için gerekli temel bir pakettir. Bunları Pardus deposu dışında bir yerden kurmak sisteminize zarar verebilir. Sorumluluk kullanıcıya aittir :)&lt;/p>
@@ -18,29 +18,29 @@ pisi bi http://github.com/askin/kelebekpisi/raw/master/wireless-tools/pspec.xml
 Ancak Pardus kurulumu ile birlikte gelen 2 araç bizim bu ağa bağlanmamız için yeterli. Bu araçlar &lt;a href="http://hostap.epitest.fi/wpa_supplicant/">wpa_supplicant&lt;/a> ve &lt;a href="http://roy.marples.name/projects/dhcpcd">dhcpcd&lt;/a>. Wpa_supplicant ağda kimlik denetimini sağlamak için, dhcpcd ise ağdan ip almamız için gerekli.&lt;/p>
 &lt;p>Öncelikle wpa_supplicant için ayar dosyası oluşturmamız gerekiyor.&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">network={
-ssid=&amp;quot;eduroam&amp;quot;
+ssid=&amp;#34;eduroam&amp;#34;
 key_mgmt=WPA-EAP
 pairwise=TKIP
 group=TKIP
 eap=TTLS
-phase2=&amp;quot;auth=PAP&amp;quot;
-anonymous_identity=&amp;quot;anonymous@ogr.deu.edu.tr&amp;quot;
-identity=&amp;quot;ogrencinumarasi@ogr.deu.edu.tr&amp;quot;
-password=&amp;quot;sifre&amp;quot;
+phase2=&amp;#34;auth=PAP&amp;#34;
+anonymous_identity=&amp;#34;anonymous@ogr.deu.edu.tr&amp;#34;
+identity=&amp;#34;ogrencinumarasi@ogr.deu.edu.tr&amp;#34;
+password=&amp;#34;sifre&amp;#34;
 }
 &lt;/code>&lt;/pre>&lt;p>Bu ayarlar Dokuz Eylül Üniversitesi için. Kendi okulunuza göre düzenlemeniz gerekiyor. Sadece ogr.deu.edu.tr adresi yerine kendi okulunuzun adresini yazmalısınız.&lt;/p>
 &lt;p>Bu dosyayı /etc/wpa_supplicant.con adıyla kaydediyoruz.&lt;/p>
 &lt;p>Sıra geldi wpa_supplicantı çalıştırmaya.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.&lt;br>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>-D parametresi hangi sürücüyü kullanacağımızı belirtiyor. Wpa_supplicantın man dosyalarına bakarak kendinize uygun bir sürücü seçebilirsiniz.&lt;br>
 -i hangi arayüzü kullanacağınızı belirtiyor. Genellikle wlan0 dır. iwconfig komutunun çıktısı size kablosuz ağ kartlarını gösterecektir.&lt;br>
 -c ile ayar dosyamızın yerini belirtiyoruz.&lt;/p>
 &lt;p>Eğer bu komut başarılı olursa artık ip alabiliriz.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dhcpcd wlan0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dhcpcd wlan0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer bu komutta başarılı olduysa artık internete bağlanabilirsiniz hayırlı olsun :)&lt;/p>
 &lt;p>Bu işlemi kolaylaştırmak için pem adında bi script yazdım.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git clone git://github.com/askin/pem.git
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komutla pem&amp;rsquo;e ulaşabilirsiniz.&lt;br>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone git://github.com/askin/pem.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bu komutla pem&amp;rsquo;e ulaşabilirsiniz.&lt;br>
 Bu aracı daha fazla geliştirecektim fakat ağ yöneticisiyle bu işleri nasıl yapabileceğimi öğrendim. Bugün oturup biraz network-managerın kodlarıyla uğraştım. Sanırım pazartesi günü bu işi ağ yöneticisiyle kolayca yapılabilecek bir hale getirebilirim. Şimdilik en güzel yöntem bu gibi :)&lt;/p>
 &lt;p>Ayrıca sevgili dostum &lt;a href="http://blog.metebilgin.com/">Mete&lt;/a> bu işin wicd kullanarak nasıl yapıldığını daha önce yazmış &lt;a href="http://blog.metebilgin.com/2009/10/pardus-2009-da-eduroam-kafay-yemeden.html">buradan&lt;/a> o yazıya ulaşabilirsiniz.&lt;/p></description></item><item><title>Pardus 2009</title><link>https://askin.ws/tr/blog/pardus-2009/</link><pubDate>Sat, 25 Jul 2009 01:09:00 +0300</pubDate><guid>https://askin.ws/tr/blog/pardus-2009/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2009/05/pardus.png" alt="Pardus" title="Pardus" />
 Sonunda Pardus 2009&amp;rsquo;u bilgisayarıma kurabildim. Ailemin yanına geldiğim için Pardus&amp;rsquo;u indiremiyordum. Malum kotalı internet, sıkıntı yaratıyor.&lt;br>
@@ -51,16 +51,16 @@ KDE4 gerçekten çok güzel, çok hoş duruyor fakat bana göre değil. Arada a�
 Her şeye rağmen güzel bi dağıtım olmuş. Emeği geçen herkese teşekür ediyorum.&lt;/p></description></item><item><title>Mysql Data Dizinini Değiştirme</title><link>https://askin.ws/tr/blog/mysql-data-dizinini-degistirme/</link><pubDate>Tue, 14 Jul 2009 02:11:00 +0300</pubDate><guid>https://askin.ws/tr/blog/mysql-data-dizinini-degistirme/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2009/07/mysql.png" alt="Mysql" title="Mysql" />
 Mysql data dizini ön tanımlı &lt;strong>/var/lib/mysql&lt;/strong> olarak belirlenmiştir. Çeşitli ihtiyaçlardan dolayı bunun yerini değiştirmemiz gerekebilir. Mesela ben ayrı bir bölümde tuttuğum &lt;strong>/home&lt;/strong> dizini altına taşımak istiyorum. Tüm işlemleri &lt;em>root&lt;/em> yetkisiyle yapıyoruz. Öncelikle mysql servisini durduralım.
 Ben pardus kullandığım için&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ service mysql-server stop
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diğer dağıtımlarda farklı olabilir.
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ service mysql-server stop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diğer dağıtımlarda farklı olabilir.
 Ardından ilgili dizini yeni yerine kopyalayalım.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ cp -a /var/lib/mysql /home
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. &lt;strong>/etc/mysql/my.cnf&lt;/strong> dosyasında
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ cp -a /var/lib/mysql /home
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Daha sonra mysql sunucusuna yeni dizinimizi haber verelim. &lt;strong>/etc/mysql/my.cnf&lt;/strong> dosyasında
 &lt;code>datadir = /var/lib/mysql&lt;/code> olan satırı
 &lt;code>datadir = /home/mysql&lt;/code> olarak değiştirelim.
 Şimdi servisi yeniden başlatabiliriz.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ service mysql-server start
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer düzgün bir şekilde çalışıyorsa &lt;strong>/var/lib/mysql&lt;/strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.&lt;/p></description></item><item><title>Pardus - Atheros AR242x - WPA2</title><link>https://askin.ws/tr/blog/pardus-atheros-ar242x-wpa2/</link><pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate><guid>https://askin.ws/tr/blog/pardus-atheros-ar242x-wpa2/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi" />
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ service mysql-server start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eğer düzgün bir şekilde çalışıyorsa &lt;strong>/var/lib/mysql&lt;/strong> dizinini silebiliriz. Ama ismini değiştirip birkaç gün her ihtimale karşı saklamak çok mantıklı.&lt;/p></description></item><item><title>Pardus - Atheros AR242x - WPA2</title><link>https://askin.ws/tr/blog/pardus-atheros-ar242x-wpa2/</link><pubDate>Tue, 02 Jun 2009 21:48:00 +0300</pubDate><guid>https://askin.ws/tr/blog/pardus-atheros-ar242x-wpa2/</guid><description>&lt;p>&lt;img loading="lazy" src="https://askin.ws/uploads/2009/06/wifi.jpeg" alt="Wi-Fi" title="Wi-Fi" />
 Pardus 2008 kurulumla beraber Atheros AR242x kablosuz ağ kartını tanıyor, fakat nedense başka ağları görmesine rağmen evimde WPA2 ile kurulu kablosuz ağımı göremiyordu. Bende diğer dağıtımlarda kullandığım ndiswrapper ile sorunumu çözmeyi denedim.&lt;br>
 Öncelikle ndiswrapperı kurduktan sonra windows için yazılmış driverları seçmemiz gerekiyor. Ardından&lt;br>
 &lt;code>/etc/modules.autoload.d/kernel-2.6&lt;/code>&lt;br>
